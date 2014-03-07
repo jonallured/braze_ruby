@@ -30,12 +30,12 @@ describe Appboy::API do
           company_secret: 'secret-key',
           app_group_id: 'app-group-id',
           external_user_ids: :user_ids,
-          segment_ids: :segment_ids,
+          segment_ids: [:segment_id],
           messages: :message
         }
       ).and_return('message' => 'success')
 
-      expect(appboy.send_message(:message, :user_ids, :segment_ids)).to be_true
+      expect(appboy.send_message(:message, :user_ids, :segment_id)).to be_true
     end
     it "handles error"
   end
@@ -46,14 +46,14 @@ describe Appboy::API do
         '/messages/schedule',
         query: {
           company_secret: 'secret-key',
-          segment_ids: :segment_ids,
+          segment_ids: [:segment_id],
           send_at: :date,
           deliver_in_local_timezone: :in_local_timezone,
           messages: :message
         }
       ).and_return('message' => 'success')
 
-      expect(appboy.schedule_message(:date, :message, :segment_ids, :in_local_timezone)).to be_true
+      expect(appboy.schedule_message(:date, :message, :segment_id, :in_local_timezone)).to be_true
     end
     it "handles error"
   end
