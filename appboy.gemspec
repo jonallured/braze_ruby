@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["josh@godynamo.com"]
   spec.description   = %q{Appboy wrapper}
   spec.summary       = %q{A wrapper for the Appboy REST API, track users/events/purchases, send & schedule messages}
-  spec.homepage      = "godynamo.com"
+  spec.homepage      = "http://appboy.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
