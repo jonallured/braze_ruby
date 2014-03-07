@@ -1,6 +1,6 @@
 # Appboy
 
-TODO: Write a gem description
+A wrapper for the Appboy REST API using HTTParty
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Track User
+### Track Event
+### Track Purchase
+### Send Message
+### Schedule Message
 
 ## Contributing
 
