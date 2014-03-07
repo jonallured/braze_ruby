@@ -32,6 +32,16 @@ api.track [{external_id: 123,
 ### Track Event
 ### Track Purchase
 ### Send Message
+
+```ruby
+message  = {android_push: {alert: 'Hello Android'},
+            apple_push:   {alert: "Hello iOS"}}
+
+user_ids = [123, 456]
+
+api.send_message(message, user_ids)
+```
+
 ### Schedule Message
 
 ## Contributing
