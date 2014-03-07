@@ -35,6 +35,14 @@ api.track [{external_id: 123,
 ```
 
 ### Track Event
+
+```ruby
+events = [
+  {external_id: 123, name: 'add-to-cart', time: Time.now}
+]
+api.track [], events
+```
+
 ### Track Purchase
 ### Send Message
 
