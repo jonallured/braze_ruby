@@ -39,4 +39,22 @@ describe Appboy::API do
     end
     it "handles error"
   end
+
+  context "#schedule_message" do
+    it "calls api" do
+      Appboy::API.should_receive(:post).with(
+        '/messages/schedule',
+        query: {
+          company_secret: 'secret-key',
+          segment_ids: :segment_ids,
+          send_at: :date,
+          deliver_in_local_timezone: :in_local_timezone,
+          messages: :message
+        }
+      ).and_return('message' => 'success')
+
+      expect(appboy.schedule_message(:date, :message, :segment_ids, :in_local_timezone)).to be_true
+    end
+    it "handles error"
+  end
 end

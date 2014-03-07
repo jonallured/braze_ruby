@@ -24,6 +24,14 @@ module Appboy
                              segment_ids:       segment_ids
     end
 
+    def schedule_message(date, message, segment_ids=[], local_timezone=false)
+      post '/messages/schedule', company_secret:            @secret,
+                                 segment_ids:               segment_ids,
+                                 send_at:                   date,
+                                 deliver_in_local_timezone: local_timezone,
+                                 messages:                  message
+    end
+
   private
     def post(url, payload)
       response = self.class.post(url, query: payload)
