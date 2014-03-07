@@ -16,6 +16,14 @@ module Appboy
                            purchases:      purchases
     end
 
+    def send_message(message, user_ids, segment_ids = [])
+      post '/messages/send', company_secret:    @secret,
+                             app_group_id:      @app_group_id,
+                             messages:          message,
+                             external_user_ids: user_ids,
+                             segment_ids:       segment_ids
+    end
+
   private
     def post(url, payload)
       response = self.class.post(url, query: payload)
