@@ -44,6 +44,15 @@ api.send_message(message, user_ids)
 
 ### Schedule Message
 
+```ruby
+message    = {android_push: {alert: 'Hello Android'},
+              apple_push:   {alert: "Hello iOS"}}
+segment_id = '<segment id>'
+send_at    = Time.new(2014, 3, 12)
+
+api.schedule_message(send_at, message, segment_id)
+```
+
 ## Contributing
 
 1. Fork it
