@@ -1,5 +1,7 @@
 module Appboy
   class API
+    include HTTParty
+
     def initialize(secret, app_group_id)
       @secret, @app_group_id = secret, app_group_id
     end
