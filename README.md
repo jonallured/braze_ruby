@@ -16,12 +16,17 @@ Or install it yourself as:
 
     $ gem install appboy
 
-## Usage
+## Examples
+
+### Initializing API
+
+```ruby
+api = Appboy::API.new('<secret>', '<app-group-id>')
+```
 
 ### Track User
 
 ```ruby
-api = Appboy::API.new('<secret>', '<app-group-id>')
 api.track [{external_id: 123,
             first_name: 'John',
             last_name: 'Smith',
