@@ -19,6 +19,16 @@ Or install it yourself as:
 ## Usage
 
 ### Track User
+
+```ruby
+api = Appboy::API.new('<secret>', '<app-group-id>')
+api.track [{external_id: 123,
+            first_name: 'John',
+            last_name: 'Smith',
+            gender: 'male',
+            email: 'jsmith@example.com'}]
+```
+
 ### Track Event
 ### Track Purchase
 ### Send Message
