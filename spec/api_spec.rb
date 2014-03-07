@@ -10,24 +10,13 @@ describe Appboy::API do
         query: {
           company_secret: 'secret-key',
           app_group_id: 'app-group-id',
-          attributes: {
-            external_id: 123,
-            first_name: "Josh",
-            last_name: "Nussbaum",
-            gender: "male",
-            email: "joshnuss@gmail.com",
-            country: "CA"
-          }
+          attributes: :attributes,
+          events: :events,
+          purchases: :purchases
         }
       ).and_return('message' => 'success')
 
-      expect(appboy.track(
-        external_id: 123,
-        first_name: "Josh",
-        last_name: "Nussbaum",
-        gender: "male",
-        email: "joshnuss@gmail.com",
-        country: "CA")).to be_true
+      expect(appboy.track(:attributes, :events, :purchases)).to be_true
     end
 
     it "handles error"

@@ -8,12 +8,18 @@ module Appboy
       @secret, @app_group_id = secret, app_group_id
     end
 
-    def track(attributes)
-      payload = {company_secret: @secret,
-                 app_group_id: @app_group_id,
-                 attributes: attributes}
+    def track(attributes, events=[], purchases=[])
+      post '/users/track', company_secret: @secret,
+                           app_group_id:   @app_group_id,
+                           attributes:     attributes,
+                           events:         events,
+                           purchases:      purchases
+    end
 
-      response = self.class.post('/users/track', query: payload)
+  private
+    def post(url, payload)
+      response = self.class.post(url, query: payload)
+      puts response.inspect
       response['message'] == 'success'
     end
   end
