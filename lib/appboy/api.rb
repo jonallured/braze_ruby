@@ -35,7 +35,6 @@ module Appboy
   private
     def post(url, payload)
       response = self.class.post(url, query: payload)
-      puts response.inspect
       response['message'] == 'success'
     end
   end
