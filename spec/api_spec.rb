@@ -16,7 +16,7 @@ describe Appboy::API do
         }
       ).and_return('message' => 'success')
 
-      expect(appboy.track(:attributes, :events, :purchases)).to be_true
+      expect(appboy.track(:attributes, :events, :purchases)).to be_truthy
     end
 
     it "handles error"
@@ -35,7 +35,7 @@ describe Appboy::API do
         }
       ).and_return('message' => 'success')
 
-      expect(appboy.send_message(:message, :user_ids, :segment_id)).to be_true
+      expect(appboy.send_message(:message, :user_ids, :segment_id)).to be_truthy
     end
     it "handles error"
   end
@@ -53,7 +53,7 @@ describe Appboy::API do
         }
       ).and_return('message' => 'success')
 
-      expect(appboy.schedule_message(:date, :message, :segment_id, :in_local_timezone)).to be_true
+      expect(appboy.schedule_message(:date, :message, :segment_id, :in_local_timezone)).to be_truthy
     end
     it "handles error"
   end
