@@ -34,7 +34,10 @@ module Appboy
 
   private
     def post(url, payload)
-      response = self.class.post(url, query: payload)
+      response = self.class.post(url,
+        headers: {'Content-Type' => 'application/json'},
+        body: payload.to_json
+      )
       response['message'] == 'success'
     end
   end

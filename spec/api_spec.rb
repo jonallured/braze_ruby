@@ -7,13 +7,14 @@ describe Appboy::API do
     it "calls api" do
       Appboy::API.should_receive(:post).with(
         '/users/track',
-        query: {
+        headers: {'Content-Type' => 'application/json'},
+        body: {
           company_secret: 'secret-key',
           app_group_id: 'app-group-id',
           attributes: :attributes,
           events: :events,
           purchases: :purchases
-        }
+        }.to_json
       ).and_return('message' => 'success')
 
       expect(appboy.track(:attributes, :events, :purchases)).to be_truthy
@@ -26,13 +27,14 @@ describe Appboy::API do
     it "calls api" do
       Appboy::API.should_receive(:post).with(
         '/messages/send',
-        query: {
+        headers: {'Content-Type' => 'application/json'},
+        body: {
           company_secret: 'secret-key',
           app_group_id: 'app-group-id',
+          messages: :message,
           external_user_ids: :user_ids,
-          segment_ids: [:segment_id],
-          messages: :message
-        }
+          segment_ids: [:segment_id]
+        }.to_json
       ).and_return('message' => 'success')
 
       expect(appboy.send_message(:message, :user_ids, :segment_id)).to be_truthy
@@ -44,13 +46,14 @@ describe Appboy::API do
     it "calls api" do
       Appboy::API.should_receive(:post).with(
         '/messages/schedule',
-        query: {
+        headers: {'Content-Type' => 'application/json'},
+        body: {
           company_secret: 'secret-key',
           segment_ids: [:segment_id],
           send_at: :date,
           deliver_in_local_timezone: :in_local_timezone,
           messages: :message
-        }
+        }.to_json
       ).and_return('message' => 'success')
 
       expect(appboy.schedule_message(:date, :message, :segment_id, :in_local_timezone)).to be_truthy
