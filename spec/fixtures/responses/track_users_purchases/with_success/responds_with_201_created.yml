@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/users/track
+    body:
+      encoding: UTF-8
+      string: '{"app_group_id":"<APPBOY_GROUP_ID>","attributes":[],"events":[],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
+        00:04:57 -0500","currency":"CAD","price":1.0}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Sun, 15 Feb 2015 05:04:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"0e21c9b6a49b0970912cf422530a0b3b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 27c05bae4f29e218465df10371d7a0b4
+      X-Runtime:
+      - '0.007733'
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"purchases_processed":1,"message":"success"}'
+    http_version: 
+  recorded_at: Sun, 15 Feb 2015 05:04:57 GMT
+recorded_with: VCR 2.9.2

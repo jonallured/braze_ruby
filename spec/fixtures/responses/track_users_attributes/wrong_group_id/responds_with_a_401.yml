@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/users/track
+    body:
+      encoding: UTF-8
+      string: '{"app_group_id":"non-existent","attributes":[{"external_id":1,"foo":"bar"}],"events":[],"purchases":[]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Sun, 15 Feb 2015 05:04:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 401 Unauthorized
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - ba670865b83f441134e31ef99cc01a23
+      X-Runtime:
+      - '0.017842'
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"message":"Invalid or missing App Group API Identifier: non-existent"}'
+    http_version: 
+  recorded_at: Sun, 15 Feb 2015 05:04:56 GMT
+recorded_with: VCR 2.9.2

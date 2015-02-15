@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/messages/send
+    body:
+      encoding: UTF-8
+      string: '{"app_group_id":"non-existent","messages":{"apple_push":{"alert":"hello"}},"external_user_ids":[1],"segment_ids":[]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Sun, 15 Feb 2015 05:04:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 401 Unauthorized
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 0789cf6902bc7cf11cf4450c4d4cb638
+      X-Runtime:
+      - '0.018963'
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"message":"Invalid or missing App Group API Identifier: non-existent"}'
+    http_version: 
+  recorded_at: Sun, 15 Feb 2015 05:04:55 GMT
+recorded_with: VCR 2.9.2
