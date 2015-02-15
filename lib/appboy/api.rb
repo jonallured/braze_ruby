@@ -62,7 +62,11 @@ module Appboy
     attr_reader :app_group_id
 
     def connection
-      @connection ||= Faraday.new(url: 'https://api.appboy.com')
+      @connection ||= Faraday.new(url: 'https://api.appboy.com') do |connection|
+        connection.request :json
+
+        connection.adapter Faraday.default_adapter
+      end
     end
   end
 end

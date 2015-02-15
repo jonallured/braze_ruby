@@ -1,10 +1,9 @@
 require 'json'
 require 'virtus'
 require 'faraday'
+require 'faraday_middleware'
 
 require 'appboy/version'
-require 'appboy/connection'
-require 'appboy/purchase'
 
 module Appboy
   autoload :API, 'appboy/api'
