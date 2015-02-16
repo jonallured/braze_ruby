@@ -6,7 +6,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"app_group_id":"<APPBOY_GROUP_ID>","segment_ids":["<APPBOY_TEST_SEGMENT>"],"send_at":"2015-02-15
-        00:04:54 -0500","deliver_in_local_timezone":false,"messages":{"apple_push":{"alert":"hello"}}}'
+        21:04:31 -0500","deliver_in_local_timezone":false,"messages":{"apple_push":{"alert":"hello"}}}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -24,7 +24,7 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Sun, 15 Feb 2015 05:04:55 GMT
+      - Mon, 16 Feb 2015 02:04:31 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -42,14 +42,14 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - af87df606bded06077fdd49ad8de4244
+      - 87445394eda38e6726c16d401e2ddd20
       X-Runtime:
-      - '0.013151'
+      - '0.010460'
       Vary:
       - Accept-Encoding
     body:
       encoding: UTF-8
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Sun, 15 Feb 2015 05:04:55 GMT
+  recorded_at: Mon, 16 Feb 2015 02:04:31 GMT
 recorded_with: VCR 2.9.2

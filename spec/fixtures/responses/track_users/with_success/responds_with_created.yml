@@ -6,8 +6,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"app_group_id":"<APPBOY_GROUP_ID>","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2015-02-15
-        20:38:13 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
-        20:38:13 -0500","currency":"CAD","price":1.0}]}'
+        21:04:32 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
+        21:04:32 -0500","currency":"CAD","price":1.0}]}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Mon, 16 Feb 2015 01:38:14 GMT
+      - Mon, 16 Feb 2015 02:04:32 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -43,14 +43,14 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4a3423885147e8d3d79bf3b37175f211
+      - 68c4d37952f3f900cd83820409e74696
       X-Runtime:
-      - '0.007607'
+      - '0.008458'
       Vary:
       - Accept-Encoding
     body:
       encoding: UTF-8
       string: '{"attributes_processed":1,"events_processed":1,"purchases_processed":1,"message":"success"}'
     http_version: 
-  recorded_at: Mon, 16 Feb 2015 01:38:14 GMT
+  recorded_at: Mon, 16 Feb 2015 02:04:32 GMT
 recorded_with: VCR 2.9.2

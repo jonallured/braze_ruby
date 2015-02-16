@@ -2,12 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/users/track
+    uri: https://api.appboy.com/messages/schedule
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"non-existent","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2015-02-15
-        20:38:14 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
-        20:38:14 -0500","currency":"CAD","price":1.0}]}'
+      string: '{"app_group_id":"non-existent","segment_ids":["<APPBOY_TEST_SEGMENT>"],"send_at":"2015-02-15
+        21:04:31 -0500","deliver_in_local_timezone":false,"messages":{"apple_push":{"alert":"hello"}}}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -25,7 +24,7 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Mon, 16 Feb 2015 01:38:14 GMT
+      - Mon, 16 Feb 2015 02:04:31 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -41,14 +40,14 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - e8ed960d3edb3285d92f1d474d4eb71b
+      - 4fced4dccb4363e4660606ba27c2561a
       X-Runtime:
-      - '0.011583'
+      - '0.018142'
       Vary:
       - Accept-Encoding
     body:
       encoding: UTF-8
       string: '{"message":"Invalid or missing App Group API Identifier: non-existent"}'
     http_version: 
-  recorded_at: Mon, 16 Feb 2015 01:38:14 GMT
+  recorded_at: Mon, 16 Feb 2015 02:04:31 GMT
 recorded_with: VCR 2.9.2
