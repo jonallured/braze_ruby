@@ -5,8 +5,9 @@ http_interactions:
     uri: https://api.appboy.com/users/track
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","attributes":[],"events":[{"external_id":1,"name":"baz","time":"2015-02-15
-        00:04:56 -0500"}],"purchases":[]}'
+      string: '{"app_group_id":"non-existent","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2015-02-15
+        20:38:14 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
+        20:38:14 -0500","currency":"CAD","price":1.0}]}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -18,13 +19,13 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 401
+      message: Unauthorized
     headers:
       Server:
       - nginx/1.6.2
       Date:
-      - Sun, 15 Feb 2015 05:04:57 GMT
+      - Mon, 16 Feb 2015 01:38:14 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -32,24 +33,22 @@ http_interactions:
       Connection:
       - keep-alive
       Status:
-      - 201 Created
+      - 401 Unauthorized
       Strict-Transport-Security:
       - max-age=31536000
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Etag:
-      - '"fec87a2a57b1ef3cd6242a118b08372c"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - b40ef0bc285c6848478907513caffc91
+      - e8ed960d3edb3285d92f1d474d4eb71b
       X-Runtime:
-      - '0.007495'
+      - '0.011583'
       Vary:
       - Accept-Encoding
     body:
       encoding: UTF-8
-      string: '{"events_processed":1,"message":"success"}'
+      string: '{"message":"Invalid or missing App Group API Identifier: non-existent"}'
     http_version: 
-  recorded_at: Sun, 15 Feb 2015 05:04:56 GMT
+  recorded_at: Mon, 16 Feb 2015 01:38:14 GMT
 recorded_with: VCR 2.9.2
