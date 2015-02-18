@@ -33,7 +33,7 @@ module Integrations
     subject(:send_messages) do
       api.send_messages(
         messages: messages,
-        user_ids: user_ids
+        external_user_ids: user_ids
       )
     end
 
