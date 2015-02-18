@@ -1,22 +1,16 @@
 require 'appboy/deprecated'
+require 'appboy/rest/track_users'
+require 'appboy/endpoints/track_users'
 
 module Appboy
   class API
     include Appboy::Deprecated
+    include Appboy::Endpoints::TrackUsers
+
+    attr_reader :app_group_id
 
     def initialize(app_group_id)
       @app_group_id = app_group_id
-    end
-
-    def track_users(attributes: [], events: [], purchases: [])
-      connection.post '/users/track' do |request|
-        request.body = {
-          app_group_id:   app_group_id,
-          attributes:     attributes,
-          events:         events,
-          purchases:      purchases
-        }
-      end
     end
 
     def send_messages(messages:, user_ids:, segment_id: nil)
@@ -41,10 +35,6 @@ module Appboy
         }
       end
     end
-
-    private
-
-    attr_reader :app_group_id
 
     def connection
       @connection ||= Faraday.new(url: 'https://api.appboy.com') do |connection|

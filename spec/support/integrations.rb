@@ -41,7 +41,7 @@ module Integrations
 
     subject(:schedule_messages) do
       api.schedule_messages(
-        send_at: Time.now,
+        send_at: test_time,
         messages: messages,
         segment_id: ENV.fetch('APPBOY_TEST_SEGMENT')
       )

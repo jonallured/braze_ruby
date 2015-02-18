@@ -15,7 +15,7 @@ describe 'track users' do
       {
         external_id: 1,
         name: :baz,
-        time: Time.now
+        time: test_time
       }
     ]
   end
@@ -25,7 +25,7 @@ describe 'track users' do
       {
         external_id: 1,
         product_id: 1,
-        time: Time.now,
+        time: test_time,
         currency: 'CAD',
         price: 1.0
       }

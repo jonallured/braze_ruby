@@ -6,8 +6,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"app_group_id":"<APPBOY_GROUP_ID>","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2015-02-15
-        21:04:32 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
-        21:04:32 -0500","currency":"CAD","price":1.0}]}'
+        00:00:00 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
+        00:00:00 -0500","currency":"CAD","price":1.0}]}'
     headers:
       User-Agent:
       - Faraday v0.9.1
