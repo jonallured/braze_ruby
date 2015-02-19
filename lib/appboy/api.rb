@@ -13,6 +13,10 @@ module Appboy
 
     attr_reader :app_group_id
 
+    def email_status(**payload)
+      Appboy::REST::EmailStatus.new(app_group_id, payload).perform
+    end
+
     def initialize(app_group_id)
       @app_group_id = app_group_id
     end
