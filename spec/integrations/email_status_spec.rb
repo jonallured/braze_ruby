@@ -28,7 +28,7 @@ describe 'email status' do
     end
 
     it 'responds with error message' do
-    expect(JSON.parse(subject.body)).to eq(
+      expect(JSON.parse(subject.body)).to eq(
         'message' => 'There is no user with the provided email'
       )
     end
