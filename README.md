@@ -98,6 +98,13 @@ See: [Platform Push Object Specifications](https://documentation.appboy.com/REST
 api.schedule_messages(send_at: 1.hour.since, messages: messages, segment_id: '<segment-id>')
 ```
 
+### Changing Email Subscription
+
+See: [Changing Email Subscription Status](https://documentation.appboy.com/REST_APIs/Email_Sync#post)
+
+```ruby
+api.email_status(email: 'john@example.com', status: :opted_in)
+```
 
 ## Contributing
 
