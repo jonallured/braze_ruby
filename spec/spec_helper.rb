@@ -1,6 +1,7 @@
 require 'pry'
 require 'vcr'
 require 'dotenv'
+require 'factory_girl'
 require 'bundler/setup'
 
 Bundler.setup
@@ -23,9 +24,16 @@ VCR.configure do |config|
   config.hook_into :webmock
 end
 
+require 'factories'
 require 'support/integrations'
 
 RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+
+  config.before(:suite) do
+    FactoryGirl.lint
+  end
+
   def test_time
     Time.parse('2015-02-15 00:00:00 -0500')
   end

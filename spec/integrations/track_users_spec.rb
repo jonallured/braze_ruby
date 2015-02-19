@@ -1,35 +1,13 @@
 require 'spec_helper'
 
 describe 'track users' do
-  let(:attributes) do
-    [
-      {
-        external_id: 1,
-        foo: :bar
-      }
-    ]
-  end
+  let(:attributes) { [build(:attribute)] }
+  let(:events) { [build(:event, time: test_time)] }
+  let(:purchases) { [build(:purchase, time: test_time)] }
 
-  let(:events) do
-    [
-      {
-        external_id: 1,
-        name: :baz,
-        time: test_time
-      }
-    ]
-  end
-
-  let(:purchases) do
-    [
-      {
-        external_id: 1,
-        product_id: 1,
-        time: test_time,
-        currency: 'CAD',
-        price: 1.0
-      }
-    ]
+  subject(:track_users) do
+    api.track_users(attributes: attributes,
+      events: events, purchases: purchases)
   end
 
   context 'with success', vcr: true do
@@ -48,7 +26,7 @@ describe 'track users' do
   end
 
   context 'unauthorized', vcr: true do
-    let(:group_id) { 'non-existent' }
+    let(:app_group_id) { 'non-existent' }
 
     it 'responds with unauthorized' do
       expect(track_users.status).to be 401
