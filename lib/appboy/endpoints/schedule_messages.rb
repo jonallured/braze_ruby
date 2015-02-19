@@ -1,8 +1,6 @@
 module Appboy
   module Endpoints
     module ScheduleMessages
-      attr_writer :schedule_messages_service
-
       def schedule_messages(**payload)
         schedule_messages_service.new(app_group_id, payload).perform
       end
