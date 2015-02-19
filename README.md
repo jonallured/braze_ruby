@@ -1,6 +1,6 @@
 # Appboy
 
-A wrapper for the Appboy REST API using HTTParty
+A wrapper for the Appboy REST API.
 
 ## Installation
 
@@ -21,50 +21,83 @@ Or install it yourself as:
 ### Initializing API
 
 ```ruby
-api = Appboy::API.new('<secret>', '<app-group-id>')
+api = Appboy::API.new('<app-group-id>')
 ```
 
-### Track User
+### Track User Attributes
+
+See: [User Attributes Object Specification](https://documentation.appboy.com/REST_APIs/User_Data#user-attribute-object)
 
 ```ruby
-api.track [{external_id: 123,
-            first_name: 'John',
-            last_name: 'Smith',
-            gender: 'male',
-            email: 'jsmith@example.com'}]
+api.track_users(attributes: [{
+  external_id: 123,
+  first_name: 'John',
+  last_name: 'Smith',
+  gender: 'male',
+  email: 'jsmith@example.com'
+}])
 ```
 
 ### Track Event
 
+See: [Event Object Specification](https://documentation.appboy.com/REST_APIs/User_Data#event-object)
+
 ```ruby
-events = [
-  {external_id: 123, name: 'add-to-cart', time: Time.now}
-]
-api.track [], events
+api.track_users(events: [{
+  external_id: 123,
+  name: 'add-to-cart',
+  time: Time.now
+}]
 ```
 
 ### Track Purchase
-### Send Message
+
+See: [Purchase Object Specfication](https://documentation.appboy.com/REST_APIs/User_Data#purchase-object)
 
 ```ruby
-message  = {android_push: {alert: 'Hello Android'},
-            apple_push:   {alert: "Hello iOS"}}
-
-user_ids = [123, 456]
-
-api.send_message(message, user_ids)
+api.track_users(purchases: [{
+  external_id: 123,
+  product_id: 456,
+  currency: 'CAD',
+  price: 1.99,
+  time: Time.now
+}]
 ```
+
+### Send Message
+
+See: [Platform Push Object Specifications](https://documentation.appboy.com/REST_APIs/Messaging#platform-push-object)
+
+##### Messages Payload
+
+```ruby
+messages = {
+  android_push: { alert: 'Hello Android' },
+  apple_push:   { alert: "Hello iOS" }
+}
+```
+
+##### Option A, Using External User IDs
+
+```ruby
+api.send_messages(messages: messages, external_user_ids: [123, 456])
+```
+
+##### Option B, Using Segment ID
+
+```ruby
+api.send_messages(messages: messages, segment_id: '<segment-id>')
+```
+
 
 ### Schedule Message
 
-```ruby
-message    = {android_push: {alert: 'Hello Android'},
-              apple_push:   {alert: "Hello iOS"}}
-segment_id = '<segment id>'
-send_at    = Time.new(2014, 3, 12)
+See: [Platform Push Object Specifications](https://documentation.appboy.com/REST_APIs/Messaging#platform-push-object)
 
-api.schedule_message(send_at, message, segment_id)
+```ruby
+api.schedule_messages(send_at: 1.hour.since, messages: messages, segment_id: '<segment-id>')
 ```
+
 
 ## Contributing
 

@@ -1,8 +1,15 @@
 require 'spec_helper'
 
 describe 'send messages' do
+  let(:user_ids) { [1] }
+  let(:messages) { build(:messages) }
+
+  subject(:send_messages) do
+    api.send_messages(messages: messages, external_user_ids: user_ids)
+  end
+
   context 'with success', vcr: true do
-    it 'responds with 201 created' do
+    it 'responds with created' do
       expect(send_messages.status).to be 201
     end
 
@@ -13,10 +20,10 @@ describe 'send messages' do
     end
   end
 
-  context 'wrong group id', vcr: true do
-    let(:group_id) { 'non-existent' }
+  context 'unauthorized', vcr: true do
+    let(:app_group_id) { 'non-existent' }
 
-    it 'responds with a 401' do
+    it 'responds with unauthorized' do
       expect(send_messages.status).to be 401
     end
   end

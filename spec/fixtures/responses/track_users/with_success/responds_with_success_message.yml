@@ -2,11 +2,12 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/messages/schedule
+    uri: https://api.appboy.com/users/track
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","segment_ids":["<APPBOY_TEST_SEGMENT>"],"send_at":"2015-02-15
-        00:04:54 -0500","deliver_in_local_timezone":false,"messages":{"apple_push":{"alert":"hello"}}}'
+      string: '{"app_group_id":"<APPBOY_GROUP_ID>","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2015-02-15
+        00:00:00 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
+        00:00:00 -0500","currency":"CAD","price":1.0}]}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -24,7 +25,7 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Sun, 15 Feb 2015 05:04:54 GMT
+      - Mon, 16 Feb 2015 02:04:33 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -38,18 +39,18 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"8736cdfe08480bca66cffeee06268705"'
+      - '"79557eda34d1dfcacc80cdd626202b9a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2922f65794b6506c3d230daceb84eb26
+      - 5a25265723e1309578e13dc0d22e6edb
       X-Runtime:
-      - '0.018949'
+      - '0.007930'
       Vary:
       - Accept-Encoding
     body:
       encoding: UTF-8
-      string: '{"message":"success"}'
+      string: '{"attributes_processed":1,"events_processed":1,"purchases_processed":1,"message":"success"}'
     http_version: 
-  recorded_at: Sun, 15 Feb 2015 05:04:54 GMT
+  recorded_at: Mon, 16 Feb 2015 02:04:32 GMT
 recorded_with: VCR 2.9.2
