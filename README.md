@@ -38,6 +38,12 @@ api.track_users(attributes: [{
 }])
 ```
 
+##### Track Attributes for Single User
+
+```ruby
+api.track_attribute(external_id: 123, first_name: 'John', ...)
+```
+
 ### Track Event
 
 See: [Event Object Specification](https://documentation.appboy.com/REST_APIs/User_Data#event-object)
@@ -48,6 +54,12 @@ api.track_users(events: [{
   name: 'add-to-cart',
   time: Time.now
 }]
+```
+
+##### Track Events for Single User
+
+```ruby
+api.track_event(external_id: 123, name: 'Event', ...)
 ```
 
 ### Track Purchase
@@ -62,6 +74,18 @@ api.track_users(purchases: [{
   price: 1.99,
   time: Time.now
 }]
+```
+
+##### Track Purchases for Single User
+
+```ruby
+api.track_purchase(external_id: 123, product_id: 456, ...)
+```
+
+### Track Everything for Everyone All at Once
+
+```ruby
+api.track_users(purchases: purchases, events: events, attributes: attributes)
 ```
 
 ### Send Message

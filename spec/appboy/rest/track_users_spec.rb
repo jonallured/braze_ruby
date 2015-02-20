@@ -11,7 +11,7 @@ describe Appboy::REST::TrackUsers do
 
   let(:app_group_id) { :app_group_id }
 
-  subject { described_class.new(app_group_id, payload) }
+  subject { described_class.new }
 
   before { subject.http = http }
 
@@ -19,6 +19,6 @@ describe Appboy::REST::TrackUsers do
     expect(http).to receive(:post).with '/users/track',
         payload.merge({ app_group_id: :app_group_id })
 
-    subject.perform
+    subject.perform(app_group_id, payload)
   end
 end
