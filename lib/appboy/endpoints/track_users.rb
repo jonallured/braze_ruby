@@ -8,15 +8,15 @@ module Appboy
       end
 
       def track_purchase(payload)
-        track_users_service.perform(app_group_id, purchases: [payload])
+        track_users(purchases: [payload])
       end
 
       def track_event(payload)
-        track_users_service.perform(app_group_id, events: [payload])
+        track_users(events: [payload])
       end
 
       def track_attribute(payload)
-        track_users_service.perform(app_group_id, attributes: [payload])
+        track_users(attributes: [payload])
       end
 
       private
