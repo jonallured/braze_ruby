@@ -130,6 +130,32 @@ See: [Changing Email Subscription Status](https://documentation.appboy.com/REST_
 api.email_status(email: 'john@example.com', status: :opted_in)
 ```
 
+### List Segments
+
+See: [Segment Export](https://documentation.appboy.com/REST_APIs/Export)
+
+```ruby
+api.list_segments
+```
+
+### Export Users
+
+See: [User Export](https://documentation.appboy.com/REST_APIs/Export#user-export)
+
+#### By IDs
+
+```ruby
+api.export_users(external_ids: [1])
+```
+
+#### By Segment
+
+```ruby
+api.export_users(segment_id: segment_id, callback_endpoint: 'https://example.com')
+```
+
+
+
 ## Contributing
 
 1. Fork it
