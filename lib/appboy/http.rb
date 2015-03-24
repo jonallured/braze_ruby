@@ -9,6 +9,10 @@ module Appboy
       end
     end
 
+    def get(path, query)
+      connection.get path, query
+    end
+
     def connection
       @connection ||= Faraday.new(url: 'https://api.appboy.com') do |connection|
         connection.request :json
