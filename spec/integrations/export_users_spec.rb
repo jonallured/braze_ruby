@@ -1,17 +1,27 @@
 require 'spec_helper'
 
 describe 'export users' do
-  subject(:export_users) do
-    api.export_users(external_ids: [1])
-  end
+  context 'by ids' do
+    subject(:export_users) { api.export_users(external_ids: [1]) }
 
-  context 'with success', vcr: true do
-    it 'responds with created' do
-      expect(export_users.status).to be 201
+    context 'with success', :vcr do
+      it 'responds with created' do
+        expect(export_users).to be_success
+      end
     end
   end
 
-  context 'unauthorized' do
+  context 'by segment' do
+    context 'with success', :vcr do
+      let(:segment_id) { ENV.fetch('APPBOY_TEST_SEGMENT') }
 
+      subject(:export_users) do
+        api.export_users(segment_id: segment_id, callback_endpoint: 'https://example.com')
+      end
+
+      it 'responds with created' do
+        expect(export_users).to be_success
+      end
+    end
   end
 end

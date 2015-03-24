@@ -138,6 +138,24 @@ See: [Segment Export](https://documentation.appboy.com/REST_APIs/Export)
 api.list_segments
 ```
 
+### Export Users
+
+See: [User Export](https://documentation.appboy.com/REST_APIs/Export#user-export)
+
+#### By IDs
+
+```ruby
+api.export_users(external_ids: [1])
+```
+
+#### By Segment
+
+```ruby
+api.export_users(segment_id: segment_id, callback_endpoint: 'https://example.com')
+```
+
+
+
 ## Contributing
 
 1. Fork it
