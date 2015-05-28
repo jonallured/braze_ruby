@@ -154,7 +154,15 @@ api.export_users(external_ids: [1])
 api.export_users(segment_id: segment_id, callback_endpoint: 'https://example.com')
 ```
 
+## Debugging
 
+The APPBOY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.
+
+```bash
+cd /my/app
+export APPBOY_DEBUG=true
+bundle exec rails whatever
+```
 
 ## Contributing
 
