@@ -53,7 +53,7 @@ api.track_users(events: [{
   external_id: 123,
   name: 'add-to-cart',
   time: Time.now
-}]
+}])
 ```
 
 ##### Track Events for Single User
@@ -73,7 +73,7 @@ api.track_users(purchases: [{
   currency: 'CAD',
   price: 1.99,
   time: Time.now
-}]
+}])
 ```
 
 ##### Track Purchases for Single User
