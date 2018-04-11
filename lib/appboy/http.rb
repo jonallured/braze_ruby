@@ -11,7 +11,7 @@ module Appboy
     end
 
     def connection
-      @connection ||= 'https://rest.iad-03.braze.com' do |connection|
+      @connection ||= Faraday.new(url: 'https://rest.iad-03.braze.com') do |connection|
         connection.request :json
 
         connection.response :logger if ENV['APPBOY_DEBUG']
