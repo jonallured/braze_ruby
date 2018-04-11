@@ -15,6 +15,8 @@ module Appboy
         connection.request :json
 
         connection.response :logger if ENV['APPBOY_DEBUG']
+
+        connection.adapter Faraday.default_adapter
       end
     end
   end
