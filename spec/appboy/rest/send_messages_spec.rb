@@ -9,9 +9,9 @@ describe Appboy::REST::SendMessages do
     segment_id: :segment_id
   }}
 
-  let(:app_group_id) { :app_group_id }
+  let(:api_key) { :api_key }
 
-  subject { described_class.new(app_group_id,
+  subject { described_class.new(api_key,
     messages: :messages,
     external_user_ids: :external_user_ids,
     segment_id: :segment_id
@@ -27,7 +27,7 @@ describe Appboy::REST::SendMessages do
 
   def expect_send_messages_http_call
     expect(http).to receive(:post).with '/messages/send', {
-      app_group_id: :app_group_id,
+      api_key: :api_key,
       messages: :messages,
       external_user_ids: :external_user_ids,
       segment_ids: [:segment_id]

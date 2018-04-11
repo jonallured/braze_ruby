@@ -1,9 +1,9 @@
 module Appboy
   module REST
     class ListSegments < Base
-      def perform(app_group_id)
+      def perform(api_key)
         http.get '/segments/list', {
-          app_group_id: app_group_id
+          api_key: api_key
         }
       end
     end

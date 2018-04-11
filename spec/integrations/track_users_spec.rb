@@ -26,7 +26,7 @@ describe 'track users' do
   end
 
   context 'unauthorized', vcr: true do
-    let(:app_group_id) { 'non-existent' }
+    let(:api_key) { 'non-existent' }
 
     it 'responds with unauthorized' do
       expect(track_users.status).to be 401

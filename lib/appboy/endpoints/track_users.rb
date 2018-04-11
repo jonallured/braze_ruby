@@ -4,7 +4,7 @@ module Appboy
       attr_writer :track_users_service
 
       def track_users(**payload)
-        track_users_service.perform(app_group_id, payload)
+        track_users_service.perform(api_key, payload)
       end
 
       def track_purchase(payload)

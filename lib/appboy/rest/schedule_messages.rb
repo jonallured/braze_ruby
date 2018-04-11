@@ -1,10 +1,10 @@
 module Appboy
   module REST
     class ScheduleMessages < Base
-      attr_reader :app_group_id, :send_at, :messages, :segment_id, :local_timezone
+      attr_reader :api_key, :send_at, :messages, :segment_id, :local_timezone
 
-      def initialize(app_group_id, send_at:, messages: [], segment_id: nil, local_timezone: false)
-        @app_group_id = app_group_id
+      def initialize(api_key, send_at:, messages: [], segment_id: nil, local_timezone: false)
+        @api_key = api_key
         @send_at = send_at
         @messages = messages
         @segment_id = segment_id
@@ -13,7 +13,7 @@ module Appboy
 
       def perform
         http.post '/messages/schedule', {
-          app_group_id:      app_group_id,
+          api_key:      api_key,
           segment_ids:               [segment_id],
           send_at:                   send_at,
           deliver_in_local_timezone: local_timezone,

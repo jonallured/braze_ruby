@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.appboy.com/email/status
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","email":"john@example.com","subscription_state":"unsubscribed"}'
+      string: '{"api_key":"<APPBOY_GROUP_ID>","email":"john@example.com","subscription_state":"unsubscribed"}'
     headers:
       User-Agent:
       - Faraday v0.9.1

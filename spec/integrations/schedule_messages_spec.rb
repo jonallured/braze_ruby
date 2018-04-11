@@ -22,7 +22,7 @@ describe 'schedule messages' do
   end
 
   context 'unauthorized', vcr: true do
-    let(:app_group_id) { 'non-existent' }
+    let(:api_key) { 'non-existent' }
 
     it 'responds with unauthorize' do
       expect(schedule_messages.status).to be 401

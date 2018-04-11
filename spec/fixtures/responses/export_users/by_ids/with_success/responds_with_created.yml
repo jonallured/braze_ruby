@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.appboy.com/users/export/ids
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","external_ids":[1]}'
+      string: '{"api_key":"<APPBOY_GROUP_ID>","external_ids":[1]}'
     headers:
       User-Agent:
       - Faraday v0.9.1

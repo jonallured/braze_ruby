@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.appboy.com/messages/schedule
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","segment_ids":["<APPBOY_TEST_SEGMENT>"],"send_at":"2015-02-15
+      string: '{"api_key":"<APPBOY_GROUP_ID>","segment_ids":["<APPBOY_TEST_SEGMENT>"],"send_at":"2015-02-15
         00:00:00 -0500","deliver_in_local_timezone":false,"messages":{"apple_push":{"alert":"hello"}}}'
     headers:
       User-Agent:

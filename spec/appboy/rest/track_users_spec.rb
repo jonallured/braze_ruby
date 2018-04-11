@@ -9,7 +9,7 @@ describe Appboy::REST::TrackUsers do
     purchases: :purchases
   }}
 
-  let(:app_group_id) { :app_group_id }
+  let(:api_key) { :api_key }
 
   subject { described_class.new }
 
@@ -17,8 +17,8 @@ describe Appboy::REST::TrackUsers do
 
   it 'makes an http call to the track user endpoint' do
     expect(http).to receive(:post).with '/users/track',
-        payload.merge({ app_group_id: :app_group_id })
+        payload.merge({ api_key: :api_key })
 
-    subject.perform(app_group_id, payload)
+    subject.perform(api_key, payload)
   end
 end

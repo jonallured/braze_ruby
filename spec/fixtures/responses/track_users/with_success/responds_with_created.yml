@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.appboy.com/users/track
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2015-02-15
+      string: '{"api_key":"<APPBOY_GROUP_ID>","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2015-02-15
         00:00:00 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
         00:00:00 -0500","currency":"CAD","price":1.0}]}'
     headers:

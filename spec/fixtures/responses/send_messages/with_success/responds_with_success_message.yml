@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.appboy.com/messages/send
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","messages":{"apple_push":{"alert":"hello"}},"external_user_ids":[1],"segment_ids":[]}'
+      string: '{"api_key":"<APPBOY_GROUP_ID>","messages":{"apple_push":{"alert":"hello"}},"external_user_ids":[1],"segment_ids":[]}'
     headers:
       User-Agent:
       - Faraday v0.9.1

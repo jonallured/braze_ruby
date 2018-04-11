@@ -1,19 +1,19 @@
 module Appboy
   module REST
     class EmailStatus < Base
-      attr_reader :app_group_id, :email, :status
+      attr_reader :api_key, :email, :status
 
-      def initialize(app_group_id, email:, status:)
-        @app_group_id = app_group_id
+      def initialize(api_key, email:, status:)
+        @api_key = api_key
         @email = email
         @status = status
       end
 
       def perform
         http.post '/email/status', {
-          app_group_id: app_group_id,
-          email: email,
-          subscription_state: status
+          'api_key': api_key,
+          'email': email,
+          'subscription_state': status
         }
       end
     end
