@@ -3,12 +3,13 @@ module BrazeRuby
     class ScheduleMessages < Base
       attr_reader :api_key, :send_at, :messages, :segment_id, :local_timezone
 
-      def initialize(api_key, send_at:, messages: [], segment_id: nil, local_timezone: false)
+      def initialize(api_key, braze_url, send_at:, messages: [], segment_id: nil, local_timezone: false)
         @api_key = api_key
         @send_at = send_at
         @messages = messages
         @segment_id = segment_id
         @local_timezone = local_timezone
+        super braze_url
       end
 
       def perform

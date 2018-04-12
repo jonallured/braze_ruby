@@ -14,11 +14,11 @@ module BrazeRuby
     include BrazeRuby::Endpoints::EmailStatus
 
     def export_users(**payload)
-      BrazeRuby::REST::ExportUsers.new.perform(api_key, payload)
+      BrazeRuby::REST::ExportUsers.new(braze_url).perform(api_key, payload)
     end
 
     def list_segments
-      BrazeRuby::REST::ListSegments.new.perform(api_key)
+      BrazeRuby::REST::ListSegments.new(braze_url).perform(api_key)
     end
 
     attr_reader :api_key, :braze_url

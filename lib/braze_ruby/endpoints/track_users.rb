@@ -22,7 +22,7 @@ module BrazeRuby
       private
 
       def track_users_service
-        @track_users_service ||= BrazeRuby::REST::TrackUsers.new
+        @track_users_service ||= BrazeRuby::REST::TrackUsers.new(braze_url)
       end
     end
   end
