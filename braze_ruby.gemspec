@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'appboy/version'
+require 'braze_ruby/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'appboy'
-  spec.version       = Appboy::VERSION
-  spec.authors       = ['Josh Nussbaum', 'Hugo Bastien']
-  spec.email         = %w(josh@godynamo.com hugo@godynamo.com)
-  spec.description   = %q{Appboy wrapper}
-  spec.summary       = %q{A wrapper for the Appboy REST API, track users/events/purchases, send & schedule messages}
-  spec.homepage      = 'http://appboy.com'
+  spec.name          = 'braze_ruby'
+  spec.version       = BrazeRuby::VERSION
+  spec.authors       = ['Justin Boltz']
+  spec.email         = %w(justin.boltz@takl.com)
+  spec.description   = %q{Braze wrapper}
+  spec.summary       = %q{A wrapper for the Braze REST API forked from the appboy gem, track users/events/purchases, send & schedule messages}
+  spec.homepage      = 'http://braze.com'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

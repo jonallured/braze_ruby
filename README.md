@@ -1,12 +1,12 @@
-# Appboy
+# BrazeRuby
 
-A wrapper for the Appboy REST API.
+A wrapper for the Braze REST API. Forked from https://github.com/DynamoMTL/appboy
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'appboy'
+    gem 'braze_ruby'
 
 And then execute:
 
@@ -14,19 +14,17 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install appboy
+    $ gem install braze_ruby
 
 ## Examples
 
 ### Initializing API
 
 ```ruby
-api = Appboy::API.new('<app-group-id>')
+api = BrazeRuby::API.new('<app-group-id>')
 ```
 
 ### Track User Attributes
-
-See: [User Attributes Object Specification](https://documentation.appboy.com/REST_APIs/User_Data#user-attribute-object)
 
 ```ruby
 api.track_users(attributes: [{
@@ -46,8 +44,6 @@ api.track_attribute(external_id: 123, first_name: 'John', ...)
 
 ### Track Event
 
-See: [Event Object Specification](https://documentation.appboy.com/REST_APIs/User_Data#event-object)
-
 ```ruby
 api.track_users(events: [{
   external_id: 123,
@@ -63,8 +59,6 @@ api.track_event(external_id: 123, name: 'Event', ...)
 ```
 
 ### Track Purchase
-
-See: [Purchase Object Specfication](https://documentation.appboy.com/REST_APIs/User_Data#purchase-object)
 
 ```ruby
 api.track_users(purchases: [{
@@ -90,8 +84,6 @@ api.track_users(purchases: purchases, events: events, attributes: attributes)
 
 ### Send Message
 
-See: [Platform Push Object Specifications](https://documentation.appboy.com/REST_APIs/Messaging#platform-push-object)
-
 ##### Messages Payload
 
 ```ruby
@@ -116,15 +108,11 @@ api.send_messages(messages: messages, segment_id: '<segment-id>')
 
 ### Schedule Message
 
-See: [Platform Push Object Specifications](https://documentation.appboy.com/REST_APIs/Messaging#platform-push-object)
-
 ```ruby
 api.schedule_messages(send_at: 1.hour.since, messages: messages, segment_id: '<segment-id>')
 ```
 
 ### Changing Email Subscription
-
-See: [Changing Email Subscription Status](https://documentation.appboy.com/REST_APIs/Email_Sync#post)
 
 ```ruby
 api.email_status(email: 'john@example.com', status: :opted_in)
@@ -132,15 +120,11 @@ api.email_status(email: 'john@example.com', status: :opted_in)
 
 ### List Segments
 
-See: [Segment Export](https://documentation.appboy.com/REST_APIs/Export)
-
 ```ruby
 api.list_segments
 ```
 
 ### Export Users
-
-See: [User Export](https://documentation.appboy.com/REST_APIs/Export#user-export)
 
 #### By IDs
 
@@ -156,11 +140,11 @@ api.export_users(segment_id: segment_id, callback_endpoint: 'https://example.com
 
 ## Debugging
 
-The APPBOY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.
+The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.
 
 ```bash
 cd /my/app
-export APPBOY_DEBUG=true
+export BRAZE_RUBY_DEBUG=true
 bundle exec rails whatever
 ```
 

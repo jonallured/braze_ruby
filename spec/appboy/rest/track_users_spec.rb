@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Appboy::REST::TrackUsers do
+describe BrazeRuby::REST::TrackUsers do
   let(:http) { double(:http) }
 
   let(:payload) {{

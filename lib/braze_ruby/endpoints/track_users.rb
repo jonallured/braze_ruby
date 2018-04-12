@@ -1,4 +1,4 @@
-module Appboy
+module BrazeRuby
   module Endpoints
     module TrackUsers
       attr_writer :track_users_service
@@ -22,7 +22,7 @@ module Appboy
       private
 
       def track_users_service
-        @track_users_service ||= Appboy::REST::TrackUsers.new
+        @track_users_service ||= BrazeRuby::REST::TrackUsers.new
       end
     end
   end

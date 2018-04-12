@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Appboy::REST::EmailStatus do
+describe BrazeRuby::REST::EmailStatus do
   let(:http) { double(:http) }
 
   before { subject.http = http }

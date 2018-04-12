@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Appboy::REST::ExportUsers do
+describe BrazeRuby::REST::ExportUsers do
   let(:http) { double(:http) }
 
   let(:payload) {{ external_ids: :external_ids }}

@@ -1,4 +1,4 @@
-module Appboy
+module BrazeRuby
   module REST
     class EmailStatus < Base
       attr_reader :api_key, :email, :status

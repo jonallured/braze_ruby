@@ -1,14 +1,14 @@
 require 'spec_helper'
 
 class API
-  include Appboy::Endpoints::TrackUsers
+  include BrazeRuby::Endpoints::TrackUsers
 
   def api_key
     :api_key
   end
 end
 
-describe Appboy::Endpoints::TrackUsers do
+describe BrazeRuby::Endpoints::TrackUsers do
   let(:api) { API.new }
   let(:track_users_service) { double(:track_users_service) }
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Appboy::REST::ScheduleMessages do
+describe BrazeRuby::REST::ScheduleMessages do
   let(:http) { double(:http) }
 
   let(:payload) {{

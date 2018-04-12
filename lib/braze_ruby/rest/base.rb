@@ -1,6 +1,6 @@
-require 'appboy/http'
+require 'braze_ruby/http'
 
-module Appboy
+module BrazeRuby
   module REST
     class Base
       attr_writer :http
@@ -8,7 +8,7 @@ module Appboy
       private
 
       def http
-        @http ||= Appboy::HTTP.new
+        @http ||= BrazeRuby::HTTP.new
       end
     end
   end

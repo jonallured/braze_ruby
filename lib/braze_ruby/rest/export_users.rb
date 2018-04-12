@@ -1,4 +1,4 @@
-module Appboy
+module BrazeRuby
   module REST
     class ExportUsers < Base
       def perform(api_key, external_ids: nil, segment_id: nil, **options)

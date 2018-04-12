@@ -1,4 +1,4 @@
-module Appboy
+module BrazeRuby
   module REST
     class ListSegments < Base
       def perform(api_key)

@@ -1,4 +1,4 @@
-module Appboy
+module BrazeRuby
   class HTTP
     def post(path, payload)
       connection.post path do |request|
@@ -11,10 +11,10 @@ module Appboy
     end
 
     def connection
-      @connection ||= Faraday.new(url: 'https://rest.iad-03.braze.com') do |connection|
+      @connection ||= Faraday.new(url: braze_url) do |connection|
         connection.request :json
 
-        connection.response :logger if ENV['APPBOY_DEBUG']
+        connection.response :logger if ENV['BRAZE_RUBY_DEBUG']
 
         connection.adapter Faraday.default_adapter
       end

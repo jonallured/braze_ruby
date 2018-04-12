@@ -1,4 +1,4 @@
-module Appboy
+module BrazeRuby
   module REST
     class TrackUsers < Base
       def perform(api_key, attributes: [], events: [], purchases: [])

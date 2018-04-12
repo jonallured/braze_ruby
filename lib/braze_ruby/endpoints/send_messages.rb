@@ -1,4 +1,4 @@
-module Appboy
+module BrazeRuby
   module Endpoints
     module SendMessages
       def send_messages(**payload)
@@ -8,7 +8,7 @@ module Appboy
       private
 
       def send_messages_service
-        Appboy::REST::SendMessages
+        BrazeRuby::REST::SendMessages
       end
     end
   end

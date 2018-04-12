@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Appboy::REST::SendMessages do
+describe BrazeRuby::REST::SendMessages do
   let(:http) { double(:http) }
 
   let(:payload) {{

@@ -1,4 +1,4 @@
-module Appboy
+module BrazeRuby
   module Endpoints
     module EmailStatus
       def email_status(**payload)
@@ -6,7 +6,7 @@ module Appboy
       end
 
       def email_status_service
-        Appboy::REST::EmailStatus
+        BrazeRuby::REST::EmailStatus
       end
     end
   end

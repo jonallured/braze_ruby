@@ -1,4 +1,4 @@
-module Appboy
+module BrazeRuby
   module REST
     class ScheduleMessages < Base
       attr_reader :api_key, :send_at, :messages, :segment_id, :local_timezone
