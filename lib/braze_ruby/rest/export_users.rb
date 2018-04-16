@@ -11,15 +11,15 @@ module BrazeRuby
 
       def export_users_by_ids(api_key, external_ids)
         http.post '/users/export/ids', {
-          api_key: api_key,
-          external_ids: external_ids
+          'api_key': api_key,
+          'external_ids': external_ids
         }
       end
 
       def export_users_by_segment(api_key, segment_id, options)
         http.post '/users/export/segment', {
-          api_key: api_key,
-          segment_id: segment_id
+          'api_key': api_key,
+          'segment_id': segment_id
         }.merge(options)
       end
     end

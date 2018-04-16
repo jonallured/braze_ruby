@@ -14,11 +14,11 @@ module BrazeRuby
 
       def perform
         http.post '/messages/schedule', {
-          api_key:      api_key,
-          segment_ids:               [segment_id],
-          send_at:                   send_at,
-          deliver_in_local_timezone: local_timezone,
-          messages:                  messages
+          'api_key':      api_key,
+          'segment_ids':               [segment_id],
+          'send_at':                   send_at,
+          'deliver_in_local_timezone': local_timezone,
+          'messages':                  messages
         }
       end
     end
