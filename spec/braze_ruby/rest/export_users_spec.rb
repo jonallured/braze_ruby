@@ -3,11 +3,10 @@ require 'spec_helper'
 describe BrazeRuby::REST::ExportUsers do
   let(:http) { double(:http) }
 
-  let(:payload) {{ external_ids: :external_ids }}
+  let(:payload) {{ external_ids: external_ids }}
+  let(:external_ids) { [1] }
 
-  let(:api_key) { :api_key }
-
-  subject { described_class.new }
+  subject { described_class.new :rest_url }
 
   before { subject.http = http }
 
@@ -15,6 +14,6 @@ describe BrazeRuby::REST::ExportUsers do
     expect(http).to receive(:post).with '/users/export/ids',
         payload.merge({ api_key: :api_key })
 
-    subject.perform(api_key, payload)
+    subject.perform(:api_key, payload)
   end
 end

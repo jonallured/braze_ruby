@@ -12,7 +12,7 @@ describe BrazeRuby::REST::SendMessages do
 
   subject { described_class.new(api_key,
     messages: :messages,
-    external_user_ids: :external_user_ids,
+    external_user_ids: :external_user_ids
   ) }
 
   before { subject.http = http }
@@ -26,8 +26,8 @@ describe BrazeRuby::REST::SendMessages do
   def expect_send_messages_http_call
     expect(http).to receive(:post).with '/messages/send', {
       api_key: :api_key,
-      messages: :messages,
-      external_user_ids: :external_user_ids,
+      messages: [],
+      external_user_ids: [],
     }
   end
 end
