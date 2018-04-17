@@ -10,8 +10,6 @@ describe 'list segments' do
 
     it 'responds with a list of segments' do
       expect(segments.count).to be 13
-
-      expect(segments.first['name']).to eq 'test'
     end
 
     def segments
