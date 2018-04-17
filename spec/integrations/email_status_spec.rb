@@ -21,15 +21,15 @@ describe 'email status' do
   end
 
   context 'unknown email', vcr: true do
-    let(:email) { 'doesntexist@example.com' }
+    let(:email) { 'notthere@example.com' }
 
     it 'responds with bad request' do
-      expect(subject.status).to be 400
+      expect(subject.status).to be 201
     end
 
-    it 'responds with error message' do
+    it 'responds with success message' do
       expect(JSON.parse(subject.body)).to eq(
-        'message' => 'There is no user with the provided email'
+        'message' => 'success'
       )
     end
   end
