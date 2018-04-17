@@ -5,7 +5,7 @@ describe BrazeRuby::REST::EmailStatus do
 
   before { subject.http = http }
 
-  subject { described_class.new(:api_key, email: :email, status: :status) }
+  subject { described_class.new(:api_key, :rest_url, email: :email, status: :status) }
 
   it 'makes an http call to the email status endpoint' do
     expect(http).to receive(:post).with '/email/status', {

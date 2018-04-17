@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<BRAZE_REST_URL>/segments/list?api_key=<BRAZE_REST_API_KEY>"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"f82a7689f0f1df180510d033adeece51"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '50000'
+      X-Ratelimit-Remaining:
+      - '49992'
+      X-Ratelimit-Reset:
+      - '1524002400'
+      X-Request-Id:
+      - a399cc89-0854-471e-aba3-71f3a79a4f47
+      X-Runtime:
+      - '0.017686'
+      Content-Length:
+      - '603'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 17 Apr 2018 21:08:20 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-pdk17835-PDK
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1523999301.931262,VS0,VE59
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"segments":[{"id":"e094130b-8b90-4b01-a004-f2b25281564f","name":"Lapsed
+        Users - 7 days","analytics_tracking_enabled":true,"tags":[]},{"id":"f77809b7-dda4-45ee-bcf4-46de5c58a0a2","name":"Lapsed
+        Users - 30 days","analytics_tracking_enabled":true,"tags":[]},{"id":"61227661-f46e-4ab6-bbc9-e4d5f65f8dbc","name":"User
+        Onboarding - First Week","analytics_tracking_enabled":true,"tags":[]},{"id":"0ccb0f97-b09c-4d0f-bc33-8c695c6eedf2","name":"User
+        Onboarding - Second Week","analytics_tracking_enabled":true,"tags":[]},{"id":"f522dea9-d27c-48b9-8e98-c03b3346e4b4","name":"Engaged
+        Recent Users","analytics_tracking_enabled":true,"tags":[]},{"id":"658307d8-3b8a-45fa-98ad-97fb75ee6eff","name":"All
+        Users (Takl Staging - iOS)","analytics_tracking_enabled":true,"tags":[]},{"id":"d04aa317-a6f4-459d-b7c0-2b1cab68cb88","name":"All
+        Users (Takl Staging - Android)","analytics_tracking_enabled":true,"tags":[]},{"id":"e2ff24e9-0d5d-4b50-8832-a4201b1d59a3","name":"All
+        Users (Takl Staging Debug - Android)","analytics_tracking_enabled":true,"tags":[]},{"id":"3de3ddbf-a327-408b-aab4-6bd390a6409e","name":"All
+        Users (Takl Staging - Web)","analytics_tracking_enabled":true,"tags":[]},{"id":"b109727d-4773-4cdf-b6c7-43385aa9ccb2","name":"Everybody","analytics_tracking_enabled":false,"tags":[]},{"id":"ef0a9a5e-c0be-41a0-9260-2718dfbe28d4","name":"Custom
+        Event Segment","analytics_tracking_enabled":false,"tags":[]},{"id":"7a337f50-4e79-46f6-b8b2-2459027e9aca","name":"Morgans
+        Segment","analytics_tracking_enabled":false,"tags":[]},{"id":"a8fde797-4c44-4406-8e6c-5850d323f169","name":"Justin''s
+        Segment","analytics_tracking_enabled":false,"tags":[]}],"message":"success"}'
+    http_version: 
+  recorded_at: Tue, 17 Apr 2018 21:08:20 GMT
+recorded_with: VCR 4.0.0

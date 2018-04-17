@@ -109,7 +109,7 @@ api.send_messages(messages: messages, segment_id: '<segment-id>')
 ### Schedule Message
 
 ```ruby
-api.schedule_messages(send_at: 1.hour.since, messages: messages, segment_id: '<segment-id>')
+api.schedule_messages(send_at: 1.hour.since, messages: messages, external_user_ids: [123, 456])
 ```
 
 ### Changing Email Subscription

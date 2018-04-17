@@ -1,3 +1,6 @@
+require 'faraday'
+require 'faraday_middleware'
+
 module BrazeRuby
   class HTTP
     def initialize(braze_url)
