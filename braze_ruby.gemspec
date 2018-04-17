@@ -6,8 +6,8 @@ require 'braze_ruby/version'
 Gem::Specification.new do |spec|
   spec.name          = 'braze_ruby'
   spec.version       = BrazeRuby::VERSION
-  spec.authors       = ['Justin Boltz']
-  spec.email         = %w(justin.boltz@takl.com)
+  spec.authors       = ['Josh Nussbaum', 'Hugo Bastien', 'Justin Boltz']
+  spec.email         = %w(josh@godynamo.com hugo@godynamo.com justin.boltz@takl.com)
   spec.description   = %q{Braze wrapper}
   spec.summary       = %q{A wrapper for the Braze REST API forked from the appboy gem, track users/events/purchases, send & schedule messages}
   spec.homepage      = 'http://braze.com'
