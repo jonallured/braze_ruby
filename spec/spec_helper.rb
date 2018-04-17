@@ -1,8 +1,6 @@
 require 'pry'
 require 'dotenv'
 require 'bundler/setup'
-require 'faraday'
-require 'faraday_middleware'
 
 Bundler.setup
 Dotenv.load
@@ -14,6 +12,6 @@ require 'support/integrations'
 
 RSpec.configure do |config|
   def test_time
-    Time.now
+    Time.parse('2019-02-15 00:00:00 -0500')
   end
 end
