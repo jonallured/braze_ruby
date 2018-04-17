@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/users/track"
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2019-02-15
+        00:00:00 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2019-02-15
+        00:00:00 -0500","currency":"CAD","price":1.0}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"68b326343749fed4d6cc5dda395b5367"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '50000'
+      X-Ratelimit-Remaining:
+      - '50000'
+      X-Ratelimit-Reset:
+      - '1524002400'
+      X-Request-Id:
+      - e810e390-4c31-49ac-abd4-5b1151cc3c33
+      X-Runtime:
+      - '0.012176'
+      Content-Length:
+      - '85'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 17 Apr 2018 21:08:07 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-pdk17824-PDK
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1523999288.612820,VS0,VE214
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"attributes_processed":1,"events_processed":1,"purchases_processed":1,"message":"success"}'
+    http_version: 
+  recorded_at: Tue, 17 Apr 2018 21:08:07 GMT
+recorded_with: VCR 4.0.0
