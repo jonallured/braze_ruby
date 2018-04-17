@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/users/track
+    uri: <BRAZE_REST_URL>/users/track
     body:
       encoding: UTF-8
       string: '{"api_key":"non-existent","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2015-02-15

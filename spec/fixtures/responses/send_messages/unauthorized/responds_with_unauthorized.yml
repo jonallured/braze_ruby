@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/messages/send
+    uri: <BRAZE_REST_URL>/messages/send
     body:
       encoding: UTF-8
       string: '{"api_key":"non-existent","messages":{"apple_push":{"alert":"hello"}},"external_user_ids":[1],"segment_ids":[]}'

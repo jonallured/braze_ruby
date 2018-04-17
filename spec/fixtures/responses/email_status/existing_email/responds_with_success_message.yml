@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/email/status
+    uri: <BRAZE_REST_URL>/email/status
     body:
       encoding: UTF-8
-      string: '{"api_key":"<APPBOY_GROUP_ID>","email":"john@example.com","subscription_state":"unsubscribed"}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","email":"john@example.com","subscription_state":"unsubscribed"}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -49,6 +49,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"message":"success"}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 19 Feb 2015 20:42:25 GMT
 recorded_with: VCR 2.9.2

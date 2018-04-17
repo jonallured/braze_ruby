@@ -21,7 +21,7 @@ Or install it yourself as:
 ### Initializing API
 
 ```ruby
-api = BrazeRuby::API.new('<app-group-id>')
+api = BrazeRuby::API.new('<braze-rest-api-key>', '<braze-rest-api-url')
 ```
 
 ### Track User Attributes

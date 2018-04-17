@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.appboy.com/segments/list?api_key=<APPBOY_GROUP_ID>
+    uri: <BRAZE_REST_URL>/segments/list?api_key=<BRAZE_REST_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -46,13 +46,13 @@ http_interactions:
       - Accept-Encoding
     body:
       encoding: UTF-8
-      string: '{"segments":[{"id":"<APPBOY_TEST_SEGMENT>","name":"test","analytics_tracking_enabled":false},{"id":"<APPBOY_TEST_SEGMENT>","name":"All
-        Users (Zweet Local - iOS)","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"Engaged
-        Recent Users","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"User
-        Onboarding - Second Week","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"User
-        Onboarding - First Week","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>1","name":"Lapsed
-        Users - 30 days","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"Lapsed
+      string: '{"segments":[{"id":"<BRAZE_RUBY_TEST_SEGMENT>","name":"test","analytics_tracking_enabled":false},{"id":"<BRAZE_RUBY_TEST_SEGMENT>","name":"All
+        Users (Zweet Local - iOS)","analytics_tracking_enabled":true},{"id":"<BRAZE_RUBY_TEST_SEGMENT>","name":"Engaged
+        Recent Users","analytics_tracking_enabled":true},{"id":"<BRAZE_RUBY_TEST_SEGMENT>","name":"User
+        Onboarding - Second Week","analytics_tracking_enabled":true},{"id":"<BRAZE_RUBY_TEST_SEGMENT>","name":"User
+        Onboarding - First Week","analytics_tracking_enabled":true},{"id":"<BRAZE_RUBY_TEST_SEGMENT>1","name":"Lapsed
+        Users - 30 days","analytics_tracking_enabled":true},{"id":"<BRAZE_RUBY_TEST_SEGMENT>","name":"Lapsed
         Users - 7 days","analytics_tracking_enabled":true}],"message":"success"}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 24 Mar 2015 17:00:42 GMT
 recorded_with: VCR 2.9.2

@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/messages/send
+    uri: <BRAZE_REST_URL>/messages/send
     body:
       encoding: UTF-8
-      string: '{"api_key":"<APPBOY_GROUP_ID>","messages":{"apple_push":{"alert":"hello"}},"external_user_ids":[1],"segment_ids":[]}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","messages":{"apple_push":{"alert":"hello"}},"external_user_ids":[1],"segment_ids":[]}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -49,6 +49,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"message":"success"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 16 Feb 2015 02:04:32 GMT
 recorded_with: VCR 2.9.2

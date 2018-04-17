@@ -4,9 +4,11 @@ describe BrazeRuby::REST::ScheduleMessages do
   let(:http) { double(:http) }
 
   let(:payload) {{
-    send_at: :send_at,
     segment_id: :segment_id,
-    local_timezone: :local_timezone,
+    schedule: {
+      time: :time,
+      in_local_time: :in_local_time
+    },
     messages: :messages
   }}
 
@@ -26,7 +28,10 @@ describe BrazeRuby::REST::ScheduleMessages do
     expect(http).to receive(:post).with '/messages/schedule', {
       api_key: api_key,
       segment_ids: [:segment_id],
-      send_at: :send_at,
+      schedule: {
+        time: :time,
+        in_local_time: :in_local_time
+      },
       deliver_in_local_timezone: :local_timezone,
       messages: :messages
     }

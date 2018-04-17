@@ -5,7 +5,7 @@ describe 'schedule messages' do
   let(:messages) { build(:messages) }
 
   subject(:schedule_messages) do
-    api.schedule_messages(send_at: test_time,
+    api.schedule_messages(time: test_time,
       messages: messages, segment_id: segment_id)
   end
 

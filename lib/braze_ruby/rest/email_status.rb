@@ -3,7 +3,7 @@ module BrazeRuby
     class EmailStatus < Base
       attr_reader :api_key, :email, :status
 
-      def initialize(api_key, braze_url, email:, status:)
+      def initialize(api_key, braze_url, email: nil, status: nil)
         @api_key = api_key
         @email = email
         @status = status

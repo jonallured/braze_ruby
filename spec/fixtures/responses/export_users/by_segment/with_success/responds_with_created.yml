@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/users/export/segment
+    uri: <BRAZE_REST_URL>/users/export/segment
     body:
       encoding: UTF-8
-      string: '{"api_key":"<APPBOY_GROUP_ID>","segment_id":"<APPBOY_TEST_SEGMENT>","callback_endpoint":"https://example.com"}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","segment_id":"<BRAZE_RUBY_TEST_SEGMENT>","callback_endpoint":"https://example.com"}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -49,6 +49,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"url":"https://appboy-data-export.s3.amazonaws.com/<REDACTED>.zip","message":"success"}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 24 Mar 2015 17:33:20 GMT
 recorded_with: VCR 2.9.2

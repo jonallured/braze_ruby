@@ -1,8 +1,9 @@
 require 'vcr'
 
 VCR.configure do |config|
-  config.filter_sensitive_data('<APPBOY_GROUP_ID>') { ENV.fetch('APPBOY_GROUP_ID') }
-  config.filter_sensitive_data('<APPBOY_TEST_SEGMENT>') { ENV.fetch('APPBOY_TEST_SEGMENT') }
+  config.filter_sensitive_data('<BRAZE_REST_API_KEY>') { ENV.fetch('BRAZE_REST_API_KEY') }
+  config.filter_sensitive_data('<BRAZE_RUBY_TEST_SEGMENT>') { ENV.fetch('BRAZE_RUBY_TEST_SEGMENT') }
+  config.filter_sensitive_data('<BRAZE_REST_URL>') { ENV.fetch('BRAZE_REST_URL')}
 
   config.cassette_library_dir = 'spec/fixtures/responses'
 
@@ -14,4 +15,3 @@ VCR.configure do |config|
 
   config.hook_into :webmock
 end
-
