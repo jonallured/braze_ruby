@@ -6,7 +6,7 @@ describe 'schedule messages' do
 
   subject(:schedule_messages) do
     api.schedule_messages(time: test_time,
-      messages: messages, segment_id: segment_id)
+      messages: messages, external_user_ids: user_ids)
   end
 
   context 'with success', vcr: true do
@@ -15,7 +15,7 @@ describe 'schedule messages' do
     end
 
     it 'responds with success message' do
-      expect(JSON.parse(schedule_messages.body)).to eq(
+      expect(JSON.parse(schedule_messages.body)).to include(
           'message' => 'success'
         )
     end

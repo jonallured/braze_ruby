@@ -6,7 +6,6 @@ describe BrazeRuby::REST::SendMessages do
   let(:payload) {{
     messages: :messages,
     external_user_ids: :external_user_ids,
-    segment_id: :segment_id
   }}
 
   let(:api_key) { :api_key }
@@ -14,7 +13,6 @@ describe BrazeRuby::REST::SendMessages do
   subject { described_class.new(api_key,
     messages: :messages,
     external_user_ids: :external_user_ids,
-    segment_id: :segment_id
   ) }
 
   before { subject.http = http }
@@ -30,7 +28,6 @@ describe BrazeRuby::REST::SendMessages do
       api_key: :api_key,
       messages: :messages,
       external_user_ids: :external_user_ids,
-      segment_ids: [:segment_id]
     }
   end
 end

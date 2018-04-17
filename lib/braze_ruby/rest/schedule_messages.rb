@@ -1,21 +1,21 @@
 module BrazeRuby
   module REST
     class ScheduleMessages < Base
-      attr_reader :api_key, :time, :messages, :segment_id, :in_local_time
+      attr_reader :api_key, :time, :messages, :in_local_time, :external_user_ids
 
-      def initialize(api_key, braze_url, time: nil, messages: [], segment_id: nil, in_local_time: false)
+      def initialize(api_key, braze_url, time: nil, messages: [], external_user_ids: nil, in_local_time: false)
         @api_key = api_key
         @messages = messages
-        @segment_id = segment_id
         @time = time
+        @external_user_ids = external_user_ids
         @in_local_timezone = in_local_time
         super braze_url
       end
 
       def perform
-        http.post '/messages/schedule', {
+        http.post '/messages/schedule/create', {
           'api_key':                    api_key,
-          'segment_id':                 segment_id,
+          'external_user_ids':          external_user_ids,
           'schedule': {
             'time':                       time,
             'in_local_time':              in_local_time

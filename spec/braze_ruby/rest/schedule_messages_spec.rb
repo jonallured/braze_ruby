@@ -25,14 +25,13 @@ describe BrazeRuby::REST::ScheduleMessages do
   end
 
   def expect_schedule_messages_http_call
-    expect(http).to receive(:post).with '/messages/schedule', {
+    expect(http).to receive(:post).with '/messages/schedule/create', {
       api_key: api_key,
-      segment_ids: [:segment_id],
+      segment_id: :segment_id,
       schedule: {
         time: :time,
         in_local_time: :in_local_time
       },
-      deliver_in_local_timezone: :local_timezone,
       messages: :messages
     }
   end
