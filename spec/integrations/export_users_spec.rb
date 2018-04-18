@@ -13,7 +13,7 @@ describe 'export users' do
 
   context 'by segment' do
     context 'with success', :vcr do
-      let(:segment_id) { ENV.fetch('BRAZE_RUBY_TEST_SEGMENT') }
+      let(:segment_id) { braze_test_segment }
 
       subject(:export_users) do
         api.export_users(segment_id: segment_id, callback_endpoint: 'https://example.com')

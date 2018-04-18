@@ -1,5 +1,6 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :attribute, class: Hash do
+    skip_create
     external_id 1
     foo :bar
 
@@ -7,6 +8,7 @@ FactoryGirl.define do
   end
 
   factory :event, class: Hash do
+    skip_create
     external_id 1
     name :baz
     time Time.now
@@ -15,6 +17,7 @@ FactoryGirl.define do
   end
 
   factory :purchase, class: Hash do
+    skip_create
     external_id 1
     product_id 1
     time Time.now
@@ -25,6 +28,7 @@ FactoryGirl.define do
   end
 
   factory :messages, class: Hash do
+    skip_create
     apple_push({ alert: :hello })
 
     initialize_with { attributes }
