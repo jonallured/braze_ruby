@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/users/delete"
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"839aaeba-c8f1-4b46-b511-67ad03558e82","external_ids":[400,401,402]}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"383e14c9bc8f36ee9f92221ad86557aa"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '50000'
+      X-Ratelimit-Remaining:
+      - '49988'
+      X-Ratelimit-Reset:
+      - '1526670000'
+      X-Request-Id:
+      - 3c706f21-aef5-4527-ab35-ded3437dbb58
+      X-Runtime:
+      - '0.019468'
+      Content-Length:
+      - '89'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 18 May 2018 18:54:31 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-atl6224-ATL
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1526669672.735390,VS0,VE223
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"invalid_user_ids":[400,401,402],"deleted":3,"message":"success"}'
+    http_version: 
+  recorded_at: Fri, 18 May 2018 18:54:13 GMT
+recorded_with: VCR 4.0.0
