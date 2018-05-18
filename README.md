@@ -137,6 +137,13 @@ api.export_users(external_ids: [1])
 ```ruby
 api.export_users(segment_id: segment_id, callback_endpoint: 'https://example.com')
 ```
+### Delete Users
+
+#####
+Delete Braze Users with an array of external_ids
+```ruby
+api.delete_users([1, 2, 3])
+```
 
 ## Debugging
 

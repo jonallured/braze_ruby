@@ -3,6 +3,7 @@ require 'braze_ruby/endpoints/track_users'
 require 'braze_ruby/endpoints/send_messages'
 require 'braze_ruby/endpoints/schedule_messages'
 require 'braze_ruby/endpoints/email_status'
+require 'braze_ruby/endpoints/delete_users'
 
 module BrazeRuby
   class API
@@ -12,6 +13,7 @@ module BrazeRuby
     include BrazeRuby::Endpoints::SendMessages
     include BrazeRuby::Endpoints::ScheduleMessages
     include BrazeRuby::Endpoints::EmailStatus
+    include BrazeRuby::Endpoints::DeleteUsers
 
     def export_users(**payload)
       BrazeRuby::REST::ExportUsers.new(braze_url).perform(api_key, payload)
