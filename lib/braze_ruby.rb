@@ -1,5 +1,4 @@
 require 'json'
-require 'virtus'
 require 'braze_ruby/version'
 
 module BrazeRuby

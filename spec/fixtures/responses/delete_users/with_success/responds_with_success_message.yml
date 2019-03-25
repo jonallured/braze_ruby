@@ -5,7 +5,7 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/users/delete"
     body:
       encoding: UTF-8
-      string: '{"api_key":"839aaeba-c8f1-4b46-b511-67ad03558e82","external_ids":[400,401,402]}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_ids":[400,401,402]}'
     headers:
       User-Agent:
       - Faraday v0.14.0
@@ -64,6 +64,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"invalid_user_ids":[400,401,402],"deleted":0,"message":"success"}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 18 May 2018 18:54:14 GMT
 recorded_with: VCR 4.0.0
