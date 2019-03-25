@@ -16,11 +16,11 @@ RSpec.configure do |config|
   end
 
   def braze_rest_api_key
-    'test'
+    ENV.fetch('BRAZE_REST_API_KEY', 'test')
   end
 
   def braze_rest_url
-    'https://rest.iad-03.braze.com'
+    ENV.fetch('BRAZE_REST_URL', 'https://rest.iad-03.braze.com')
   end
 
   def braze_test_segment

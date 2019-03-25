@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'virtus'
   spec.add_dependency 'faraday'
   spec.add_dependency 'faraday_middleware'
-  spec.add_development_dependency 'bundler', '~> 1.3'
+  spec.add_development_dependency 'bundler', '>= 1.3'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'dotenv'
