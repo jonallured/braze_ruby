@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = %w(josh@godynamo.com hugo@godynamo.com justin.boltz@takl.com)
   spec.description   = %q{Braze wrapper}
   spec.summary       = %q{A wrapper for the Braze REST API forked from the appboy gem, track users/events/purchases, send & schedule messages}
-  spec.homepage      = 'http://braze.com'
+  spec.homepage      = 'https://www.braze.com/'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
@@ -27,6 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'vcr'
   spec.add_development_dependency 'webmock'
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'activesupport'
   spec.add_development_dependency 'factory_bot'
 end

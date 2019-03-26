@@ -1,17 +1,18 @@
-require 'active_support/concern'
-
 module Integrations
-  extend ActiveSupport::Concern
+  def api_key
+    braze_rest_api_key
+  end
 
-  included do
-    let(:api_key) { braze_rest_api_key }
-    let(:rest_url) { braze_rest_url }
-    let(:segment_id) { braze_test_segment }
+  def rest_url
+    braze_rest_url
+  end
 
-    let(:api) { BrazeRuby::API.new(api_key, rest_url) }
+  def segment_id
+    braze_test_segment
+  end
 
-
-
+  def api
+    BrazeRuby::API.new(api_key, rest_url)
   end
 
   RSpec.configure do |config|
