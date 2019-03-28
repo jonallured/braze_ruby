@@ -1,4 +1,3 @@
-require 'json'
 require 'braze_ruby/version'
 
 module BrazeRuby
