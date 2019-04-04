@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    braze_ruby (0.0.2)
+    braze_ruby (0.1.0)
       faraday
       faraday_middleware
 
