@@ -1,5 +1,5 @@
+require 'json'
 require 'faraday'
-require 'faraday_middleware'
 
 module BrazeRuby
   class HTTP
@@ -9,7 +9,7 @@ module BrazeRuby
 
     def post(path, payload)
       connection.post path do |request|
-        request.body = payload
+        request.body = JSON.dump(payload)
       end
     end
 
@@ -19,7 +19,9 @@ module BrazeRuby
 
     def connection
       @connection ||= Faraday.new(url: @braze_url) do |connection|
-        connection.request :json
+        connection.headers['Content-Type'] = 'application/json'
+        connection.headers['Accept']       = 'application/json'
+        connection.headers['User-Agent']   = "Braze Ruby gem v#{BrazeRuby::VERSION}"
 
         connection.response :logger if ENV['BRAZE_RUBY_DEBUG']
 

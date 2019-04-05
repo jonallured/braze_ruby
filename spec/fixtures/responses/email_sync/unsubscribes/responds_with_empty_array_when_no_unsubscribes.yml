@@ -7,12 +7,14 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
       User-Agent:
-      - Faraday v0.15.4
+      - Braze Ruby gem v0.1.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -32,40 +34,40 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249996'
+      - '249995'
       X-Ratelimit-Reset:
-      - '1553594400'
+      - '1554469200'
       X-Request-Id:
-      - c3dec26e-ab23-4812-ad5d-0f817df5804d
+      - 789be9aa-f170-4720-8e99-69225027766a
       X-Runtime:
-      - '0.112126'
+      - '0.090793'
       Accept-Ranges:
       - bytes
       - bytes
       Age:
       - '0'
       - '0'
-      Content-Length:
-      - '58'
+      Transfer-Encoding:
+      - chunked
       Date:
-      - Tue, 26 Mar 2019 09:49:52 GMT
+      - Fri, 05 Apr 2019 12:44:12 GMT
       Via:
       - 1.1 varnish
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-ams21023-AMS
+      - cache-ams21050-AMS
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1553593792.986450,VS0,VE124
+      - S1554468252.044685,VS0,VE101
       Vary:
       - Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"emails":[],"message":"success"}'
     http_version: 
-  recorded_at: Tue, 26 Mar 2019 09:49:52 GMT
+  recorded_at: Fri, 05 Apr 2019 12:44:12 GMT
 recorded_with: VCR 4.0.0
