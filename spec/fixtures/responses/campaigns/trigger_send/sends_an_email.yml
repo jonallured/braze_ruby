@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/campaigns/trigger/send"
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","campaign_id":"69e9b681-779c-4b4c-b6b8-cd74b17d21d2","recipients":[{"external_user_id":132404,"trigger_properties":{"first_name":"John"}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"838a7c62adda8d131d694ae13ba2c5b7"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249998'
+      X-Ratelimit-Reset:
+      - '1567425600'
+      X-Request-Id:
+      - e6f14e03-5226-45f3-9a9f-901a0139b071
+      X-Runtime:
+      - '0.019114'
+      Content-Length:
+      - '46'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 02 Sep 2019 11:41:42 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-hhn4029-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1567424502.370259,VS0,VE27
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"success"}'
+    http_version: 
+  recorded_at: Mon, 02 Sep 2019 11:41:42 GMT
+recorded_with: VCR 5.0.0
