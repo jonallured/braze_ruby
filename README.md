@@ -121,6 +121,15 @@ api.trigger_campaign_send(
 )
 ```
 
+### Send Canvas
+
+```ruby
+api.trigger_canvas_send(
+  canvas_id: 'canvas-id',
+  recipients: [external_user_id: 123, canvas_entry_properties: {first_name: 'John'}]
+)
+```
+
 ### Changing Email Subscription
 
 ```ruby
