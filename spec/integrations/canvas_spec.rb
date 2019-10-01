@@ -12,4 +12,13 @@ RSpec.describe 'canvas' do
       )
     end
   end
+
+  describe 'details' do
+    it 'returns error when no canvas', vcr: true do
+      response = api.canvas_details(
+        canvas_id: 'non-existing'
+      )
+      expect(response.status).to eq(400)
+    end
+  end
 end
