@@ -34,36 +34,36 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249992'
+      - '249960'
       X-Ratelimit-Reset:
-      - '1574355600'
+      - '1574359200'
       X-Request-Id:
-      - cfe79464-e555-4f82-934e-fc1b5d40f3a8
+      - 4278e704-824b-4b3e-ad53-9b385baebbfe
       X-Runtime:
-      - '0.011553'
+      - '0.007647'
       Content-Length:
       - '46'
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 21 Nov 2019 16:27:34 GMT
+      - Thu, 21 Nov 2019 17:21:35 GMT
       Via:
       - 1.1 varnish
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-hhn4081-HHN
+      - cache-hhn4060-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1574353655.891275,VS0,VE60
+      - S1574356896.586183,VS0,VE11
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 16:27:34 GMT
+  recorded_at: Thu, 21 Nov 2019 17:21:35 GMT
 recorded_with: VCR 5.0.0
