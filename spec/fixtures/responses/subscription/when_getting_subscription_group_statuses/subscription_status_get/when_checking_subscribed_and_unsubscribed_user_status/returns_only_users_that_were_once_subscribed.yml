@@ -34,38 +34,38 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249966'
+      - '249983'
       X-Ratelimit-Reset:
-      - '1574359200'
+      - '1574409600'
       X-Request-Id:
-      - 0707f448-45e9-412f-ac56-7175130195e7
+      - 870fe392-6e88-4d29-bb09-44abb692feee
       X-Runtime:
-      - '0.009687'
+      - '0.004454'
       Content-Length:
       - '46'
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 21 Nov 2019 17:21:33 GMT
+      - Fri, 22 Nov 2019 07:59:44 GMT
       Via:
       - 1.1 varnish
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-hhn4046-HHN
+      - cache-hhn4067-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1574356894.558230,VS0,VE13
+      - S1574409585.950445,VS0,VE12
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 17:21:33 GMT
+  recorded_at: Fri, 22 Nov 2019 07:59:44 GMT
 - request:
     method: post
     uri: "<BRAZE_REST_URL>/subscription/status/set"
@@ -100,38 +100,38 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249965'
+      - '249982'
       X-Ratelimit-Reset:
-      - '1574359200'
+      - '1574409600'
       X-Request-Id:
-      - a127d1f3-77bd-4c65-9872-62eda97e9812
+      - 653dcaaa-5c38-4e71-b65c-f0b0149638d4
       X-Runtime:
-      - '0.006718'
+      - '0.006976'
       Content-Length:
       - '46'
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 21 Nov 2019 17:21:33 GMT
+      - Fri, 22 Nov 2019 07:59:45 GMT
       Via:
       - 1.1 varnish
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-hhn4066-HHN
+      - cache-hhn4027-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1574356894.921194,VS0,VE57
+      - S1574409585.148598,VS0,VE54
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 17:21:33 GMT
+  recorded_at: Fri, 22 Nov 2019 07:59:45 GMT
 - request:
     method: get
     uri: "<BRAZE_REST_URL>/subscription/status/get?api_key=<BRAZE_REST_API_KEY>&external_id%5B%5D=test-gem-001&external_id%5B%5D=test-gem-002&external_id%5B%5D=test-gem-003&subscription_group_id=0201b87a-ef6e-4410-9412-a298c4c1206d"
@@ -166,13 +166,13 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249964'
+      - '249981'
       X-Ratelimit-Reset:
-      - '1574359200'
+      - '1574409600'
       X-Request-Id:
-      - 73f12d40-1c80-4203-a636-d1b3ebcb36f4
+      - c7e25224-b577-4528-8990-43af1de7e6d9
       X-Runtime:
-      - '0.034875'
+      - '0.031761'
       Accept-Ranges:
       - bytes
       - bytes
@@ -182,24 +182,24 @@ http_interactions:
       Content-Length:
       - '106'
       Date:
-      - Thu, 21 Nov 2019 17:21:34 GMT
+      - Fri, 22 Nov 2019 07:59:45 GMT
       Via:
       - 1.1 varnish
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-hhn4030-HHN
+      - cache-hhn4053-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1574356894.204744,VS0,VE39
+      - S1574409585.392003,VS0,VE34
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"status":{"test-gem-001":"Subscribed","test-gem-002":"Unsubscribed","test-gem-003":"unknown"},"message":"success"}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 17:21:34 GMT
+  recorded_at: Fri, 22 Nov 2019 07:59:45 GMT
 recorded_with: VCR 5.0.0
