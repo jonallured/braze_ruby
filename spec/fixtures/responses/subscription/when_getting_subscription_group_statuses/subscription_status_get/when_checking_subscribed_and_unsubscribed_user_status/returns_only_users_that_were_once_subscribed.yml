@@ -1,0 +1,205 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/subscription/status/set"
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-gem-001","subscription_group_id":"0201b87a-ef6e-4410-9412-a298c4c1206d","subscription_state":"subscribed"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.2.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"838a7c62adda8d131d694ae13ba2c5b7"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249983'
+      X-Ratelimit-Reset:
+      - '1574409600'
+      X-Request-Id:
+      - 870fe392-6e88-4d29-bb09-44abb692feee
+      X-Runtime:
+      - '0.004454'
+      Content-Length:
+      - '46'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 22 Nov 2019 07:59:44 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-hhn4067-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1574409585.950445,VS0,VE12
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"success"}'
+    http_version: 
+  recorded_at: Fri, 22 Nov 2019 07:59:44 GMT
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/subscription/status/set"
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-gem-002","subscription_group_id":"0201b87a-ef6e-4410-9412-a298c4c1206d","subscription_state":"unsubscribed"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.2.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"838a7c62adda8d131d694ae13ba2c5b7"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249982'
+      X-Ratelimit-Reset:
+      - '1574409600'
+      X-Request-Id:
+      - 653dcaaa-5c38-4e71-b65c-f0b0149638d4
+      X-Runtime:
+      - '0.006976'
+      Content-Length:
+      - '46'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 22 Nov 2019 07:59:45 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-hhn4027-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1574409585.148598,VS0,VE54
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"success"}'
+    http_version: 
+  recorded_at: Fri, 22 Nov 2019 07:59:45 GMT
+- request:
+    method: get
+    uri: "<BRAZE_REST_URL>/subscription/status/get?api_key=<BRAZE_REST_API_KEY>&external_id%5B%5D=test-gem-001&external_id%5B%5D=test-gem-002&external_id%5B%5D=test-gem-003&subscription_group_id=0201b87a-ef6e-4410-9412-a298c4c1206d"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.2.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"693ac9a1fc6752c76edadb586c391f44"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249981'
+      X-Ratelimit-Reset:
+      - '1574409600'
+      X-Request-Id:
+      - c7e25224-b577-4528-8990-43af1de7e6d9
+      X-Runtime:
+      - '0.031761'
+      Accept-Ranges:
+      - bytes
+      - bytes
+      Age:
+      - '0'
+      - '0'
+      Content-Length:
+      - '106'
+      Date:
+      - Fri, 22 Nov 2019 07:59:45 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-hhn4053-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1574409585.392003,VS0,VE34
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":{"test-gem-001":"Subscribed","test-gem-002":"Unsubscribed","test-gem-003":"unknown"},"message":"success"}'
+    http_version: 
+  recorded_at: Fri, 22 Nov 2019 07:59:45 GMT
+recorded_with: VCR 5.0.0

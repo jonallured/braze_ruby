@@ -163,6 +163,30 @@ Delete Braze Users with an array of external_ids
 api.delete_users([1, 2, 3])
 ```
 
+### Subscription groups
+
+#### Get subscription group status for users by id
+```ruby
+api.subscription_user_status(external_id: [1])
+```
+
+#### Get users status for a specific subscription group
+```ruby
+api.subscription_status_get(
+  external_id: [1],
+  subscription_group_id: 'some-uuid'
+)
+```
+
+#### Set user status for a specific subscription group
+```ruby
+api.subscription_status_set(
+  external_id: [1],
+  subscription_group_id: 'some-uuid',
+  subscription_state: 'subscribed|unsubscribed'
+)
+```
+
 ## Debugging
 
 The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.

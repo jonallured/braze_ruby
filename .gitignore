@@ -4,6 +4,7 @@
 .config
 .yardoc
 .ruby-version
+.ruby-gemset
 .env
 InstalledFiles
 _yardoc
