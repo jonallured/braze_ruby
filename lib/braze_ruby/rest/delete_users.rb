@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BrazeRuby
   module REST
     class DeleteUsers < Base

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Integrations
   def api_key
     braze_rest_api_key

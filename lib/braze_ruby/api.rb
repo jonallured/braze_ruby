@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'braze_ruby/deprecated'
 require 'braze_ruby/endpoints/track_users'
 require 'braze_ruby/endpoints/send_messages'

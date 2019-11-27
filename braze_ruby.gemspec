@@ -25,14 +25,14 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.required_ruby_version = '>= 2.0'
 
-  spec.add_dependency 'faraday'
+  spec.add_dependency 'faraday', '~> 0.17.1'
 
   spec.add_development_dependency 'bundler', '>= 1.3'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'dotenv'
-  spec.add_development_dependency 'vcr'
-  spec.add_development_dependency 'webmock'
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'factory_bot'
+  spec.add_development_dependency 'rake', '~> 12.3.3'
+  spec.add_development_dependency 'rspec', '~> 3.8.0'
+  spec.add_development_dependency 'dotenv', '~> 2.7.5'
+  spec.add_development_dependency 'vcr', '~> 5.0.0'
+  spec.add_development_dependency 'webmock', '~> 3.7.5'
+  spec.add_development_dependency 'pry', '~> 0.12.2'
+  spec.add_development_dependency 'factory_bot', '~> 5.1.0'
 end

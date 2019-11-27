@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'braze_ruby/endpoints/email_status'
 require 'braze_ruby/endpoints/email_sync'
 require 'braze_ruby/endpoints/schedule_messages'
