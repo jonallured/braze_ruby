@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'braze_ruby/http'
 
 module BrazeRuby

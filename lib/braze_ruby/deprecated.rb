@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BrazeRuby
   module Deprecated
     def track(attribute, events = [], purchases = [])
