@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    braze_ruby (0.3.1)
+    braze_ruby (0.3.2)
       faraday
 
 GEM
@@ -75,4 +75,4 @@ DEPENDENCIES
   webmock (~> 3.7.5)
 
 BUNDLED WITH
-   2.0.2
+   2.1.1
