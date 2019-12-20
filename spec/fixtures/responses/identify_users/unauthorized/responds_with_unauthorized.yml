@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/users/identify"
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"non-existent","aliases_to_identify":[{"external_id":400,"user_alias":{"alias_name":"abc","alias_label":"foo"}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.3.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '69'
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      X-Ratelimit-Limit:
+      - ''
+      X-Ratelimit-Remaining:
+      - ''
+      X-Ratelimit-Reset:
+      - ''
+      X-Request-Id:
+      - 8bd7f08e-2a28-4cac-af20-26dbf479eeb2
+      X-Runtime:
+      - '0.006500'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Thu, 19 Dec 2019 20:55:45 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-msp20825-MSP
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1576788945.296140,VS0,VE43
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invalid API key: non-existent"}'
+    http_version: 
+  recorded_at: Thu, 19 Dec 2019 20:55:45 GMT
+recorded_with: VCR 5.0.0

@@ -187,6 +187,21 @@ api.subscription_status_set(
 )
 ```
 
+### User Identification
+
+#### Identify an alias-only user
+```ruby
+api.identify_users(
+  aliases_to_identify: [{
+    external_id: 1234,
+    user_alias: {
+      alias_name: "device123",
+      alias_label: "my_device_identifier",
+    }
+  }]
+)
+```
+
 ## Debugging
 
 The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.
