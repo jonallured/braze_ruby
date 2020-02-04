@@ -12,7 +12,9 @@ describe BrazeRuby::REST::SendMessages do
 
   let(:api_key) { :api_key }
 
-  subject { described_class.new(api_key,
+  subject { described_class.new(
+    api_key,
+    {},
     messages: :messages,
     external_user_ids: :external_user_ids
   ) }

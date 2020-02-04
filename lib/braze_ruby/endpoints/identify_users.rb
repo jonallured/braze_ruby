@@ -12,7 +12,7 @@ module BrazeRuby
       private
 
       def identify_users_service
-        @identify_users_service ||= BrazeRuby::REST::IdentifyUsers.new(braze_url)
+        @identify_users_service ||= BrazeRuby::REST::IdentifyUsers.new(braze_url, options)
       end
     end
   end

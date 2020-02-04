@@ -8,7 +8,7 @@ describe BrazeRuby::REST::ExportUsers do
   let(:payload) {{ external_ids: external_ids }}
   let(:external_ids) { [1] }
 
-  subject { described_class.new :rest_url }
+  subject { described_class.new :rest_url, {} }
 
   before { subject.http = http }
 

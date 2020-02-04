@@ -13,8 +13,12 @@ module Integrations
     braze_test_segment
   end
 
+  def options
+    {}
+  end
+
   def api
-    BrazeRuby::API.new(api_key, rest_url)
+    BrazeRuby::API.new(api_key, rest_url, options)
   end
 
   RSpec.configure do |config|

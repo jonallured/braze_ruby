@@ -16,7 +16,7 @@ module BrazeRuby
       private
 
       def delete_users_service
-        @delete_users_service ||= BrazeRuby::REST::DeleteUsers.new(braze_url)
+        @delete_users_service ||= BrazeRuby::REST::DeleteUsers.new(braze_url, options)
       end
     end
   end
