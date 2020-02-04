@@ -5,10 +5,10 @@ module BrazeRuby
     class EmailUnsubscribes < Base
       attr_reader :api_key, :params
 
-      def initialize(api_key, braze_url, **params)
+      def initialize(api_key, braze_url, options, **params)
         @api_key = api_key
         @params = params
-        super braze_url
+        super braze_url, options
       end
 
       def perform

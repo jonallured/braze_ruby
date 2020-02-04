@@ -10,7 +10,7 @@ describe BrazeRuby::REST::IdentifyUsers do
 
   let(:api_key) { :api_key }
 
-  subject { described_class.new :rest_url}
+  subject { described_class.new :rest_url, {}}
 
   before { subject.http = http }
 

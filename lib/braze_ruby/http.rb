@@ -5,8 +5,11 @@ require 'faraday'
 
 module BrazeRuby
   class HTTP
-    def initialize(braze_url)
+    DEFAULT_TIMEOUT = 30
+
+    def initialize(braze_url, options = {})
       @braze_url = braze_url
+      @options = default_options.merge(options)
     end
 
     def post(path, payload)
@@ -28,7 +31,15 @@ module BrazeRuby
         connection.response :logger if ENV['BRAZE_RUBY_DEBUG']
 
         connection.adapter Faraday.default_adapter
+
+        connection.options[:timeout] = @options[:timeout]
       end
+    end
+
+    private
+
+    def default_options
+      {timeout: DEFAULT_TIMEOUT}
     end
   end
 end
