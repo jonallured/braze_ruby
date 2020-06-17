@@ -29,7 +29,6 @@ describe BrazeRuby::REST::SendMessages do
 
   def expect_send_messages_http_call
     expect(http).to receive(:post).with '/messages/send', {
-      api_key: :api_key,
       messages: [],
       external_user_ids: [],
     }

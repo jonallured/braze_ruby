@@ -5,14 +5,16 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/users/identify"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","aliases_to_identify":[{"external_id":400,"user_alias":{"alias_name":"abc","alias_label":"foo"}}]}'
+      string: '{"aliases_to_identify":[{"external_id":12345,"user_alias":{"alias_name":"abc","alias_label":"foo"}}]}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       User-Agent:
-      - Braze Ruby gem v0.3.2
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -38,32 +40,32 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249975'
+      - '249982'
       X-Ratelimit-Reset:
-      - '1576789200'
+      - '1592427600'
       X-Request-Id:
-      - 9348cf6f-365f-43fe-b460-f956c932097d
+      - d0f2ec14-ad20-4ec1-8c98-e082ba1a29a7
       X-Runtime:
-      - '0.005338'
+      - '0.007261'
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 19 Dec 2019 20:55:44 GMT
+      - Wed, 17 Jun 2020 20:30:11 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-msp20820-MSP
+      - cache-hhn4027-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1576788945.699710,VS0,VE187
+      - S1592425811.496339,VS0,VE10
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"aliases_processed":1,"message":"success"}'
     http_version: 
-  recorded_at: Thu, 19 Dec 2019 20:55:44 GMT
+  recorded_at: Wed, 17 Jun 2020 20:30:11 GMT
 recorded_with: VCR 5.0.0

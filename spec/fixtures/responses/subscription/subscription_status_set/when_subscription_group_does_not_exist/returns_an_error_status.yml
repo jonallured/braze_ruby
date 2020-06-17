@@ -5,14 +5,16 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/subscription/status/set"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-gem-001","subscription_group_id":"non-existing-subscription-group","subscription_state":"subscribed"}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-user-1","subscription_group_id":"non-existing-subscription-group","subscription_state":"subscribed"}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       User-Agent:
-      - Braze Ruby gem v0.2.2
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,6 +22,10 @@ http_interactions:
       code: 400
       message: Bad Request
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '69'
       Cache-Control:
       - no-cache
       Content-Type:
@@ -31,36 +37,32 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249974'
+      - '249955'
       X-Ratelimit-Reset:
-      - '1574409600'
+      - '1592427600'
       X-Request-Id:
-      - 9d318398-4dbe-4fca-8bc8-fed3002af64a
+      - 285e3842-f442-4877-b5b9-5328ac36c2be
       X-Runtime:
-      - '0.013998'
-      Content-Length:
-      - '69'
+      - '0.031452'
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 22 Nov 2019 07:59:46 GMT
+      - Wed, 17 Jun 2020 20:35:56 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-hhn4070-HHN
+      - cache-hhn4036-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1574409587.847958,VS0,VE17
+      - S1592426156.132497,VS0,VE34
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Invalid subscription group ID"}'
     http_version: 
-  recorded_at: Fri, 22 Nov 2019 07:59:46 GMT
+  recorded_at: Wed, 17 Jun 2020 20:35:56 GMT
 recorded_with: VCR 5.0.0

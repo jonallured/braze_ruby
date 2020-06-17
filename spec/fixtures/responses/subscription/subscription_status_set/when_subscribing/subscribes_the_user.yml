@@ -5,14 +5,16 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/subscription/status/set"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-gem-001","subscription_group_id":"0201b87a-ef6e-4410-9412-a298c4c1206d","subscription_state":"subscribed"}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-user-1","subscription_group_id":"ed06e19a-69b1-4f9b-a452-2db2c4e303a8","subscription_state":"subscribed"}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       User-Agent:
-      - Braze Ruby gem v0.2.2
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,6 +22,10 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '46'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
@@ -34,36 +40,32 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249977'
+      - '249958'
       X-Ratelimit-Reset:
-      - '1574409600'
+      - '1592427600'
       X-Request-Id:
-      - 9e429cb2-6c63-44e8-bb25-97d23edb25d1
+      - fbac8f93-a99e-452b-b5a3-8fc91d85e232
       X-Runtime:
-      - '0.008757'
-      Content-Length:
-      - '46'
+      - '0.005479'
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 22 Nov 2019 07:59:46 GMT
+      - Wed, 17 Jun 2020 20:35:55 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-hhn4035-HHN
+      - cache-hhn4062-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1574409586.236608,VS0,VE18
+      - S1592426156.816894,VS0,VE8
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Fri, 22 Nov 2019 07:59:46 GMT
+  recorded_at: Wed, 17 Jun 2020 20:35:55 GMT
 recorded_with: VCR 5.0.0

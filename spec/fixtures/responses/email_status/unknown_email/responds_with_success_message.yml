@@ -7,19 +7,25 @@ http_interactions:
       encoding: UTF-8
       string: '{"api_key":"<BRAZE_REST_API_KEY>","email":"notthere@example.com","subscription_state":"unsubscribed"}'
     headers:
-      User-Agent:
-      - Faraday v0.14.0
       Content-Type:
       - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 201
       message: Created
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '46'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
@@ -32,38 +38,34 @@ http_interactions:
       - max-age=0; includeSubDomains
       - max-age=31536000; includeSubDomains
       X-Ratelimit-Limit:
-      - '50000'
+      - '250000'
       X-Ratelimit-Remaining:
-      - '49996'
+      - '249989'
       X-Ratelimit-Reset:
-      - '1524002400'
+      - '1592424000'
       X-Request-Id:
-      - 3050a957-b5b3-4f16-bdd1-c42ac5718d67
+      - cb7461f4-ce7b-42f8-84b5-e02a6b6ec10e
       X-Runtime:
-      - '0.013591'
-      Content-Length:
-      - '46'
+      - '0.007939'
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 17 Apr 2018 21:08:19 GMT
+      - Wed, 17 Jun 2020 19:25:40 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-pdk17843-PDK
+      - cache-hhn4077-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1523999300.711704,VS0,VE182
+      - S1592421941.513159,VS0,VE11
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Tue, 17 Apr 2018 21:08:20 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Wed, 17 Jun 2020 19:25:40 GMT
+recorded_with: VCR 5.0.0

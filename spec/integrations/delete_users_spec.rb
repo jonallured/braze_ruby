@@ -16,6 +16,7 @@ describe 'delete users' do
 
     it 'responds with success message' do
       expect(JSON.parse(delete_users.body)).to include(
+          'deleted' => 3,
           'message' => 'success'
         )
     end

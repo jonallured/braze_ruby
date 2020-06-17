@@ -3,10 +3,8 @@
 module BrazeRuby
   module REST
     class ListSegments < Base
-      def perform(api_key)
-        http.get '/segments/list', {
-          'api_key': api_key
-        }
+      def perform
+        http.get '/segments/list'
       end
     end
   end

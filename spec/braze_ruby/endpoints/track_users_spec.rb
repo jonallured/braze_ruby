@@ -27,7 +27,7 @@ describe BrazeRuby::Endpoints::TrackUsers do
 
     it 'tracks attributes, events and purchases' do
       expect(track_users_service).to receive(:perform)
-        .with(:api_key, payload)
+        .with(payload)
 
       track_users!
     end
@@ -40,7 +40,7 @@ describe BrazeRuby::Endpoints::TrackUsers do
 
     it 'tracks a single purchase' do
       expect(track_users_service).to receive(:perform)
-        .with(:api_key, purchases: [payload])
+        .with(purchases: [payload])
 
       track_purchase!
     end
@@ -53,7 +53,7 @@ describe BrazeRuby::Endpoints::TrackUsers do
 
     it 'tracks a single purchase' do
       expect(track_users_service).to receive(:perform)
-        .with(:api_key, events: [payload])
+        .with(events: [payload])
 
       track_event!
     end
@@ -66,7 +66,7 @@ describe BrazeRuby::Endpoints::TrackUsers do
 
     it 'tracks a single purchase' do
       expect(track_users_service).to receive(:perform)
-          .with(:api_key, attributes: [payload])
+          .with(attributes: [payload])
 
       track_attribute!
     end

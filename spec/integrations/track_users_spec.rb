@@ -4,6 +4,7 @@ require 'spec_helper'
 
 describe 'track users' do
   let(:attributes) { [build(:attribute)] }
+  let(:test_time) { Time.parse('2019-02-15 00:00:00 -0500') }
   let(:events) { [build(:event, time: test_time)] }
   let(:purchases) { [build(:purchase, time: test_time)] }
 

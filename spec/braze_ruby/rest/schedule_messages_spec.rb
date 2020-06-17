@@ -26,7 +26,6 @@ describe BrazeRuby::REST::ScheduleMessages do
 
   def expect_schedule_messages_http_call
     expect(http).to receive(:post).with '/messages/schedule/create', {
-      api_key: api_key,
       external_user_ids: :external_user_ids,
       schedule: {
         time: :time,

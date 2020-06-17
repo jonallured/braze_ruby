@@ -5,14 +5,16 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/subscription/status/set"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-gem-001","subscription_group_id":"non-existing-subscription-group","subscription_state":"subscribed"}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-user-1","subscription_group_id":"non-existing-subscription-group","subscription_state":"subscribed"}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       User-Agent:
-      - Braze Ruby gem v0.2.2
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,6 +22,10 @@ http_interactions:
       code: 400
       message: Bad Request
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '69'
       Cache-Control:
       - no-cache
       Content-Type:
@@ -31,51 +37,49 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249980'
+      - '249961'
       X-Ratelimit-Reset:
-      - '1574409600'
+      - '1592427600'
       X-Request-Id:
-      - 620af52d-d528-46bd-bc42-8e658850ff56
+      - 9755c1e8-a2f0-4544-846a-7af38c68cc82
       X-Runtime:
-      - '0.011493'
-      Content-Length:
-      - '69'
+      - '0.056532'
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 22 Nov 2019 07:59:45 GMT
+      - Wed, 17 Jun 2020 20:35:55 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-hhn4035-HHN
+      - cache-hhn4051-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1574409586.594248,VS0,VE57
+      - S1592426155.381280,VS0,VE60
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Invalid subscription group ID"}'
     http_version: 
-  recorded_at: Fri, 22 Nov 2019 07:59:45 GMT
+  recorded_at: Wed, 17 Jun 2020 20:35:55 GMT
 - request:
     method: post
     uri: "<BRAZE_REST_URL>/subscription/status/set"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-gem-002","subscription_group_id":"non-existing-subscription-group","subscription_state":"unsubscribed"}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-user-2","subscription_group_id":"non-existing-subscription-group","subscription_state":"unsubscribed"}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       User-Agent:
-      - Braze Ruby gem v0.2.2
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -83,6 +87,10 @@ http_interactions:
       code: 400
       message: Bad Request
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '69'
       Cache-Control:
       - no-cache
       Content-Type:
@@ -94,41 +102,37 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249979'
+      - '249960'
       X-Ratelimit-Reset:
-      - '1574409600'
+      - '1592427600'
       X-Request-Id:
-      - 1dbbe62d-e251-46ac-b511-9e435f790a96
+      - 3634daac-e2da-487f-bcb6-21920f1584b3
       X-Runtime:
-      - '0.009396'
-      Content-Length:
-      - '69'
+      - '0.041838'
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 22 Nov 2019 07:59:45 GMT
+      - Wed, 17 Jun 2020 20:35:55 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-hhn4061-HHN
+      - cache-hhn4059-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1574409586.826897,VS0,VE15
+      - S1592426156.540854,VS0,VE44
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Invalid subscription group ID"}'
     http_version: 
-  recorded_at: Fri, 22 Nov 2019 07:59:45 GMT
+  recorded_at: Wed, 17 Jun 2020 20:35:55 GMT
 - request:
     method: get
-    uri: "<BRAZE_REST_URL>/subscription/status/get?api_key=<BRAZE_REST_API_KEY>&external_id=test-gem-001&subscription_group_id=non-existing-subscription-group"
+    uri: "<BRAZE_REST_URL>/subscription/status/get?api_key=<BRAZE_REST_API_KEY>&external_id=test-user-1&subscription_group_id=non-existing-subscription-group"
     body:
       encoding: US-ASCII
       string: ''
@@ -138,7 +142,9 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - Braze Ruby gem v0.2.2
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -146,6 +152,10 @@ http_interactions:
       code: 400
       message: Bad Request
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '69'
       Cache-Control:
       - no-cache
       Content-Type:
@@ -157,37 +167,33 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249978'
+      - '249959'
       X-Ratelimit-Reset:
-      - '1574409600'
+      - '1592427600'
       X-Request-Id:
-      - f79731f9-3440-47dc-871c-6349fbaf28ea
+      - 4cc890fd-7070-403b-85b6-0f1565046779
       X-Runtime:
-      - '0.009930'
+      - '0.035309'
       Accept-Ranges:
       - bytes
       - bytes
-      Content-Length:
-      - '69'
       Date:
-      - Fri, 22 Nov 2019 07:59:46 GMT
+      - Wed, 17 Jun 2020 20:35:55 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-hhn4051-HHN
+      - cache-hhn4031-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1574409586.039550,VS0,VE13
+      - S1592426156.680642,VS0,VE38
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Invalid subscription group ID"}'
     http_version: 
-  recorded_at: Fri, 22 Nov 2019 07:59:46 GMT
+  recorded_at: Wed, 17 Jun 2020 20:35:55 GMT
 recorded_with: VCR 5.0.0

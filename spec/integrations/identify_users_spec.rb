@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'identify users' do
-  let(:user) { { external_id: 400, user_alias: { alias_name: 'abc', alias_label: 'foo' } } }
+  let(:user) { { external_id: 12345, user_alias: { alias_name: 'abc', alias_label: 'foo' } } }
 
   subject(:identify_users) do
     api.identify_users(aliases_to_identify: [user])

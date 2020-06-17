@@ -5,65 +5,67 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/users/export/segment"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","segment_id":"a8fde797-4c44-4406-8e6c-5850d323f169","callback_endpoint":"https://example.com"}'
+      string: '{"segment_id":"3aca937b-9bbc-4e42-9370-05e411967b2b","callback_endpoint":"https://example.com"}'
     headers:
-      User-Agent:
-      - Faraday v0.14.0
       Content-Type:
       - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 201
       message: Created
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '196'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
       - application/json
       Etag:
-      - W/"3ea7dd8571456c18ee0f64e21588cd18"
+      - W/"2e35da6e340b6bc894c81eb5d32fe5bd"
       Server:
       - nginx
       Strict-Transport-Security:
       - max-age=0; includeSubDomains
       - max-age=31536000; includeSubDomains
       X-Ratelimit-Limit:
-      - '50000'
+      - '250000'
       X-Ratelimit-Remaining:
-      - '49994'
+      - '249994'
       X-Ratelimit-Reset:
-      - '1524002400'
+      - '1592427600'
       X-Request-Id:
-      - 383a399b-8622-432b-8e8c-3466bb2918aa
+      - 15c5b986-e83c-4fc5-bc7c-8245f2c10185
       X-Runtime:
-      - '0.019441'
-      Content-Length:
-      - '193'
+      - '0.065960'
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 17 Apr 2018 21:08:20 GMT
+      - Wed, 17 Jun 2020 20:14:30 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-pdk17823-PDK
+      - cache-hhn4075-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1523999301.520355,VS0,VE192
+      - S1592424871.804901,VS0,VE69
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
-      string: '{"url":"https://appboy-03-data-export.s3.amazonaws.com/6GyY08ekLymivv4VS0uQFeWV1yP1OV99jgrGSJ4MmYg.zip","object_prefix":"9665a629-c9b2-499b-a2d8-f1f6fc19cf64-1523999300","message":"success"}'
+      string: '{"object_prefix":"e739ed46-9cd7-4142-b70f-843b89c5ac80-1592424870","url":"https://appboy-eu-data-export.s3.amazonaws.com/Iw_2CAuI2mvAemo2jRTbG6IBUkzpJNBbYSMwPHO082o.zip","message":"success"}'
     http_version: 
-  recorded_at: Tue, 17 Apr 2018 21:08:20 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Wed, 17 Jun 2020 20:14:30 GMT
+recorded_with: VCR 5.0.0

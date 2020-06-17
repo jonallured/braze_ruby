@@ -23,7 +23,7 @@ describe BrazeRuby::Endpoints::DeleteUsers do
 
     it 'deletes users' do
       expect(delete_users_service).to receive(:perform)
-        .with(:api_key, external_ids: payload)
+        .with(external_ids: payload)
 
       delete_users!
     end
