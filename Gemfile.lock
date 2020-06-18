@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    braze_ruby (0.3.3)
+    braze_ruby (0.4.0)
       faraday
 
 GEM
