@@ -14,7 +14,7 @@ describe BrazeRuby::REST::ScheduleMessages do
 
   let(:api_key) { :api_key }
 
-  subject { described_class.new(api_key, :rest_url, {}, payload) }
+  subject { described_class.new(api_key, :rest_url, {}, **payload) }
 
   before { subject.http = http }
 

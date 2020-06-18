@@ -6,18 +6,18 @@ module BrazeRuby
       attr_writer :track_users_service
 
       def track_users(**payload)
-        track_users_service.perform(payload)
+        track_users_service.perform(**payload)
       end
 
-      def track_purchase(payload)
+      def track_purchase(**payload)
         track_users(purchases: [payload])
       end
 
-      def track_event(payload)
+      def track_event(**payload)
         track_users(events: [payload])
       end
 
-      def track_attribute(payload)
+      def track_attribute(**payload)
         track_users(attributes: [payload])
       end
 

@@ -6,7 +6,7 @@ module BrazeRuby
       attr_writer :identify_users_service
 
       def identify_users(**payload)
-        identify_users_service.perform(payload)
+        identify_users_service.perform(**payload)
       end
 
       private

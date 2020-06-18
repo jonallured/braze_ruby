@@ -6,7 +6,7 @@ module BrazeRuby
       attr_writer :delete_users_service
 
       def delete_users_action(**payload)
-        delete_users_service.perform(payload)
+        delete_users_service.perform(**payload)
       end
 
       def delete_users(payload)
