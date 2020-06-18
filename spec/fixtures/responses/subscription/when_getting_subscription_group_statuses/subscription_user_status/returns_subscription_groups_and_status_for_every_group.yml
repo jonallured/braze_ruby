@@ -5,7 +5,7 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/subscription/status/set"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-user-1","subscription_group_id":"ed06e19a-69b1-4f9b-a452-2db2c4e303a8","subscription_state":"subscribed"}'
+      string: '{"external_id":"test-user-1","subscription_group_id":"ed06e19a-69b1-4f9b-a452-2db2c4e303a8","subscription_state":"subscribed"}'
     headers:
       Content-Type:
       - application/json
@@ -40,40 +40,40 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249967'
+      - '249995'
       X-Ratelimit-Reset:
-      - '1592427600'
+      - '1592478000'
       X-Request-Id:
-      - 9a2653af-a41b-4085-9389-a1151db08c6e
+      - 3c0417c1-397b-4f71-b60c-c2a2082a435a
       X-Runtime:
-      - '0.007510'
+      - '0.012552'
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 17 Jun 2020 20:35:54 GMT
+      - Thu, 18 Jun 2020 10:03:06 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-hhn4040-HHN
+      - cache-hhn4023-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1592426154.270505,VS0,VE11
+      - S1592474586.184983,VS0,VE16
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Wed, 17 Jun 2020 20:35:54 GMT
+  recorded_at: Thu, 18 Jun 2020 10:03:06 GMT
 - request:
     method: post
     uri: "<BRAZE_REST_URL>/subscription/status/set"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_id":"test-user-2","subscription_group_id":"ed06e19a-69b1-4f9b-a452-2db2c4e303a8","subscription_state":"unsubscribed"}'
+      string: '{"external_id":"test-user-2","subscription_group_id":"ed06e19a-69b1-4f9b-a452-2db2c4e303a8","subscription_state":"unsubscribed"}'
     headers:
       Content-Type:
       - application/json
@@ -108,34 +108,34 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249966'
+      - '249994'
       X-Ratelimit-Reset:
-      - '1592427600'
+      - '1592478000'
       X-Request-Id:
-      - ce75c931-b122-4aad-92c3-6db310c24ad4
+      - b49b0519-bb0a-4e16-b9c0-9d5af6fee340
       X-Runtime:
-      - '0.008743'
+      - '0.012962'
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 17 Jun 2020 20:35:54 GMT
+      - Thu, 18 Jun 2020 10:03:06 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-hhn4073-HHN
+      - cache-hhn4057-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1592426154.373418,VS0,VE11
+      - S1592474586.279449,VS0,VE16
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Wed, 17 Jun 2020 20:35:54 GMT
+  recorded_at: Thu, 18 Jun 2020 10:03:06 GMT
 - request:
     method: get
     uri: "<BRAZE_REST_URL>/subscription/user/status?external_id%5B%5D=test-user-1&external_id%5B%5D=test-user-2&external_id%5B%5D=test-user-3"
@@ -176,13 +176,13 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249965'
+      - '249993'
       X-Ratelimit-Reset:
-      - '1592427600'
+      - '1592478000'
       X-Request-Id:
-      - 7cf13d94-44f3-4c96-afa6-f1bc1737050f
+      - 2c909898-af08-4996-b063-cccd07cbee21
       X-Runtime:
-      - '0.274424'
+      - '0.291483'
       Accept-Ranges:
       - bytes
       - bytes
@@ -190,22 +190,22 @@ http_interactions:
       - '0'
       - '0'
       Date:
-      - Wed, 17 Jun 2020 20:35:54 GMT
+      - Thu, 18 Jun 2020 10:03:06 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-hhn4055-HHN
+      - cache-hhn4039-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1592426154.495497,VS0,VE278
+      - S1592474586.385788,VS0,VE300
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"users":[{"email":"test-user-1@test.com","phone":null,"external_id":"test-user-1","subscription_groups":[{"id":"ed06e19a-69b1-4f9b-a452-2db2c4e303a8","name":"test-subscription-group","channel":"email","status":"Subscribed"}]},{"email":"test-user-2@test.com","phone":null,"external_id":"test-user-2","subscription_groups":[{"id":"ed06e19a-69b1-4f9b-a452-2db2c4e303a8","name":"test-subscription-group","channel":"email","status":"Unsubscribed"}]},{"email":"test-user-3@test.com","phone":null,"external_id":"test-user-3","subscription_groups":[]}],"total_count":3,"message":"success"}'
     http_version: 
-  recorded_at: Wed, 17 Jun 2020 20:35:54 GMT
+  recorded_at: Thu, 18 Jun 2020 10:03:06 GMT
 recorded_with: VCR 5.0.0

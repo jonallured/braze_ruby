@@ -5,7 +5,7 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/email/status"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","email":"notthere@example.com","subscription_state":"unsubscribed"}'
+      string: '{"email":"notthere@example.com","subscription_state":"unsubscribed"}'
     headers:
       Content-Type:
       - application/json
@@ -40,32 +40,32 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249990'
+      - '249997'
       X-Ratelimit-Reset:
-      - '1592424000'
+      - '1592478000'
       X-Request-Id:
-      - 4e43d022-880d-4b26-b147-f17322b893d7
+      - ea52a572-1445-4d30-89f0-87595863fc6a
       X-Runtime:
-      - '0.006838'
+      - '0.006073'
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 17 Jun 2020 19:25:40 GMT
+      - Thu, 18 Jun 2020 10:02:14 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-hhn4073-HHN
+      - cache-hhn4061-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1592421940.408208,VS0,VE10
+      - S1592474534.256187,VS0,VE9
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Wed, 17 Jun 2020 19:25:40 GMT
+  recorded_at: Thu, 18 Jun 2020 10:02:14 GMT
 recorded_with: VCR 5.0.0

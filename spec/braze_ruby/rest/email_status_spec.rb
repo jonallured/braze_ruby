@@ -11,7 +11,6 @@ describe BrazeRuby::REST::EmailStatus do
 
   it 'makes an http call to the email status endpoint' do
     expect(http).to receive(:post).with '/email/status', {
-      api_key: :api_key,
       email: :email,
       subscription_state: :status
     }

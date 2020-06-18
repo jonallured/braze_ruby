@@ -3,7 +3,7 @@
 module BrazeRuby
   module REST
     class SendMessages < Base
-      attr_reader :api_key, :messages, :external_user_ids
+      attr_reader :messages, :external_user_ids
 
       def initialize(api_key, braze_url, options, messages: [], external_user_ids: [])
         @messages = messages

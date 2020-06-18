@@ -3,7 +3,7 @@
 module BrazeRuby
   module REST
     class EmailHardBounces < Base
-      attr_reader :api_key, :params
+      attr_reader :params
 
       def initialize(api_key, braze_url, options, **params)
         @params = params
