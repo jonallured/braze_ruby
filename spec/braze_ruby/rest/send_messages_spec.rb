@@ -5,18 +5,12 @@ require 'spec_helper'
 describe BrazeRuby::REST::SendMessages do
   let(:http) { double(:http) }
 
-  let(:payload) {{
-    messages: :messages,
-    external_user_ids: :external_user_ids,
-  }}
-
-  let(:api_key) { :api_key }
-
   subject { described_class.new(
-    api_key,
+    :api_key,
+    :rest_url,
     {},
-    messages: :messages,
-    external_user_ids: :external_user_ids
+    messages: ["message"],
+    external_user_ids: ["1", "2"]
   ) }
 
   before { subject.http = http }
@@ -29,8 +23,8 @@ describe BrazeRuby::REST::SendMessages do
 
   def expect_send_messages_http_call
     expect(http).to receive(:post).with '/messages/send', {
-      messages: [],
-      external_user_ids: [],
+      messages: ["message"],
+      external_user_ids: ["1", "2"],
     }
   end
 end

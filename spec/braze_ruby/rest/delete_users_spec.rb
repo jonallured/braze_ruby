@@ -17,6 +17,6 @@ describe BrazeRuby::REST::DeleteUsers do
     expect(http).to receive(:post).with '/users/delete',
         payload
 
-    subject.perform(payload)
+    subject.perform(**payload)
   end
 end

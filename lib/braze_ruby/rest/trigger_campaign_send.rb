@@ -11,9 +11,7 @@ module BrazeRuby
       end
 
       def perform
-        http.post('/campaigns/trigger/send', {
-          **@params
-        })
+        http.post('/campaigns/trigger/send', @params)
       end
     end
   end
