@@ -11,7 +11,7 @@ describe 'list segments' do
     end
 
     it 'responds with a list of segments' do
-      expect(segments.count).to be 13
+      expect(segments.count).to be 6
     end
 
     def segments

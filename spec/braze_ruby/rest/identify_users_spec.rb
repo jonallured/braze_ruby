@@ -10,14 +10,14 @@ describe BrazeRuby::REST::IdentifyUsers do
 
   let(:api_key) { :api_key }
 
-  subject { described_class.new :rest_url, {}}
+  subject { described_class.new :api_key, :rest_url, {}}
 
   before { subject.http = http }
 
   it 'makes an http call to the identify users endpoint' do
     expect(http).to receive(:post).with '/users/identify',
-        payload.merge({ api_key: :api_key })
+        payload
 
-    subject.perform(api_key, payload)
+    subject.perform(**payload)
   end
 end

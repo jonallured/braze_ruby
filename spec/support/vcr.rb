@@ -9,7 +9,9 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/responses'
 
   config.default_cassette_options = {
-    match_requests_on: [:method, :uri, :body]
+    match_requests_on: [:method, :uri, :body],
+    record: :once,
+    allow_unused_http_interactions: false
   }
 
   config.configure_rspec_metadata!

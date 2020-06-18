@@ -3,7 +3,8 @@
 require 'spec_helper'
 
 describe 'schedule messages' do
-  let(:user_ids) { [1] }
+  let(:user_ids) { [12345] }
+  let(:test_time) { "2020-08-07T00:00:00+02:00" }
   let(:messages) { build(:messages) }
 
   subject(:schedule_messages) do

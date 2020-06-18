@@ -27,11 +27,11 @@ module BrazeRuby
     include BrazeRuby::Endpoints::IdentifyUsers
 
     def export_users(**payload)
-      BrazeRuby::REST::ExportUsers.new(braze_url, options).perform(api_key, payload)
+      BrazeRuby::REST::ExportUsers.new(api_key, braze_url, options).perform(**payload)
     end
 
     def list_segments
-      BrazeRuby::REST::ListSegments.new(braze_url, options).perform(api_key)
+      BrazeRuby::REST::ListSegments.new(api_key, braze_url, options).perform
     end
 
     attr_reader :api_key, :braze_url, :options

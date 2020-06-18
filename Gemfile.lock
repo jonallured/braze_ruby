@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    braze_ruby (0.3.2)
+    braze_ruby (0.3.3)
       faraday
 
 GEM
@@ -23,7 +23,7 @@ GEM
     dotenv (2.7.5)
     factory_bot (5.1.0)
       activesupport (>= 4.2.0)
-    faraday (0.17.1)
+    faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     hashdiff (1.0.0)
     i18n (1.6.0)

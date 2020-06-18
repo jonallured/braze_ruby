@@ -3,10 +3,9 @@
 module BrazeRuby
   module REST
     class IdentifyUsers < Base
-      def perform(api_key, aliases_to_identify: [])
+      def perform(aliases_to_identify: [])
         http.post '/users/identify', {
-          'api_key':             api_key,
-          'aliases_to_identify': aliases_to_identify,
+          'aliases_to_identify': aliases_to_identify
         }
       end
     end

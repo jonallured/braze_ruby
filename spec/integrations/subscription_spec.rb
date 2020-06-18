@@ -3,10 +3,10 @@
 require 'spec_helper'
 
 RSpec.describe 'subscription', vcr: true do
-  let(:subscription_group_id) { '0201b87a-ef6e-4410-9412-a298c4c1206d' }
-  let(:subscribed_user) { 'test-gem-001' }
-  let(:unsubscribed_user) { 'test-gem-002' }
-  let(:never_subscribed_user) { 'test-gem-003' }
+  let(:subscription_group_id) { 'ed06e19a-69b1-4f9b-a452-2db2c4e303a8' }
+  let(:subscribed_user) { 'test-user-1' }
+  let(:unsubscribed_user) { 'test-user-2' }
+  let(:never_subscribed_user) { 'test-user-3' }
 
   context 'when getting subscription group statuses' do
     let(:json_response) { JSON.parse(response.body) }
@@ -83,9 +83,9 @@ RSpec.describe 'subscription', vcr: true do
           expect(json_response).to eq(
             'message' => 'success',
             'status' => {
-              'test-gem-001' => 'Subscribed',
-              'test-gem-002' => 'Unsubscribed',
-              'test-gem-003' => 'unknown'
+              'test-user-1' => 'Subscribed',
+              'test-user-2' => 'Unsubscribed',
+              'test-user-3' => 'unknown'
             }
           )
         end

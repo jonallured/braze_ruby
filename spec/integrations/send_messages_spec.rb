@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'send messages' do
-  let(:user_ids) { [1] }
+  let(:user_ids) { [12345] }
   let(:messages) { build(:messages) }
 
   subject(:send_messages) do
@@ -17,6 +17,7 @@ describe 'send messages' do
 
     it 'responds with success message' do
       expect(JSON.parse(send_messages.body)).to eq(
+          'dispatch_id' => "ea0532cddfc97cd4e5767b351d6af0eb",
           'message' => 'success'
         )
     end

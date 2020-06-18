@@ -7,15 +7,16 @@ module BrazeRuby
     class Base
       attr_writer :http
 
-      def initialize(braze_url, options)
+      def initialize(api_key, braze_url, options)
+        @api_key   = api_key
         @braze_url = braze_url
-        @options = options
+        @options   = options
       end
 
       private
 
       def http
-        @http ||= BrazeRuby::HTTP.new(@braze_url, @options)
+        @http ||= BrazeRuby::HTTP.new(@api_key, @braze_url, @options)
       end
     end
   end

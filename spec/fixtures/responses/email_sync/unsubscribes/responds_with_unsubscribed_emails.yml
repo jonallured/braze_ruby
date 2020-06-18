@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: "<BRAZE_REST_URL>/email/unsubscribes?api_key=<BRAZE_REST_API_KEY>&end_date=2019-03-25&start_date=2019-03-20"
+    uri: "<BRAZE_REST_URL>/email/unsubscribes?end_date=2020-06-18&start_date=2020-06-17"
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,9 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - Braze Ruby gem v0.1.0
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,12 +22,16 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '181'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
       - application/json
       Etag:
-      - W/"5eb0e9bcc8119b72a7bccb6a7195558f"
+      - W/"e65c6449e615b3f001070538af4b6fd9"
       Server:
       - nginx
       Strict-Transport-Security:
@@ -34,41 +40,36 @@ http_interactions:
       X-Ratelimit-Limit:
       - '250000'
       X-Ratelimit-Remaining:
-      - '249996'
+      - '249928'
       X-Ratelimit-Reset:
-      - '1554469200'
+      - '1592424000'
       X-Request-Id:
-      - fa9392d1-098a-406c-9957-9f8f504b3263
+      - 71487406-0d6c-4384-906e-b5cddf19d5b4
       X-Runtime:
-      - '0.118162'
+      - '0.011941'
       Accept-Ranges:
       - bytes
       - bytes
       Age:
       - '0'
       - '0'
-      Transfer-Encoding:
-      - chunked
       Date:
-      - Fri, 05 Apr 2019 12:44:11 GMT
+      - Wed, 17 Jun 2020 19:42:36 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-ams21026-AMS
+      - cache-hhn4028-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1554468252.696233,VS0,VE128
+      - S1592422957.581337,VS0,VE15
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
-      string: '{"emails":[{"email":"wojtek@test.com","unsubscribed_at":"2019-03-21
-        16:31:31 +0000"}],"message":"success"}'
-    http_version:
-  recorded_at: Fri, 05 Apr 2019 12:44:11 GMT
-recorded_with: VCR 4.0.0
+      string: '{"emails":[{"email":"example@123.com","unsubscribed_at":"2020-06-17 19:27:44 +0000"}], "message":"success"}'
+    http_version: 
+  recorded_at: Wed, 17 Jun 2020 19:42:36 GMT
+recorded_with: VCR 5.0.0

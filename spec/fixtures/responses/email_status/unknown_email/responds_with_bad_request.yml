@@ -5,21 +5,27 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/email/status"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","email":"notthere@example.com","subscription_state":"unsubscribed"}'
+      string: '{"email":"notthere@example.com","subscription_state":"unsubscribed"}'
     headers:
-      User-Agent:
-      - Faraday v0.14.0
       Content-Type:
       - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 201
       message: Created
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '46'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
@@ -32,38 +38,34 @@ http_interactions:
       - max-age=0; includeSubDomains
       - max-age=31536000; includeSubDomains
       X-Ratelimit-Limit:
-      - '50000'
+      - '250000'
       X-Ratelimit-Remaining:
-      - '49997'
+      - '249997'
       X-Ratelimit-Reset:
-      - '1524002400'
+      - '1592478000'
       X-Request-Id:
-      - 5d962401-96ee-484d-b6a1-84accd7877d7
+      - ea52a572-1445-4d30-89f0-87595863fc6a
       X-Runtime:
-      - '0.032026'
-      Content-Length:
-      - '46'
+      - '0.006073'
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 17 Apr 2018 21:08:19 GMT
+      - Thu, 18 Jun 2020 10:02:14 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-pdk17834-PDK
+      - cache-hhn4061-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1523999299.420584,VS0,VE200
+      - S1592474534.256187,VS0,VE9
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Tue, 17 Apr 2018 21:08:19 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Thu, 18 Jun 2020 10:02:14 GMT
+recorded_with: VCR 5.0.0

@@ -5,21 +5,27 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/users/delete"
     body:
       encoding: UTF-8
-      string: '{"api_key":"non-existent","external_ids":[400,401,402]}'
+      string: '{"external_ids":[400,401,402]}'
     headers:
-      User-Agent:
-      - Faraday v0.14.0
       Content-Type:
       - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer non-existent
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 401
       message: Unauthorized
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '69'
       Cache-Control:
       - no-cache
       Content-Type:
@@ -35,32 +41,28 @@ http_interactions:
       X-Ratelimit-Reset:
       - ''
       X-Request-Id:
-      - bd4c1e19-8065-4db0-b5e5-aaafcb40ef9d
+      - '0335584f-5add-47dd-9476-fecfe3ee350d'
       X-Runtime:
-      - '0.011342'
-      Content-Length:
-      - '85'
+      - '0.001182'
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 18 May 2018 18:54:32 GMT
+      - Wed, 17 Jun 2020 20:59:32 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-pdk17824-PDK
+      - cache-hhn4081-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1526669672.332248,VS0,VE196
+      - S1592427573.501246,VS0,VE4
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
-      string: '{"message":"Invalid App Group API Identifier: non-existent"}'
+      string: '{"message":"Invalid API key: non-existent"}'
     http_version: 
-  recorded_at: Fri, 18 May 2018 18:54:14 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Wed, 17 Jun 2020 20:59:32 GMT
+recorded_with: VCR 5.0.0

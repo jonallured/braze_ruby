@@ -6,12 +6,14 @@ RSpec.describe 'canvas' do
   describe 'trigger_send' do
     it 'sends a canvas', vcr: true do
       response = api.trigger_canvas_send(
-        canvas_id: 'dc23ade4-e970-0c52-81bc-b369f64f533d',
+        canvas_id: '70a7fb99-cbcb-451a-8224-5f8b8c63e03f',
         recipients: [
-          external_user_id: 132404,
+          external_user_id: 12345,
           canvas_entry_properties: {first_name: 'John'}
         ]
       )
+
+      expect(response.success?).to eq(true)
     end
   end
 
