@@ -202,6 +202,18 @@ api.identify_users(
 )
 ```
 
+### Email Sync
+
+#### Get List of or Query Email Unsubscribes
+```ruby
+api.email_unsubscribes(email: ['jdoe@example.com'])
+```
+
+#### Get List of or Query Hard Bounced Emails
+```ruby
+api.email_hard_bounces(email: ['jdoe@example.com'])
+```
+
 ## Debugging
 
 The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.
