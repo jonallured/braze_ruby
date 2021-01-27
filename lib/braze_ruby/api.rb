@@ -25,6 +25,7 @@ module BrazeRuby
     include BrazeRuby::Endpoints::Canvas
     include BrazeRuby::Endpoints::Subscription
     include BrazeRuby::Endpoints::IdentifyUsers
+    include BrazeRuby::Endpoints::CreateUserAliases
 
     def export_users(**payload)
       BrazeRuby::REST::ExportUsers.new(api_key, braze_url, options).perform(**payload)
