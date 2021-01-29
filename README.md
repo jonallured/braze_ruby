@@ -187,7 +187,20 @@ api.subscription_status_set(
 )
 ```
 
-### User Identification
+### User Alias
+
+#### Create an alias-only user
+
+```ruby
+api.create_user_aliases(
+  user_aliases: [{
+    user_alias: {
+      alias_name: "device123",
+      alias_label: "my_device_identifier",
+    }
+  }]
+)
+```
 
 #### Identify an alias-only user
 ```ruby
