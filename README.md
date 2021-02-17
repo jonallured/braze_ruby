@@ -215,6 +215,25 @@ api.identify_users(
 )
 ```
 
+### External ID Migration
+
+#### Rename users' external IDs with an array of external_id_renames
+Note: you can send up to 50 rename objects per request.
+```ruby
+api.rename_external_ids(
+  external_id_renames: [{
+    current_external_id: "old_external_id",
+    new_external_id: "new_external_id",
+  }]
+)
+```
+
+#### Remove users' old deprecated external IDs
+Note: you can send up to 50 external IDs per request.
+```ruby
+api.remove_external_ids(external_ids: ['old_external_id'])
+```
+
 ### Email Sync
 
 #### Get List of or Query Email Unsubscribes
