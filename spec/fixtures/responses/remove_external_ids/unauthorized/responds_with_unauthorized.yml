@@ -5,7 +5,7 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/users/external_ids/remove"
     body:
       encoding: UTF-8
-      string: '{"external_ids":["foo"]}'
+      string: '{"external_ids":["abc"]}'
     headers:
       Content-Type:
       - application/json
@@ -37,23 +37,23 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - bbcbcace-3788-4076-967d-c869aa28e1bb
+      - fff87872-0c9f-4447-8f75-a4486f719ba5
       X-Runtime:
-      - '0.001388'
+      - '0.001435'
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 17 Feb 2021 15:46:18 GMT
+      - Wed, 17 Feb 2021 16:18:26 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-ams21037-AMS
+      - cache-ams21045-AMS
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1613576778.895176,VS0,VE382
+      - S1613578706.459807,VS0,VE382
       Vary:
       - Origin,Accept-Encoding
       Strict-Transport-Security:
@@ -63,5 +63,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Invalid API key: non-existent"}'
-  recorded_at: Wed, 17 Feb 2021 15:46:18 GMT
+  recorded_at: Wed, 17 Feb 2021 16:18:26 GMT
 recorded_with: VCR 6.0.0

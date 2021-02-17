@@ -33,29 +33,29 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '998'
       X-Ratelimit-Reset:
-      - '1613575980'
+      - '1613578560'
       Etag:
-      - W/"1cf65d926a6d70c8a47395a660a6e0c6"
+      - W/"a9c3c0562b37c07a68d9efb65c83b0ac"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 52115792-a179-424b-ad52-c816dd187746
+      - 29237f90-93bf-42d1-9779-ab337284b6aa
       X-Runtime:
-      - '0.015784'
+      - '0.011804'
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 17 Feb 2021 15:32:38 GMT
+      - Wed, 17 Feb 2021 16:15:49 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-ams21048-AMS
+      - cache-ams21022-AMS
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1613575958.898583,VS0,VE365
+      - S1613578549.641027,VS0,VE361
       Vary:
       - Origin,Accept-Encoding
       Strict-Transport-Security:
@@ -65,5 +65,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"rename_errors":[],"external_ids":[{"current_external_id":"abc","new_external_id":"foo"}],"message":"success"}'
-  recorded_at: Wed, 17 Feb 2021 15:32:38 GMT
+  recorded_at: Wed, 17 Feb 2021 16:15:49 GMT
 recorded_with: VCR 6.0.0

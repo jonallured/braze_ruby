@@ -5,7 +5,7 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/users/external_ids/remove"
     body:
       encoding: UTF-8
-      string: '{"external_ids":["foo"]}'
+      string: '{"external_ids":["abc"]}'
     headers:
       Content-Type:
       - application/json
@@ -33,29 +33,29 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '999'
       X-Ratelimit-Reset:
-      - '1613576820'
+      - '1613578740'
       Etag:
-      - W/"9ecbe52521d0bc00a1add74d07debc00"
+      - W/"da64f75988bb6d65ffcb9b3107fcc046"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0ef49c62-da51-4e8b-bda6-d43a0b654d07
+      - '03680848-33cc-443c-9cf8-a9b47ebb3938'
       X-Runtime:
-      - '0.023280'
+      - '0.018449'
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 17 Feb 2021 15:46:17 GMT
+      - Wed, 17 Feb 2021 16:18:25 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-ams21045-AMS
+      - cache-ams21046-AMS
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1613576777.981232,VS0,VE367
+      - S1613578705.470198,VS0,VE406
       Vary:
       - Origin,Accept-Encoding
       Strict-Transport-Security:
@@ -64,6 +64,6 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"removed_ids":["foo"],"removal_errors":[],"message":"success"}'
-  recorded_at: Wed, 17 Feb 2021 15:46:17 GMT
+      string: '{"removed_ids":["abc"],"removal_errors":[],"message":"success"}'
+  recorded_at: Wed, 17 Feb 2021 16:18:25 GMT
 recorded_with: VCR 6.0.0

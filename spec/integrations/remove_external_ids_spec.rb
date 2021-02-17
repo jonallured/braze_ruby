@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'remove external ids' do
-  let(:external_ids) { { external_ids: ['foo'] } }
+  let(:external_ids) { { external_ids: ['abc'] } }
 
   subject(:remove_external_ids) do
     api.remove_external_ids(external_ids)
@@ -16,7 +16,7 @@ describe 'remove external ids' do
 
     it 'responds with success message' do
       expect(JSON.parse(remove_external_ids.body)).to include(
-                                                        'removed_ids' => ['foo'],
+                                                        'removed_ids' => ['abc'],
                                                         'removal_errors' => [],
                                                         'message' => 'success'
                                                       )
