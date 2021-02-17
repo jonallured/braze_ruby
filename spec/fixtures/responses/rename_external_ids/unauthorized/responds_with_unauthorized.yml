@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/users/external_ids/rename"
+    body:
+      encoding: UTF-8
+      string: '{"external_id_renames":[{"current_external_id":"abc","new_external_id":"foo"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.4.1
+      Authorization:
+      - Bearer non-existent
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Server:
+      - nginx
+      X-Ratelimit-Limit:
+      - ''
+      X-Ratelimit-Remaining:
+      - ''
+      X-Ratelimit-Reset:
+      - ''
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - b1977832-8892-451b-ad99-12ea605febd5
+      X-Runtime:
+      - '0.001530'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 17 Feb 2021 15:28:57 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-ams21042-AMS
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1613575737.393979,VS0,VE340
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invalid API key: non-existent"}'
+  recorded_at: Wed, 17 Feb 2021 15:28:57 GMT
+recorded_with: VCR 6.0.0

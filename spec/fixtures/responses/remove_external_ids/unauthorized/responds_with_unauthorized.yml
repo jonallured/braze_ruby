@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/users/external_ids/remove"
+    body:
+      encoding: UTF-8
+      string: '{"external_ids":["foo"]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.4.1
+      Authorization:
+      - Bearer non-existent
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Server:
+      - nginx
+      X-Ratelimit-Limit:
+      - ''
+      X-Ratelimit-Remaining:
+      - ''
+      X-Ratelimit-Reset:
+      - ''
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - bbcbcace-3788-4076-967d-c869aa28e1bb
+      X-Runtime:
+      - '0.001388'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 17 Feb 2021 15:46:18 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-ams21037-AMS
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1613576778.895176,VS0,VE382
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invalid API key: non-existent"}'
+  recorded_at: Wed, 17 Feb 2021 15:46:18 GMT
+recorded_with: VCR 6.0.0

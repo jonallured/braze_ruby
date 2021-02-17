@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    braze_ruby (0.4.0)
+    braze_ruby (0.4.1)
       faraday
 
 GEM
@@ -23,8 +23,11 @@ GEM
     dotenv (2.7.5)
     factory_bot (5.2.0)
       activesupport (>= 4.2.0)
-    faraday (1.0.1)
+    faraday (1.3.0)
+      faraday-net_http (~> 1.0)
       multipart-post (>= 1.2, < 3)
+      ruby2_keywords
+    faraday-net_http (1.0.1)
     hashdiff (1.0.1)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
@@ -49,6 +52,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
+    ruby2_keywords (0.0.4)
     safe_yaml (1.0.5)
     thread_safe (0.3.6)
     tzinfo (1.2.7)
