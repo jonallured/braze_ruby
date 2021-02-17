@@ -10,6 +10,8 @@ require 'braze_ruby/endpoints/delete_users'
 require 'braze_ruby/endpoints/campaigns'
 require 'braze_ruby/endpoints/canvas'
 require 'braze_ruby/endpoints/subscription'
+require 'braze_ruby/endpoints/rename_external_ids'
+require 'braze_ruby/endpoints/remove_external_ids'
 
 module BrazeRuby
   class API
@@ -26,6 +28,8 @@ module BrazeRuby
     include BrazeRuby::Endpoints::Subscription
     include BrazeRuby::Endpoints::IdentifyUsers
     include BrazeRuby::Endpoints::CreateUserAliases
+    include BrazeRuby::Endpoints::RenameExternalIds
+    include BrazeRuby::Endpoints::RemoveExternalIds
 
     def export_users(**payload)
       BrazeRuby::REST::ExportUsers.new(api_key, braze_url, options).perform(**payload)
