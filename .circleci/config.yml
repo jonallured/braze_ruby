@@ -1,0 +1,30 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: ruby:2.7.2
+    steps:
+      - checkout
+
+      - run:
+          name: Gem install bundler
+          command: gem update --system && gem install bundler
+
+      - restore_cache:
+          name: Restore bundler cache
+          key: bundler-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Bundle install
+          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          name: Save bundler cache
+          key: bundler-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Run tests
+          command: bundle exec rake
