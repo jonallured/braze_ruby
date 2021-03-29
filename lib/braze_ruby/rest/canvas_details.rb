@@ -11,7 +11,7 @@ module BrazeRuby
       end
 
       def perform
-        http.get('/canvas/details', {
+        http.get("/canvas/details", {
           **@params
         })
       end

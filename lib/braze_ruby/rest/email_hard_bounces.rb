@@ -11,7 +11,7 @@ module BrazeRuby
       end
 
       def perform
-        http.get('/email/hard_bounces', {
+        http.get("/email/hard_bounces", {
           **@params
         })
       end

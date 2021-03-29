@@ -22,6 +22,6 @@ module Integrations
   end
 
   RSpec.configure do |config|
-    config.include self, type: :integrations, file_path: %r(spec/integrations)
+    config.include self, type: :integrations, file_path: %r{spec/integrations}
   end
 end

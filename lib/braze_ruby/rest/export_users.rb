@@ -12,13 +12,13 @@ module BrazeRuby
       private
 
       def export_users_by_ids(external_ids)
-        http.post '/users/export/ids', {
+        http.post "/users/export/ids", {
           'external_ids': external_ids
         }
       end
 
       def export_users_by_segment(segment_id, options)
-        http.post '/users/export/segment', {
+        http.post "/users/export/segment", {
           'segment_id': segment_id
         }.merge(options)
       end

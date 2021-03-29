@@ -11,7 +11,7 @@ module BrazeRuby
       end
 
       def perform
-        http.post('/canvas/trigger/send', {
+        http.post("/canvas/trigger/send", {
           **@params
         })
       end

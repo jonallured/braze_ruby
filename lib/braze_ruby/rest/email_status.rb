@@ -12,7 +12,7 @@ module BrazeRuby
       end
 
       def perform
-        http.post '/email/status', {
+        http.post "/email/status", {
           'email': email,
           'subscription_state': status
         }

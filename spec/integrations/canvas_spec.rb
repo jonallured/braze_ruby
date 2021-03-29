@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-RSpec.describe 'canvas' do
-  describe 'trigger_send' do
-    it 'sends a canvas', vcr: true do
+RSpec.describe "canvas" do
+  describe "trigger_send" do
+    it "sends a canvas", vcr: true do
       response = api.trigger_canvas_send(
-        canvas_id: '70a7fb99-cbcb-451a-8224-5f8b8c63e03f',
+        canvas_id: "70a7fb99-cbcb-451a-8224-5f8b8c63e03f",
         recipients: [
           external_user_id: 12345,
-          canvas_entry_properties: {first_name: 'John'}
+          canvas_entry_properties: {first_name: "John"}
         ]
       )
 
@@ -17,10 +17,10 @@ RSpec.describe 'canvas' do
     end
   end
 
-  describe 'details' do
-    it 'returns error when no canvas', vcr: true do
+  describe "details" do
+    it "returns error when no canvas", vcr: true do
       response = api.canvas_details(
-        canvas_id: 'non-existing'
+        canvas_id: "non-existing"
       )
       expect(response.status).to eq(400)
     end

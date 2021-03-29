@@ -4,7 +4,7 @@ module BrazeRuby
   module REST
     class IdentifyUsers < Base
       def perform(aliases_to_identify: [])
-        http.post '/users/identify', {
+        http.post "/users/identify", {
           'aliases_to_identify': aliases_to_identify
         }
       end

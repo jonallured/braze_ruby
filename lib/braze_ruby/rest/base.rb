@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'braze_ruby/http'
+require "braze_ruby/http"
 
 module BrazeRuby
   module REST
@@ -8,9 +8,9 @@ module BrazeRuby
       attr_writer :http
 
       def initialize(api_key, braze_url, options)
-        @api_key   = api_key
+        @api_key = api_key
         @braze_url = braze_url
-        @options   = options
+        @options = options
       end
 
       private
