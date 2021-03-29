@@ -1,4 +1,4 @@
-# BrazeRuby
+# BrazeRuby [![CircleCI][badge]][circle]
 
 A wrapper for the Braze REST API. Forked from https://github.com/DynamoMTL/appboy
 
@@ -263,3 +263,6 @@ bundle exec rails whatever
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+[badge]: https://circleci.com/gh/jonallured/braze_ruby.svg?style=svg
+[circle]: https://circleci.com/gh/jonallured/braze_ruby
