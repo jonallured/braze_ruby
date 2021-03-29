@@ -5,8 +5,8 @@ module BrazeRuby
     module RenameExternalIds
       attr_writer :rename_external_ids_service
 
-      def rename_external_ids(**payload)
-        rename_external_ids_service.perform(**payload)
+      def rename_external_ids(payload)
+        rename_external_ids_service.perform(external_id_renames: payload[:external_id_renames])
       end
 
       private

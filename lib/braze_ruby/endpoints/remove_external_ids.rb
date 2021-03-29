@@ -5,8 +5,8 @@ module BrazeRuby
     module RemoveExternalIds
       attr_writer :remove_external_ids_service
 
-      def remove_external_ids(**payload)
-        remove_external_ids_service.perform(**payload)
+      def remove_external_ids(payload)
+        remove_external_ids_service.perform(external_ids: payload[:external_ids])
       end
 
       private
