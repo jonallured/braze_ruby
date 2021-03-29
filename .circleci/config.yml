@@ -1,9 +1,12 @@
 version: 2.1
 
 jobs:
-  build:
+  test:
+    parameters:
+      ruby-version:
+        type: string
     docker:
-      - image: ruby:2.7.2
+      - image: << parameters.ruby-version >>
     steps:
       - checkout
 
@@ -13,7 +16,7 @@ jobs:
 
       - restore_cache:
           name: Restore bundler cache
-          key: bundler-{{ checksum "Gemfile.lock" }}
+          key: bundler-<< parameters.ruby-version >>-{{ checksum "Gemfile.lock" }}
 
       - run:
           name: Bundle install
@@ -21,10 +24,18 @@ jobs:
 
       - save_cache:
           name: Save bundler cache
-          key: bundler-{{ checksum "Gemfile.lock" }}
+          key: bundler-<< parameters.ruby-version >>-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
       - run:
           name: Run tests
           command: bundle exec rake
+
+workflows:
+  all-tests:
+    jobs:
+      - test:
+          matrix:
+            parameters:
+              ruby-version: ["ruby:3.0.0", "ruby:2.7.2", "ruby:2.6.3"]
