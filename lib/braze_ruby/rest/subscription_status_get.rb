@@ -11,7 +11,7 @@ module BrazeRuby
       end
 
       def perform
-        http.get('/subscription/status/get', {
+        http.get("/subscription/status/get", {
           **params
         })
       end

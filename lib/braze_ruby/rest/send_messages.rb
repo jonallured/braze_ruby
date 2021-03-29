@@ -12,8 +12,8 @@ module BrazeRuby
       end
 
       def perform
-        http.post '/messages/send', {
-          'messages':          messages,
+        http.post "/messages/send", {
+          'messages': messages,
           'external_user_ids': external_user_ids
         }
       end

@@ -11,7 +11,7 @@ module BrazeRuby
       end
 
       def perform
-        http.post('/subscription/status/set', {
+        http.post("/subscription/status/set", {
           **params
         })
       end

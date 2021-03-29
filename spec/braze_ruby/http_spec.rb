@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-require 'braze_ruby/http'
+require "spec_helper"
+require "braze_ruby/http"
 
 describe BrazeRuby::HTTP do
   describe "#connection" do
-    let(:options) { double("options", :"[]=" => nil) }
-    let(:headers) { double("headers", :"[]=" => nil) }
+    let(:options) { double("options", "[]=": nil) }
+    let(:headers) { double("headers", "[]=": nil) }
     let(:conn) { double("conn", adapter: nil, options: options, headers: headers) }
     let(:api_key) { "braze-api-key" }
     let(:braze_url) { "http://example.com" }
@@ -31,7 +31,6 @@ describe BrazeRuby::HTTP do
 
     it "sets the headers" do
       described_class.new(api_key, braze_url).connection
-
 
       expect(headers).to have_received(:"[]=").with("Content-Type", "application/json")
       expect(headers).to have_received(:"[]=").with("Accept", "application/json")

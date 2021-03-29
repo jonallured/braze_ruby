@@ -14,13 +14,13 @@ module BrazeRuby
       end
 
       def perform
-        http.post '/messages/schedule/create', {
-          'external_user_ids':          external_user_ids,
+        http.post "/messages/schedule/create", {
+          'external_user_ids': external_user_ids,
           'schedule': {
-            'time':                       time,
-            'in_local_time':              in_local_time
+            'time': time,
+            'in_local_time': in_local_time
           },
-          'messages':                   messages
+          'messages': messages
         }
       end
     end

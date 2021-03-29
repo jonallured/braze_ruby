@@ -4,7 +4,7 @@ module BrazeRuby
   module REST
     class ListSegments < Base
       def perform
-        http.get '/segments/list'
+        http.get "/segments/list"
       end
     end
   end
