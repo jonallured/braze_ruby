@@ -5,9 +5,9 @@ module BrazeRuby
     class TrackUsers < Base
       def perform(attributes: [], events: [], purchases: [])
         http.post "/users/track", {
-          'attributes': attributes,
-          'events': events,
-          'purchases': purchases
+          attributes: attributes,
+          events: events,
+          purchases: purchases
         }
       end
     end

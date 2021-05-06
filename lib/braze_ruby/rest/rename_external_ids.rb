@@ -5,7 +5,7 @@ module BrazeRuby
     class RenameExternalIds < Base
       def perform(external_id_renames: [])
         http.post "/users/external_ids/rename", {
-          'external_id_renames': external_id_renames
+          external_id_renames: external_id_renames
         }
       end
     end

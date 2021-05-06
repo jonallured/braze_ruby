@@ -5,7 +5,7 @@ module BrazeRuby
     class IdentifyUsers < Base
       def perform(aliases_to_identify: [])
         http.post "/users/identify", {
-          'aliases_to_identify': aliases_to_identify
+          aliases_to_identify: aliases_to_identify
         }
       end
     end
