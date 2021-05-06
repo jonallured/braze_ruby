@@ -22,6 +22,24 @@ jobs:
           name: Run tests
           command: bundle exec rake
 
+  publish:
+    docker:
+      - image: ruby:3.0.0
+    steps:
+      - checkout
+
+      - run:
+          name: Setup Rubygems
+          command: cd .. && bash .circleci/setup-rubygems
+
+      - run:
+          name: Build gem
+          command: gem build braze_ruby.gemspec --output braze_ruby.gem
+
+      - run:
+          name: Publish gem
+          command: gem push braze_ruby.gem
+
 workflows:
   all-tests:
     jobs:
@@ -29,3 +47,11 @@ workflows:
           matrix:
             parameters:
               ruby-version: ["ruby:3.0.0", "ruby:2.7.2", "ruby:2.6.3"]
+  release:
+    jobs:
+      - publish:
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
