@@ -30,7 +30,7 @@ jobs:
 
       - run:
           name: Setup Rubygems
-          command: cd .. && bash .circleci/setup-rubygems
+          command: bash .circleci/setup-rubygems
 
       - run:
           name: Build gem
