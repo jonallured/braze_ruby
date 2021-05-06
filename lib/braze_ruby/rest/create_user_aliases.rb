@@ -5,7 +5,7 @@ module BrazeRuby
     class CreateUserAliases < Base
       def perform(user_aliases: [])
         http.post "/users/alias/new", {
-          'user_aliases': user_aliases
+          user_aliases: user_aliases
         }
       end
     end

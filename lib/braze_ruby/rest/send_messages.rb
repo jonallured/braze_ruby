@@ -13,8 +13,8 @@ module BrazeRuby
 
       def perform
         http.post "/messages/send", {
-          'messages': messages,
-          'external_user_ids': external_user_ids
+          messages: messages,
+          external_user_ids: external_user_ids
         }
       end
     end
