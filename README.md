@@ -246,6 +246,11 @@ api.email_unsubscribes(email: ['jdoe@example.com'])
 api.email_hard_bounces(email: ['jdoe@example.com'])
 ```
 
+#### Remove Email Addresses From Spam List
+```ruby
+api.remove_emails_from_spam(email: ['jdoe@example.com'])
+```
+
 ## Debugging
 
 The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.
