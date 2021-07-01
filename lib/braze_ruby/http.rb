@@ -6,6 +6,7 @@ require "faraday"
 module BrazeRuby
   class HTTP
     DEFAULT_TIMEOUT = 30
+    DEFAULT_OPEN_TIMEOUT = 5
 
     def initialize(api_key, braze_url, options = {})
       @api_key = api_key
@@ -35,13 +36,14 @@ module BrazeRuby
         connection.adapter Faraday.default_adapter
 
         connection.options[:timeout] = @options[:timeout]
+        connection.options[:open_timeout] = @options[:open_timeout]
       end
     end
 
     private
 
     def default_options
-      {timeout: DEFAULT_TIMEOUT}
+      {timeout: DEFAULT_TIMEOUT, open_timeout: DEFAULT_OPEN_TIMEOUT}
     end
   end
 end
