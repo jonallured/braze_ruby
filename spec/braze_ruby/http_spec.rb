@@ -16,6 +16,19 @@ describe BrazeRuby::HTTP do
       allow(Faraday).to receive(:default_adapter).and_return(:default_adapter)
     end
 
+    it "it defaults to the opeN_timeout option" do
+      described_class.new(api_key, braze_url).connection
+
+      expect(options).to have_received(:"[]=").with(:open_timeout, described_class::DEFAULT_OPEN_TIMEOUT)
+    end
+
+    it "it sets the default timeout open_option when given" do
+      timeout = 5
+      described_class.new(api_key, braze_url, {open_timeout: timeout}).connection
+
+      expect(options).to have_received(:"[]=").with(:open_timeout, timeout)
+    end
+
     it "it defaults to the timeout option" do
       described_class.new(api_key, braze_url).connection
 
