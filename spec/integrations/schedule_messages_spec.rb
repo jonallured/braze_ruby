@@ -8,8 +8,9 @@ describe "schedule messages" do
   let(:messages) { build(:messages) }
 
   subject(:schedule_messages) do
-    api.schedule_messages(time: test_time,
-                          messages: messages, external_user_ids: user_ids)
+    api.schedule_messages(
+      time: test_time, messages: messages, external_user_ids: user_ids
+    )
   end
 
   context "with success", vcr: true do

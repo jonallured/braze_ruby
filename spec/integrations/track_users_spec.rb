@@ -9,8 +9,9 @@ describe "track users" do
   let(:purchases) { [build(:purchase, time: test_time)] }
 
   subject(:track_users) do
-    api.track_users(attributes: attributes,
-                    events: events, purchases: purchases)
+    api.track_users(
+      attributes: attributes, events: events, purchases: purchases
+    )
   end
 
   context "with success", vcr: true do
