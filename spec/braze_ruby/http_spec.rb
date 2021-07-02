@@ -7,7 +7,7 @@ describe BrazeRuby::HTTP do
   describe "#connection" do
     let(:options) { double("options", "[]=": nil) }
     let(:headers) { double("headers", "[]=": nil) }
-    let(:conn) { double("conn", adapter: nil, options: options, headers: headers) }
+    let(:conn) { double("conn", adapter: nil, options: options, headers: headers, request: nil) }
     let(:api_key) { "braze-api-key" }
     let(:braze_url) { "http://example.com" }
 
@@ -40,6 +40,17 @@ describe BrazeRuby::HTTP do
       described_class.new(api_key, braze_url, {timeout: timeout}).connection
 
       expect(options).to have_received(:"[]=").with(:timeout, timeout)
+    end
+
+    it "sets the retry block if given" do
+      retry_hash = { max: 2, interval: 0.05 }
+      connection = described_class.new(api_key, braze_url, { retry: retry_hash }).connection
+      expect(conn).to have_received(:request).with(:retry, retry_hash)
+    end
+
+    it "does not set the retry block if no retry info is passed" do
+      connection = described_class.new(api_key, braze_url).connection
+      expect(conn).not_to have_received(:request)
     end
 
     it "sets the headers" do
