@@ -10,7 +10,7 @@ describe "track users" do
 
   subject(:track_users) do
     api.track_users(attributes: attributes,
-                    events: events, purchases: purchases)
+      events: events, purchases: purchases)
   end
 
   context "with success", vcr: true do
