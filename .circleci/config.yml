@@ -1,5 +1,4 @@
 version: 2.1
-
 jobs:
   test:
     parameters:
@@ -9,37 +8,15 @@ jobs:
       - image: << parameters.ruby-version >>
     steps:
       - checkout
-
       - run:
           name: Gem install bundler
           command: gem update --system && gem install bundler
-
       - run:
           name: Bundle install
           command: bundle install --jobs=4 --retry=3 --path vendor/bundle
-
       - run:
           name: Run tests
           command: bundle exec rake
-
-  publish:
-    docker:
-      - image: ruby:3.0.0
-    steps:
-      - checkout
-
-      - run:
-          name: Setup Rubygems
-          command: bash .circleci/setup-rubygems
-
-      - run:
-          name: Build gem
-          command: gem build braze_ruby.gemspec --output braze_ruby.gem
-
-      - run:
-          name: Publish gem
-          command: gem push braze_ruby.gem
-
 workflows:
   all-tests:
     jobs:
@@ -47,11 +24,3 @@ workflows:
           matrix:
             parameters:
               ruby-version: ["ruby:3.0.0", "ruby:2.7.2", "ruby:2.6.3"]
-  release:
-    jobs:
-      - publish:
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
