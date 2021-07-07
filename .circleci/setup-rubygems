@@ -1,6 +1,0 @@
-#! /bin/sh
-
-mkdir -p ~/.gem
-cp ./.circleci/gem_credentials ~/.gem/credentials
-chmod 0600 ~/.gem/credentials
-sed -i "s/REPLACE_ME/${RUBYGEMS_API_KEY}/g" ~/.gem/credentials
