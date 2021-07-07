@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 class API
   include BrazeRuby::Endpoints::DeleteUsers
@@ -16,14 +16,14 @@ describe BrazeRuby::Endpoints::DeleteUsers do
 
   before { api.delete_users_service = delete_users_service }
 
-  describe '#delete_users' do
+  describe "#delete_users" do
     let(:payload) { [1, 2, 3] }
 
     subject(:delete_users!) { api.delete_users(payload) }
 
-    it 'deletes users' do
+    it "deletes users" do
       expect(delete_users_service).to receive(:perform)
-        .with(:api_key, external_ids: payload)
+        .with(external_ids: payload)
 
       delete_users!
     end

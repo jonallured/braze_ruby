@@ -3,17 +3,15 @@
 module BrazeRuby
   module REST
     class SubscriptionStatusGet < Base
-      attr_reader :api_key, :params
+      attr_reader :params
 
-      def initialize(api_key, braze_url, **params)
-        @api_key = api_key
+      def initialize(api_key, braze_url, options, **params)
         @params = params
-        super braze_url
+        super api_key, braze_url, options
       end
 
       def perform
-        http.get('/subscription/status/get', {
-          'api_key': api_key,
+        http.get("/subscription/status/get", {
           **params
         })
       end

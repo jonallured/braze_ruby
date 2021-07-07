@@ -3,19 +3,15 @@
 module BrazeRuby
   module REST
     class TriggerCampaignSend < Base
-      attr_reader :api_key, :params
+      attr_reader :params
 
-      def initialize(api_key, braze_url, **params)
-        @api_key = api_key
+      def initialize(api_key, braze_url, options, **params)
         @params = params
-        super braze_url
+        super api_key, braze_url, options
       end
 
       def perform
-        http.post('/campaigns/trigger/send', {
-          'api_key': api_key,
-          **@params
-        })
+        http.post("/campaigns/trigger/send", @params)
       end
     end
   end

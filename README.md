@@ -1,4 +1,4 @@
-# BrazeRuby
+# BrazeRuby [![CircleCI][badge]][circle]
 
 A wrapper for the Braze REST API. Forked from https://github.com/DynamoMTL/appboy
 
@@ -187,6 +187,65 @@ api.subscription_status_set(
 )
 ```
 
+### User Alias
+
+#### Create an alias-only user
+
+```ruby
+api.create_user_aliases(
+  user_aliases: [{
+    user_alias: {
+      alias_name: "device123",
+      alias_label: "my_device_identifier",
+    }
+  }]
+)
+```
+
+#### Identify an alias-only user
+```ruby
+api.identify_users(
+  aliases_to_identify: [{
+    external_id: 1234,
+    user_alias: {
+      alias_name: "device123",
+      alias_label: "my_device_identifier",
+    }
+  }]
+)
+```
+
+### External ID Migration
+
+#### Rename users' external IDs with an array of external_id_renames
+Note: you can send up to 50 rename objects per request.
+```ruby
+api.rename_external_ids(
+  external_id_renames: [{
+    current_external_id: "old_external_id",
+    new_external_id: "new_external_id",
+  }]
+)
+```
+
+#### Remove users' old deprecated external IDs
+Note: you can send up to 50 external IDs per request.
+```ruby
+api.remove_external_ids(external_ids: ['old_external_id'])
+```
+
+### Email Sync
+
+#### Get List of or Query Email Unsubscribes
+```ruby
+api.email_unsubscribes(email: ['jdoe@example.com'])
+```
+
+#### Get List of or Query Hard Bounced Emails
+```ruby
+api.email_hard_bounces(email: ['jdoe@example.com'])
+```
+
 ## Debugging
 
 The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.
@@ -204,3 +263,6 @@ bundle exec rails whatever
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+[badge]: https://circleci.com/gh/jonallured/braze_ruby.svg?style=svg
+[circle]: https://circleci.com/gh/jonallured/braze_ruby

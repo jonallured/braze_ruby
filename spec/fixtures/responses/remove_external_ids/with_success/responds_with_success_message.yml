@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/users/external_ids/remove"
+    body:
+      encoding: UTF-8
+      string: '{"external_ids":["abc"]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.4.1
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Server:
+      - nginx
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '998'
+      X-Ratelimit-Reset:
+      - '1613578740'
+      Etag:
+      - W/"9ecbe52521d0bc00a1add74d07debc00"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 584c5e27-bf41-47a6-b89f-d91dfeffd118
+      X-Runtime:
+      - '0.020452'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 17 Feb 2021 16:18:26 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-ams21056-AMS
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1613578706.952471,VS0,VE408
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"removed_ids":["abc"],"removal_errors":[],"message":"success"}'
+  recorded_at: Wed, 17 Feb 2021 16:18:26 GMT
+recorded_with: VCR 6.0.0

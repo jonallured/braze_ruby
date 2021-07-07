@@ -5,65 +5,68 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/users/export/ids"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","external_ids":[1]}'
+      string: '{"external_ids":[12345]}'
     headers:
-      User-Agent:
-      - Faraday v0.14.0
       Content-Type:
       - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 201
       message: Created
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '448'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
       - application/json
       Etag:
-      - W/"a8eccb6359ba1adb300e19da464d87e6"
+      - W/"7df8cd8f88a14f379a69f3838271d7fc"
       Server:
       - nginx
       Strict-Transport-Security:
       - max-age=0; includeSubDomains
       - max-age=31536000; includeSubDomains
       X-Ratelimit-Limit:
-      - '50000'
+      - '250000'
       X-Ratelimit-Remaining:
-      - '49995'
+      - '249995'
       X-Ratelimit-Reset:
-      - '1524002400'
+      - '1592427600'
       X-Request-Id:
-      - f720263b-e324-49ea-a74b-b6855cf41336
+      - 4d9fd8a1-a8bb-4e20-99b1-063365c51808
       X-Runtime:
-      - '0.083452'
-      Content-Length:
-      - '319'
+      - '0.342278'
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 17 Apr 2018 21:08:20 GMT
+      - Wed, 17 Jun 2020 20:14:30 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-pdk17841-PDK
+      - cache-hhn4030-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1523999300.120226,VS0,VE267
+      - S1592424870.344107,VS0,VE345
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
-      string: '{"users":[{"created_at":"2018-04-17T17:28:56.807Z","external_id":"1","user_aliases":[],"appboy_id":"5ad62ed85941bafd80298dfc","braze_id":"5ad62ed85941bafd80298dfc","random_bucket":2118,"home_city":null,"total_revenue":19.03,"push_subscribe":"subscribed","email_subscribe":"subscribed","custom_attributes":{"foo":"bar"},"apps":[],"custom_events":[{"name":"baz","first":"2015-02-15T05:00:00.000Z","last":"2019-02-15T05:00:00.000Z","count":24}],"purchases":[{"name":"1","first":"2015-02-15T05:00:00.000Z","last":"2019-02-15T05:00:00.000Z","count":24}]}],"invalid_user_ids":[1],"message":"success"}'
+      string: '{"users":[{"created_at":"2020-06-17T20:01:33.385Z","external_id":"12345","user_aliases":[],"appboy_id":"5eea769d45bb2e1467418f92","braze_id":"5eea769d45bb2e1467418f92","first_name":"John","last_name":"Doe","random_bucket":5445,"email":"example@test.com","custom_attributes":{"string_attribute":"sherman","boolean_attribute_1":true,"integer_attribute":25,"array_attribute":["banana","apple"]},"total_revenue":0.0,"push_subscribe":"subscribed","email_subscribe":"subscribed","campaigns_received":[{"name":"campaign-test","api_campaign_id":"d8b73da7-0b7c-fc72-1d80-e59c7f20f0d3","last_received":"2020-06-17T20:04:49.193Z","in_control":false,"variation_name":"Variant
+        1","variation_api_id":"f2123be2-74ac-4cff-b010-d0b6217595a1"}]}],"message":"success"}'
     http_version: 
-  recorded_at: Tue, 17 Apr 2018 21:08:20 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Wed, 17 Jun 2020 20:14:30 GMT
+recorded_with: VCR 5.0.0

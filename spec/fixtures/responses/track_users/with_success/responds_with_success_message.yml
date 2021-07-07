@@ -5,23 +5,29 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/users/track"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2019-02-15
+      string: '{"attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2019-02-15
         00:00:00 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2019-02-15
         00:00:00 -0500","currency":"CAD","price":1.0}]}'
     headers:
-      User-Agent:
-      - Faraday v0.14.0
       Content-Type:
       - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 201
       message: Created
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '85'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
@@ -34,38 +40,34 @@ http_interactions:
       - max-age=0; includeSubDomains
       - max-age=31536000; includeSubDomains
       X-Ratelimit-Limit:
-      - '50000'
+      - '250000'
       X-Ratelimit-Remaining:
-      - '50000'
+      - '250000'
       X-Ratelimit-Reset:
-      - '1524002400'
+      - '1592427600'
       X-Request-Id:
-      - e810e390-4c31-49ac-abd4-5b1151cc3c33
+      - 75dc3ac0-d4d2-4278-89d0-b29e540dc719
       X-Runtime:
-      - '0.012176'
-      Content-Length:
-      - '85'
+      - '0.008741'
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 17 Apr 2018 21:08:07 GMT
+      - Wed, 17 Jun 2020 20:31:42 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-pdk17824-PDK
+      - cache-hhn4063-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1523999288.612820,VS0,VE214
+      - S1592425903.749169,VS0,VE11
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"attributes_processed":1,"events_processed":1,"purchases_processed":1,"message":"success"}'
     http_version: 
-  recorded_at: Tue, 17 Apr 2018 21:08:07 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Wed, 17 Jun 2020 20:31:42 GMT
+recorded_with: VCR 5.0.0

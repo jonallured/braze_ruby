@@ -1,38 +1,35 @@
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'braze_ruby/version'
+require_relative "lib/braze_ruby/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = 'braze_ruby'
-  spec.version       = BrazeRuby::VERSION
-  spec.authors       = ['Josh Nussbaum', 'Hugo Bastien', 'Justin Boltz']
-  spec.email         = %w(josh@godynamo.com hugo@godynamo.com justin.boltz@takl.com)
-  spec.description   = %q{Braze wrapper}
-  spec.summary       = %q{A wrapper for the Braze REST API forked from the appboy gem, track users/events/purchases, send & schedule messages}
-  spec.homepage      = 'https://www.braze.com/'
-  spec.license       = 'MIT'
+  spec.name = "braze_ruby"
+  spec.version = BrazeRuby::VERSION
+  spec.authors = ["Josh Nussbaum", "Hugo Bastien", "Justin Boltz", "Jonathan Allured"]
+  spec.email = %w[josh@godynamo.com hugo@godynamo.com justin.boltz@takl.com jon.allured@gmail.com]
 
-  if spec.respond_to?(:metadata)
-    spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/jboltz88/braze_ruby"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
+  spec.summary = "A wrapper gem for the Braze REST API."
+  spec.description = "Wrapper for Braze API"
+  spec.homepage = "https://github.com/jonallured/braze_ruby"
+  spec.license = "MIT"
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.6.0")
+
+  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["source_code_uri"] = spec.homepage
+
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features)/}) }
   end
+  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
+  spec.test_files = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ['lib']
-  spec.required_ruby_version = '>= 2.0'
+  spec.add_dependency "faraday"
 
-  spec.add_dependency 'faraday'
-
-  spec.add_development_dependency 'bundler', '>= 1.3'
-  spec.add_development_dependency 'rake', '~> 12.3.3'
-  spec.add_development_dependency 'rspec', '~> 3.8.0'
-  spec.add_development_dependency 'dotenv', '~> 2.7.5'
-  spec.add_development_dependency 'vcr', '~> 5.0.0'
-  spec.add_development_dependency 'webmock', '~> 3.7.5'
-  spec.add_development_dependency 'pry', '~> 0.12.2'
-  spec.add_development_dependency 'factory_bot', '~> 5.1.0'
+  spec.add_development_dependency "dotenv"
+  spec.add_development_dependency "factory_bot"
+  spec.add_development_dependency "pry"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "standard"
+  spec.add_development_dependency "vcr"
+  spec.add_development_dependency "webmock"
 end

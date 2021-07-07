@@ -23,7 +23,7 @@ FactoryBot.define do
     external_id { 1 }
     product_id { 1 }
     time { Time.now }
-    currency { 'CAD' }
+    currency { "CAD" }
     price { 1.0 }
 
     initialize_with { attributes }

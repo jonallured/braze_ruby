@@ -5,14 +5,16 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/campaigns/trigger/send"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","campaign_id":"69e9b681-779c-4b4c-b6b8-cd74b17d21d2","recipients":[{"external_user_id":132404,"trigger_properties":{"first_name":"John"}}]}'
+      string: '{"campaign_id":"d8b73da7-0b7c-fc72-1d80-e59c7f20f0d3","recipients":[{"external_user_id":12345,"trigger_properties":{"first_name":"John"}}]}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       User-Agent:
-      - Braze Ruby gem v0.2.0
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,12 +22,16 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '94'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
       - application/json
       Etag:
-      - W/"838a7c62adda8d131d694ae13ba2c5b7"
+      - W/"b02a5788c87daf846d9cf451bf7f4e6d"
       Server:
       - nginx
       Strict-Transport-Security:
@@ -36,34 +42,30 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '249998'
       X-Ratelimit-Reset:
-      - '1567425600'
+      - '1592427600'
       X-Request-Id:
-      - e6f14e03-5226-45f3-9a9f-901a0139b071
+      - ab80a33e-db36-4fe9-af89-6ce274df5edc
       X-Runtime:
-      - '0.019114'
-      Content-Length:
-      - '46'
+      - '0.016803'
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 02 Sep 2019 11:41:42 GMT
+      - Wed, 17 Jun 2020 20:04:46 GMT
       Via:
       - 1.1 varnish
-      Connection:
-      - keep-alive
       X-Served-By:
-      - cache-hhn4029-HHN
+      - cache-hhn4039-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1567424502.370259,VS0,VE27
+      - S1592424287.720589,VS0,VE19
       Vary:
       - Origin,Accept-Encoding
     body:
       encoding: ASCII-8BIT
-      string: '{"message":"success"}'
+      string: '{"dispatch_id":"14497aa4b013bf150881547fb3076fd6","message":"success"}'
     http_version: 
-  recorded_at: Mon, 02 Sep 2019 11:41:42 GMT
+  recorded_at: Wed, 17 Jun 2020 20:04:46 GMT
 recorded_with: VCR 5.0.0
