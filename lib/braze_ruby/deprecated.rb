@@ -14,8 +14,7 @@ module BrazeRuby
 
     def schedule_message(date, message, segment_id, local_timezone = false)
       warn("[BrazeRuby] `schedule_message` is deprecated. Please use `schedule_messages` instead.")
-      schedule_messages(send_at: date, messages: message,
-        segment_id: segment_id, local_timezone: local_timezone)
+      schedule_messages(send_at: date, messages: message, segment_id: segment_id, local_timezone: local_timezone)
     end
   end
 end
