@@ -31,6 +31,18 @@ describe BrazeRuby::REST::ExportUsers do
       export_users.http = http
       export_users.perform(external_ids: external_ids, segment_id: segment_id, **options)
     end
+
+    context "with options" do
+      let(:options) { {foo: "bar"} }
+
+      it "sends those options to the endpoint" do
+        expect(http).to receive(:post).with("/users/export/segment", segment_id: 1, foo: "bar")
+
+        export_users = BrazeRuby::REST::ExportUsers.new(:api_key, :rest_url, {})
+        export_users.http = http
+        export_users.perform(external_ids: external_ids, segment_id: segment_id, **options)
+      end
+    end
   end
 
   context "without any ids" do
