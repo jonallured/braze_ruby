@@ -5,7 +5,7 @@ require "spec_helper"
 describe BrazeRuby::REST::RemoveEmailAddressesFromSpam do
   let(:http) { double(:http) }
 
-  let(:payload) {{ email: ["fake@fake.net", "real_email22@cool.org"] }}
+  let(:payload) { {email: ["fake@fake.net", "real_email22@cool.org"]} }
 
   let(:api_key) { :api_key }
 
