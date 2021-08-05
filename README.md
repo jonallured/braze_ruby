@@ -117,7 +117,7 @@ api.schedule_messages(send_at: 1.hour.since, messages: messages, external_user_i
 ```ruby
 api.trigger_campaign_send(
   campaign_id: 'campaign-id',
-  recipients: [external_user_id: 123, trigger_properties: {first_name: 'John'}]
+  recipients: [{external_user_id: 123, trigger_properties: {first_name: 'John'}}]
 )
 ```
 
