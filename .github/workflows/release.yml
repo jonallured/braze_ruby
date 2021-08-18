@@ -1,0 +1,20 @@
+name: release
+on:
+  push:
+    tags:
+      - v*
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup rubygems
+        run: |
+          mkdir ~/.gem
+          cp ./.github/workflows/gem_credentials ~/.gem/credentials
+          chmod 0600 ~/.gem/credentials
+          sed -i "s/REPLACE_ME/${{ secrets.RUBYGEMS_KEY }}/g" ~/.gem/credentials
+      - name: Build gem
+        run: gem build braze_ruby.gemspec --output braze_ruby.gem
+      - name: Publish gem
+        run: gem push braze_ruby.gem

@@ -117,7 +117,7 @@ api.schedule_messages(send_at: 1.hour.since, messages: messages, external_user_i
 ```ruby
 api.trigger_campaign_send(
   campaign_id: 'campaign-id',
-  recipients: [external_user_id: 123, trigger_properties: {first_name: 'John'}]
+  recipients: [{external_user_id: 123, trigger_properties: {first_name: 'John'}}]
 )
 ```
 
@@ -244,6 +244,11 @@ api.email_unsubscribes(email: ['jdoe@example.com'])
 #### Get List of or Query Hard Bounced Emails
 ```ruby
 api.email_hard_bounces(email: ['jdoe@example.com'])
+```
+
+#### Remove Email Addresses From Spam List
+```ruby
+api.remove_emails_from_spam(email: ['jdoe@example.com'])
 ```
 
 ## Debugging
