@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/email/bounce/remove"
+    body:
+      encoding: UTF-8
+      string: '{"email":["thing@beep.com","crash@bandicoot.net"]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.5.0
+      Authorization:
+      - Bearer non-existent
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Server:
+      - nginx
+      X-Ratelimit-Limit:
+      - ''
+      X-Ratelimit-Remaining:
+      - ''
+      X-Ratelimit-Reset:
+      - ''
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - ca4c0e47-8277-4a76-813b-4ecae74da677
+      X-Runtime:
+      - '0.001494'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 25 Jun 2021 15:27:25 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-pwk4951-PWK
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1624634846.642304,VS0,VE24
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invalid API key: non-existent"}'
+  recorded_at: Fri, 25 Jun 2021 15:27:25 GMT
+recorded_with: VCR 6.0.0
