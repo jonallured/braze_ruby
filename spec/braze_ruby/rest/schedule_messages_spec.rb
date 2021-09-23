@@ -9,6 +9,7 @@ describe BrazeRuby::REST::ScheduleMessages do
     {
       external_user_ids: :external_user_ids,
       time: :time,
+      campaign_id: :campaign_id,
       in_local_time: :in_local_time,
       messages: :messages
     }
@@ -29,6 +30,7 @@ describe BrazeRuby::REST::ScheduleMessages do
   def expect_schedule_messages_http_call
     expect(http).to receive(:post).with "/messages/schedule/create", {
       external_user_ids: :external_user_ids,
+      campaign_id: :campaign_id,
       schedule: {
         time: :time,
         in_local_time: :in_local_time
