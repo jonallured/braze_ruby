@@ -112,12 +112,22 @@ api.send_messages(messages: messages, segment_id: '<segment-id>')
 api.schedule_messages(send_at: 1.hour.since, messages: messages, external_user_ids: [123, 456])
 ```
 
+### Schedule Campaigns
+
+```ruby
+api.trigger_campaign_schedule(
+  campaign_id: 'campaign-id',
+  recipients: [{ external_user_id: 123 }]
+  schedule: { time: Time.now.iso8601 }
+)
+```
+
 ### Send Campaigns
 
 ```ruby
 api.trigger_campaign_send(
   campaign_id: 'campaign-id',
-  recipients: [{external_user_id: 123, trigger_properties: {first_name: 'John'}}]
+  recipients: [{external_user_id: 123, trigger_properties: { first_name: 'John' }}]
 )
 ```
 
