@@ -1,6 +1,7 @@
 # BrazeRuby [![CircleCI][badge]][circle]
 
-A wrapper for the Braze REST API. Forked from https://github.com/DynamoMTL/appboy
+A wrapper for the Braze REST API. Forked from
+https://github.com/DynamoMTL/appboy
 
 ## Installation
 
@@ -24,7 +25,9 @@ Configuration options may be passed when a new API object is instantiated:
 BrazeRuby::API.new('<braze-rest-api-key>', '<braze-rest-url', {<additional options>})
 ```
 
-Alternatively, you can pass your [Braze REST API key][braze_api_key], [Braze REST URL][braze_url], and any required [Faraday options][faraday_options] to the `BrazeRuby::configuration` method:
+Alternatively, you can pass your [Braze REST API key][braze_api_key], [Braze
+REST URL][braze_url], and any required [Faraday options][faraday_options] to the
+`BrazeRuby::configuration` method:
 
 ```ruby
 BrazeRuby.configure do |config|
@@ -281,7 +284,8 @@ api.remove_emails_from_spam(email: ['jdoe@example.com'])
 
 ## Debugging
 
-The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.
+The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the
+Faraday gem's HTTP requests and responses.
 
 ```bash
 cd /my/app
