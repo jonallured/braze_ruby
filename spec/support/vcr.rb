@@ -3,8 +3,8 @@
 require "vcr"
 
 VCR.configure do |config|
-  config.filter_sensitive_data("<BRAZE_REST_API_KEY>") { BRAZE_REST_API_KEY }
-  config.filter_sensitive_data("<BRAZE_REST_URL>") { BRAZE_REST_URL }
+  config.filter_sensitive_data("<BRAZE_REST_API_KEY>") { braze_rest_api_key }
+  config.filter_sensitive_data("<BRAZE_REST_URL>") { braze_rest_url }
 
   config.cassette_library_dir = "spec/fixtures/responses"
 
