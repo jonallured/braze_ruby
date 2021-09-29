@@ -16,12 +16,30 @@ Or install it yourself as:
 
     $ gem install braze_ruby
 
+### Configuration
+
+Configuration options may be passed when a new API object is instantiated:
+
+```ruby
+BrazeRuby::API.new('<braze-rest-api-key>', '<braze-rest-url', {<additional options>})
+```
+
+Alternatively, you can pass your [Braze REST API key][braze_api_key], [Braze REST URL][braze_url], and any required [Faraday options][faraday_options] to the `BrazeRuby::configuration` method:
+
+```ruby
+BrazeRuby.configure do |config|
+  config.rest_api_key = '<braze-rest-api-key>'
+  config.rest_url = '<braze-rest-url>'
+  config.options = {<additional options>}
+end
+```
+
 ## Examples
 
 ### Initializing API
 
 ```ruby
-api = BrazeRuby::API.new('<braze-rest-api-key>', '<braze-rest-api-url')
+api = BrazeRuby::API.new('<braze-rest-api-key>', '<braze-rest-url')
 ```
 
 ### Track User Attributes
@@ -280,4 +298,7 @@ bundle exec rails whatever
 5. Create new Pull Request
 
 [badge]: https://circleci.com/gh/jonallured/braze_ruby.svg?style=svg
+[braze_api_key]: https://www.braze.com/docs/api/api_key/
+[braze_url]: https://www.braze.com/docs/api/basics/#endpoints
 [circle]: https://circleci.com/gh/jonallured/braze_ruby
+[faraday_options]: https://github.com/lostisland/faraday/blob/main/lib/faraday/options.rb

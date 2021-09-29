@@ -11,15 +11,19 @@ require "support/vcr"
 require "support/factory_bot"
 require "support/integrations"
 
-BRAZE_REST_API_KEY = ENV.fetch("BRAZE_REST_API_KEY", "test")
-BRAZE_REST_URL = ENV.fetch("BRAZE_REST_URL", "https://rest.iad-03.braze.com")
-
 RSpec.configure do |config|
+  config.before(:all) do
+    BrazeRuby.configure do |config|
+      config.rest_api_key = ENV.fetch("BRAZE_REST_API_KEY", "test")
+      config.rest_url = ENV.fetch("BRAZE_REST_URL", "https://rest.iad-03.braze.com")
+    end
+  end
+
   def braze_rest_api_key
-    BRAZE_REST_API_KEY
+    BrazeRuby.configuration.rest_api_key
   end
 
   def braze_rest_url
-    BRAZE_REST_URL
+    BrazeRuby.configuration.rest_url
   end
 end

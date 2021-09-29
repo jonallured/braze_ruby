@@ -44,9 +44,9 @@ module BrazeRuby
     attr_reader :api_key, :braze_url, :options
 
     def initialize(api_key, braze_url, options = {})
-      @api_key = api_key
-      @braze_url = braze_url
-      @options = options
+      @api_key = api_key || configuration.rest_api_key
+      @braze_url = braze_url || configuration.rest_url
+      @options = options || configuration.options
     end
   end
 end
