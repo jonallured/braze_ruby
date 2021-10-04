@@ -27,7 +27,7 @@ BrazeRuby::API.new('<braze-rest-api-key>', '<braze-rest-url', {<additional optio
 
 Alternatively, you can pass your [Braze REST API key][braze_api_key], [Braze
 REST URL][braze_url], and any required [Faraday options][faraday_options] to the
-`BrazeRuby::configuration` method:
+`BrazeRuby::configure` method:
 
 ```ruby
 BrazeRuby.configure do |config|
