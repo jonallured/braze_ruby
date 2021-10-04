@@ -126,7 +126,6 @@ api.send_messages(messages: messages, external_user_ids: [123, 456])
 api.send_messages(messages: messages, segment_id: '<segment-id>')
 ```
 
-
 ### Schedule Message
 
 ```ruby
@@ -165,6 +164,12 @@ api.trigger_canvas_send(
 
 ```ruby
 api.email_status(email: 'john@example.com', status: :opted_in)
+```
+
+### List Scheduled Messages and Canvases
+
+```ruby
+api.scheduled_messages(end_time: Time.now.advance(weeks: 2).iso861)
 ```
 
 ### List Segments
