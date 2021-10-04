@@ -7,15 +7,12 @@ describe BrazeRuby::REST::RemoveEmailAddressesFromSpam do
 
   let(:payload) { {email: ["fake@fake.net", "real_email22@cool.org"]} }
 
-  let(:api_key) { :api_key }
-
   subject { described_class.new :api_key, :rest_url, {} }
 
   before { subject.http = http }
 
   it "makes an http call to the remove user from spam list endpoint" do
-    expect(http).to receive(:post).with "/email/spam/remove",
-      payload
+    expect(http).to receive(:post).with "/email/spam/remove", payload
 
     subject.perform(**payload)
   end
