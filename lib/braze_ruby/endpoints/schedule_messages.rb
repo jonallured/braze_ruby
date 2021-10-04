@@ -4,13 +4,11 @@ module BrazeRuby
   module Endpoints
     module ScheduleMessages
       def schedule_messages(**payload)
-        schedule_messages_service.new(api_key, braze_url, options, **payload).perform
+        BrazeRuby::REST::ScheduleMessages.new(api_key, braze_url, options, **payload).perform
       end
 
-      private
-
-      def schedule_messages_service
-        BrazeRuby::REST::ScheduleMessages
+      def scheduled_messages(**payload)
+        BrazeRuby::REST::ScheduledBroadcasts.new(api_key, braze_url, options, **payload).perform
       end
     end
   end
