@@ -142,6 +142,15 @@ api.trigger_campaign_schedule(
 )
 ```
 
+### Delete Scheduled Campaign
+
+```ruby
+api.delete_campaign_trigger_schedule(
+  campaign_id: 'campaign_id',
+  schedule_id: 'schedule_id'
+)
+```
+
 ### Send Campaigns
 
 ```ruby
