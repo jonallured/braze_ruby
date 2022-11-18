@@ -43,10 +43,13 @@ module BrazeRuby
 
     attr_reader :api_key, :braze_url, :options
 
-    def initialize(api_key = nil, braze_url = nil, options = nil)
-      @api_key = api_key || configuration.rest_api_key
-      @braze_url = braze_url || configuration.rest_url
+    def initialize(rest_api_key = nil, rest_url = nil, options = nil)
+      @api_key = rest_api_key || configuration.rest_api_key
+      @braze_url = rest_url || configuration.rest_url
       @options = options || configuration.options || {}
+
+      raise ArgumentError, "BrazeRuby.configure rest_api_key is missing" if @api_key.nil? || @api_key.empty?
+      raise ArgumentError, "BrazeRuby.configure rest_url is missing"  if @braze_url.nil? || @braze_url.empty?
     end
 
     private
