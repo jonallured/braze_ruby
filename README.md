@@ -296,6 +296,23 @@ api.email_hard_bounces(email: ['jdoe@example.com'])
 api.remove_emails_from_spam(email: ['jdoe@example.com'])
 ```
 
+### Export Campaigns
+
+#### Export Campaigns List
+```ruby
+api.export_campaigns_list(page: 1)
+```
+
+#### Export Campaign Details
+```ruby
+api.export_campaign_details(campaign_id: 1)
+```
+
+#### Export Campaign Analytics
+```ruby
+api.export_campaign_analytics(campaign_id: 1, length: 100, ending_at: '2022-12-13T11:21:09-08:00' ))
+```
+
 ## Debugging
 
 The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the
