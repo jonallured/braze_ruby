@@ -6,6 +6,7 @@ require "braze_ruby/endpoints/send_messages"
 require "braze_ruby/endpoints/schedule_messages"
 require "braze_ruby/endpoints/email_status"
 require "braze_ruby/endpoints/email_sync"
+require "braze_ruby/endpoints/export"
 require "braze_ruby/endpoints/delete_users"
 require "braze_ruby/endpoints/campaigns"
 require "braze_ruby/endpoints/canvas"
@@ -24,6 +25,7 @@ module BrazeRuby
     include BrazeRuby::Endpoints::ScheduleMessages
     include BrazeRuby::Endpoints::EmailStatus
     include BrazeRuby::Endpoints::EmailSync
+    include BrazeRuby::Endpoints::Export
     include BrazeRuby::Endpoints::DeleteUsers
     include BrazeRuby::Endpoints::Campaigns
     include BrazeRuby::Endpoints::Canvas
