@@ -13,5 +13,4 @@ describe BrazeRuby::REST::ExportCampaignsList do
     export_users.http = http
     export_users.perform(**options)
   end
-
 end
