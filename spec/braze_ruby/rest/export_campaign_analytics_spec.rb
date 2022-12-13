@@ -4,7 +4,7 @@ require "spec_helper"
 
 describe BrazeRuby::REST::ExportCampaignAnalytics do
   let(:http) { double(:http) }
-  let(:options) { { campaign_id: 1 } }
+  let(:options) { {campaign_id: 1} }
 
   it "makes an api call to the export campaign analytics endpoint" do
     expect(http).to receive(:get).with("/campaigns/data_series", options)
@@ -13,5 +13,4 @@ describe BrazeRuby::REST::ExportCampaignAnalytics do
     export_users.http = http
     export_users.perform(**options)
   end
-
 end
