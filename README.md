@@ -228,10 +228,13 @@ api.export_users(external_ids: [1])
 ```ruby
 api.export_users(segment_id: segment_id, callback_endpoint: 'https://example.com')
 ```
+
 ### Delete Users
 
 #####
+
 Delete Braze Users with an array of external_ids
+
 ```ruby
 api.delete_users([1, 2, 3])
 ```
@@ -239,11 +242,13 @@ api.delete_users([1, 2, 3])
 ### Subscription groups
 
 #### Get subscription group status for users by id
+
 ```ruby
 api.subscription_user_status(external_id: [1])
 ```
 
 #### Get users status for a specific subscription group
+
 ```ruby
 api.subscription_status_get(
   external_id: [1],
@@ -252,6 +257,7 @@ api.subscription_status_get(
 ```
 
 #### Set user status for a specific subscription group
+
 ```ruby
 api.subscription_status_set(
   external_id: [1],
@@ -259,7 +265,9 @@ api.subscription_status_set(
   subscription_state: 'subscribed|unsubscribed'
 )
 ```
+
 #### Set user status for a specific subscription group using v2 route
+
 ```ruby
 api.v2_subscription_status_set(
   subscription_groups: [
@@ -288,6 +296,7 @@ api.create_user_aliases(
 ```
 
 #### Identify an alias-only user
+
 ```ruby
 api.identify_users(
   aliases_to_identify: [{
@@ -303,7 +312,9 @@ api.identify_users(
 ### External ID Migration
 
 #### Rename users' external IDs with an array of external_id_renames
+
 Note: you can send up to 50 rename objects per request.
+
 ```ruby
 api.rename_external_ids(
   external_id_renames: [{
@@ -314,7 +325,9 @@ api.rename_external_ids(
 ```
 
 #### Remove users' old deprecated external IDs
+
 Note: you can send up to 50 external IDs per request.
+
 ```ruby
 api.remove_external_ids(external_ids: ['old_external_id'])
 ```
@@ -322,16 +335,19 @@ api.remove_external_ids(external_ids: ['old_external_id'])
 ### Email Sync
 
 #### Get List of or Query Email Unsubscribes
+
 ```ruby
 api.email_unsubscribes(email: ['jdoe@example.com'])
 ```
 
 #### Get List of or Query Hard Bounced Emails
+
 ```ruby
 api.email_hard_bounces(email: ['jdoe@example.com'])
 ```
 
 #### Remove Email Addresses From Spam List
+
 ```ruby
 api.remove_emails_from_spam(email: ['jdoe@example.com'])
 ```
@@ -342,6 +358,7 @@ As of november 2024, Braze catalogs still have some moving parts (beta) and only
 partial support has been implemented
 
 #### Create Catalogs
+
 ```ruby
 api.create_catalogs(
   catalogs: [
@@ -360,16 +377,19 @@ api.create_catalogs(
 ```
 
 #### List Catalogs
+
 ```ruby
 api.list_catalogs
 ```
 
 #### Delete Catalog
+
 ```ruby
 api.delete_catalog("restaurants")
 ```
 
 #### Create Catalog Items
+
 ```ruby
 api.create_catalog_items(
   "restaurants",
@@ -385,6 +405,7 @@ api.create_catalog_items(
 ```
 
 #### Delete Catalog Items
+
 ```ruby
 api.delete_catalog_items(
   "restaurants",
@@ -415,6 +436,7 @@ api.update_catalog_items(
 ```
 
 #### Edit Catalog Items
+
 This functions actually _updates_ items. The update catalog items does not. This
 is very confusing and Braze support answers late nov 2024 did not clarify this
 point. TL;DR Actual behaviour is `update_catalog_items` functions more or less
@@ -437,6 +459,26 @@ api.edit_catalog_items(
     }
   ]
 )
+```
+
+### Export Campaigns
+
+#### Export Campaigns List
+
+```ruby
+api.export_campaigns_list(page: 1)
+```
+
+#### Export Campaign Details
+
+```ruby
+api.export_campaign_details(campaign_id: 1)
+```
+
+#### Export Campaign Analytics
+
+```ruby
+api.export_campaign_analytics(campaign_id: 1, length: 100, ending_at: '2022-12-13T11:21:09-08:00' ))
 ```
 
 ## Debugging
