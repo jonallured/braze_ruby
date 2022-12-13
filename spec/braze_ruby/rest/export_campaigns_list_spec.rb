@@ -11,6 +11,6 @@ describe BrazeRuby::REST::ExportCampaignsList do
 
     export_users = BrazeRuby::REST::ExportCampaignsList.new(:api_key, :rest_url, options)
     export_users.http = http
-    export_users.perform(**options)
+    export_users.perform(options)
   end
 end
