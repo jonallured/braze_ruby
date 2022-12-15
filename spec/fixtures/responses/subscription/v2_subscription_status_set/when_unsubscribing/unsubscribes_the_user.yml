@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/v2/subscription/status/set"
+    body:
+      encoding: UTF-8
+      string: '{"subscription_groups":[{"external_id":"test-user-2","subscription_group_id":"ed06e19a-69b1-4f9b-a452-2db2c4e303a8","subscription_state":"subscribed"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '46'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"838a7c62adda8d131d694ae13ba2c5b7"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249985'
+      X-Ratelimit-Reset:
+      - '1592478000'
+      X-Request-Id:
+      - d808049c-58d0-413b-84ed-c9976614bc96
+      X-Runtime:
+      - '0.011481'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Thu, 18 Jun 2020 10:03:07 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-hhn4056-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1592474588.950706,VS0,VE15
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"success"}'
+    http_version:
+  recorded_at: Thu, 18 Jun 2020 10:03:07 GMT
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/v2/subscription/status/set"
+    body:
+      encoding: UTF-8
+      string: '{"subscription_groups":[{"external_id":"test-user-2","subscription_group_id":"ed06e19a-69b1-4f9b-a452-2db2c4e303a8","subscription_state":"unsubscribed"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.3.3
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '46'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"838a7c62adda8d131d694ae13ba2c5b7"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249984'
+      X-Ratelimit-Reset:
+      - '1592478000'
+      X-Request-Id:
+      - cf4a6c76-ff97-4790-8a24-d0febe4764c4
+      X-Runtime:
+      - '0.010860'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Thu, 18 Jun 2020 10:03:08 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-hhn4056-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1592474588.057509,VS0,VE14
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"success"}'
+    http_version:
+  recorded_at: Thu, 18 Jun 2020 10:03:08 GMT
+recorded_with: VCR 5.0.0
