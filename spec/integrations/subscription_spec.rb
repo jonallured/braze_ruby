@@ -145,4 +145,56 @@ RSpec.describe "subscription", vcr: true do
       end
     end
   end
+
+  describe "v2_subscription_status_set" do
+    subject(:response) do
+      api.v2_subscription_status_set(
+        subscription_groups: [
+          {
+            external_id: external_id,
+            subscription_group_id: subscription_group_id,
+            subscription_state: subscription_state
+          }
+        ]
+      )
+    end
+
+    let(:external_id) { subscribed_user }
+    let(:subscription_state) { "subscribed" }
+
+    context "when subscribing" do
+      it "subscribes the user" do
+        expect(response.status).to eq(201)
+      end
+    end
+
+    context "when unsubscribing" do
+      let(:external_id) { unsubscribed_user }
+      let(:subscription_state) { "subscribed" }
+
+      before do
+        api.v2_subscription_status_set(
+          subscription_groups: [
+            {
+              external_id: external_id,
+              subscription_group_id: subscription_group_id,
+              subscription_state: "unsubscribed"
+            }
+          ]
+        )
+      end
+
+      it "unsubscribes the user" do
+        expect(response.status).to eq(201)
+      end
+    end
+
+    context "when subscription group does not exist" do
+      let(:subscription_group_id) { "non-existing-subscription-group" }
+
+      it "returns an error status" do
+        expect(response.status).to eq(400)
+      end
+    end
+  end
 end
