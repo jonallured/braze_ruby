@@ -259,6 +259,18 @@ api.subscription_status_set(
   subscription_state: 'subscribed|unsubscribed'
 )
 ```
+#### Set user status for a specific subscription group using v2 route
+```ruby
+api.v2_subscription_status_set(
+  subscription_groups: [
+    {
+      external_id: [1],
+      subscription_group_id: 'some-uuid',
+      subscription_state: 'subscribed|unsubscribed'
+    }
+  ]
+)
+```
 
 ### User Alias
 
