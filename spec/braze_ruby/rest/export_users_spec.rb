@@ -13,7 +13,7 @@ describe BrazeRuby::REST::ExportUsers do
     let(:external_ids) { [1] }
 
     it "makes an api call to the users export by id endpoint" do
-      expect(http).to receive(:post).with("/users/export/ids", external_ids: external_ids)
+      expect(http).to receive(:post).with("/users/export/ids", {external_ids: external_ids})
 
       export_users = BrazeRuby::REST::ExportUsers.new(:api_key, :rest_url, {})
       export_users.http = http
@@ -24,7 +24,7 @@ describe BrazeRuby::REST::ExportUsers do
       let(:options) { {foo: "bar"} }
 
       it "sends those options to the endpoint" do
-        expect(http).to receive(:post).with("/users/export/ids", external_ids: [1], foo: "bar")
+        expect(http).to receive(:post).with("/users/export/ids", {external_ids: [1], foo: "bar"})
 
         export_users = BrazeRuby::REST::ExportUsers.new(:api_key, :rest_url, {})
         export_users.http = http
@@ -37,7 +37,7 @@ describe BrazeRuby::REST::ExportUsers do
     let(:segment_id) { 1 }
 
     it "makes an api call to the users export by segment endpoint" do
-      expect(http).to receive(:post).with("/users/export/segment", segment_id: 1)
+      expect(http).to receive(:post).with("/users/export/segment", {segment_id: 1})
 
       export_users = BrazeRuby::REST::ExportUsers.new(:api_key, :rest_url, {})
       export_users.http = http
@@ -48,7 +48,7 @@ describe BrazeRuby::REST::ExportUsers do
       let(:options) { {foo: "bar"} }
 
       it "sends those options to the endpoint" do
-        expect(http).to receive(:post).with("/users/export/segment", segment_id: 1, foo: "bar")
+        expect(http).to receive(:post).with("/users/export/segment", {segment_id: 1, foo: "bar"})
 
         export_users = BrazeRuby::REST::ExportUsers.new(:api_key, :rest_url, {})
         export_users.http = http
