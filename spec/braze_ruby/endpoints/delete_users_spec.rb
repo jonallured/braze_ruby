@@ -28,4 +28,30 @@ describe BrazeRuby::Endpoints::DeleteUsers do
       delete_users!
     end
   end
+
+  describe "#delete_users_by_alias" do
+    let(:payload) { [1, 2, 3] }
+
+    subject(:delete_users_by_alias!) { api.delete_users_by_alias(payload) }
+
+    it "deletes users by alias" do
+      expect(delete_users_service).to receive(:perform)
+        .with(user_aliases: payload)
+
+      delete_users_by_alias!
+    end
+  end
+
+  describe "#delete_users_by_braze_id" do
+    let(:payload) { [1, 2, 3] }
+
+    subject(:delete_users_by_braze_id!) { api.delete_users_by_braze_id(payload) }
+
+    it "deletes users by braze id" do
+      expect(delete_users_service).to receive(:perform)
+        .with(braze_ids: payload)
+
+      delete_users_by_braze_id!
+    end
+  end
 end

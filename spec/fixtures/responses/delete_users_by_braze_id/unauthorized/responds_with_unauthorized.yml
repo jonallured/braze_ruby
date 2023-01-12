@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/users/delete"
+    body:
+      encoding: UTF-8
+      string: '{"external_ids":[],"user_aliases":[],"braze_ids":["id1","id2","id3"]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.8.0
+      Authorization:
+      - Bearer non-existent
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Server:
+      - nginx
+      X-Ratelimit-Limit:
+      - ''
+      X-Ratelimit-Remaining:
+      - ''
+      X-Ratelimit-Reset:
+      - ''
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a9eda6a8-75eb-4f7e-abbb-a654bbf48783
+      X-Runtime:
+      - '0.001064'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Thu, 12 Jan 2023 19:19:07 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-sjc10034-SJC
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1673551148.691738,VS0,VE78
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invalid API key: non-existent"}'
+  recorded_at: Thu, 12 Jan 2023 19:19:07 GMT
+recorded_with: VCR 6.1.0
