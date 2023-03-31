@@ -43,6 +43,10 @@ end
 
 ```ruby
 api = BrazeRuby::API.new('<braze-rest-api-key>', '<braze-rest-url')
+
+# Alternatively, if configuration is set via `BrazeRuby.configure`
+
+api = BrazeRuby::API.new()
 ```
 
 ### Track User Attributes
