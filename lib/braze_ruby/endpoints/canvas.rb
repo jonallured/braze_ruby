@@ -3,6 +3,10 @@
 module BrazeRuby
   module Endpoints
     module Canvas
+      def trigger_canvas_schedule(**payload)
+        BrazeRuby::REST::TriggerCanvasSchedule.new(api_key, braze_url, options).perform(**payload)
+      end
+
       def trigger_canvas_send(**payload)
         BrazeRuby::REST::TriggerCanvasSend.new(api_key, braze_url, options, **payload).perform
       end
