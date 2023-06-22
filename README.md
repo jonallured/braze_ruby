@@ -151,6 +151,15 @@ api.trigger_canvas_schedule(
 )
 ```
 
+### Delete Scheduled Canvas
+
+```ruby
+api.delete_canvas_trigger_schedule(
+  canvas_id: 'canvas_id',
+  schedule_id: 'schedule_id'
+)
+```
+
 ### Delete Scheduled Campaign
 
 ```ruby
