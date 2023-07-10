@@ -51,10 +51,10 @@ module BrazeRuby
       end
     end
 
-    def initialize_with_hash(options = {})
-      @api_key = options[:api_key] || BrazeRuby.configuration.rest_api_key
-      @braze_url = options[:braze_url] || BrazeRuby.configuration.rest_url
-      @options = options[:options] || BrazeRuby.configuration.options
+    def initialize_with_hash(config = {})
+      @api_key = config[:api_key] || BrazeRuby.configuration.rest_api_key
+      @braze_url = config[:braze_url] || BrazeRuby.configuration.rest_url
+      @options = config[:options] || BrazeRuby.configuration.options
     end
 
     def initialize_with_args(api_key, braze_url, options = {})
