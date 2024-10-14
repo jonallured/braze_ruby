@@ -3,6 +3,7 @@
 require "spec_helper"
 
 RSpec.describe "catalogs" do
+  # Catalog Management
   describe "create_catalog" do
     subject(:create_catalog) do
       api.create_catalog(
@@ -47,6 +48,23 @@ RSpec.describe "catalogs" do
     context "with success", vcr: true do
       it "responds with success message" do
         expect(delete_catalog.status).to be 200
+      end
+    end
+  end
+
+  describe "list catalogs" do
+    subject(:list_catalogs) { api.list_catalogs }
+
+    context "with success", vcr: true do
+      it "responds with items" do
+        expect(list_catalogs.status).to be 200
+
+        parsed_body = JSON.parse(list_catalogs.body)
+
+        expect(parsed_body["catalogs"].size).to eq(1)
+
+        expect(parsed_body["catalogs"][0]["name"]).to eq("restaurants")
+        expect(parsed_body["catalogs"][0]["num_items"]).to eq(0)
       end
     end
   end
