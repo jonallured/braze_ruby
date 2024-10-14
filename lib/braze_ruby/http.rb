@@ -24,6 +24,12 @@ module BrazeRuby
       connection.get path, query
     end
 
+    def delete(path, payload = nil)
+      connection.delete path do |request|
+        request.body = JSON.dump(payload) if payload
+      end
+    end
+
     def connection
       @connection ||= Faraday.new(url: @braze_url) do |connection|
         connection.headers["Content-Type"] = "application/json"
