@@ -3,7 +3,6 @@
 require "spec_helper"
 
 RSpec.describe "catalogs" do
-
   describe "create_catalog" do
     subject(:create_catalog) do
       api.create_catalog(
@@ -42,4 +41,13 @@ RSpec.describe "catalogs" do
     end
   end
 
+  describe "delete_catalog" do
+    subject(:delete_catalog) { api.delete_catalog("restaurants") }
+
+    context "with success", vcr: true do
+      it "responds with success message" do
+        expect(delete_catalog.status).to be 200
+      end
+    end
+  end
 end
