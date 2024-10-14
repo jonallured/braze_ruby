@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<BRAZE_REST_URL>/catalogs"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.8.0
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 14 Oct 2024 13:27:23 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 8d27e8167f61d096-CDG
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"de353b11872ccfd1d845f1882a12a29b"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin,Accept-Encoding
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Ratelimit-Reset:
+      - '1728912480'
+      X-Request-Id:
+      - 5c2e90c6-49b0-4dc9-bab4-f41fea821a54
+      X-Runtime:
+      - '0.022254'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"catalogs":[{"description":"My Restaurants","fields":[{"name":"id","token":"-1","type":"string"},{"name":"Name","token":"0","type":"string"},{"name":"City","token":"1","type":"string"},{"name":"Cuisine","token":"2","type":"string"},{"name":"Rating","token":"3","type":"number"},{"name":"Loyalty_Program","token":"4","type":"boolean"},{"name":"Location","token":"5","type":"object"},{"name":"Created_At","token":"6","type":"time"}],"name":"restaurants","source":"Braze","num_items":0,"storage_size":12868,"selections_size":0,"updated_at":"2024-10-14T13:00:15.946+00:00","selections":[]}],"message":"success"}'
+  recorded_at: Mon, 14 Oct 2024 13:27:23 GMT
+recorded_with: VCR 6.2.0

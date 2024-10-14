@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<BRAZE_REST_URL>/catalogs"
+    body:
+      encoding: UTF-8
+      string: '{"catalogs":[{"name":"restaurants","description":"My Restaurants","fields":[{"name":"id","type":"string"},{"name":"Name","type":"string"},{"name":"City","type":"string"},{"name":"Cuisine","type":"string"},{"name":"Rating","type":"number"},{"name":"Loyalty_Program","type":"boolean"},{"name":"Location","type":"object"},{"name":"Created_At","type":"time"}]}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.8.0
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 14 Oct 2024 10:28:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 8d26e1568a362a22-CDG
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"6520808834517d26b28aa49d2426e449"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin,Accept-Encoding
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Ratelimit-Reset:
+      - '1728901740'
+      X-Request-Id:
+      - 2c92adc6-9029-4f9a-909d-cb0b74d4666b
+      X-Runtime:
+      - '2.205757'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"catalogs":[{"description":"My Restaurants","fields":[{"name":"id","token":"-1","type":"string"},{"name":"Name","token":"0","type":"string"},{"name":"City","token":"1","type":"string"},{"name":"Cuisine","token":"2","type":"string"},{"name":"Rating","token":"3","type":"number"},{"name":"Loyalty_Program","token":"4","type":"boolean"},{"name":"Location","token":"5","type":"object"},{"name":"Created_At","token":"6","type":"time"}],"name":"restaurants","source":"Braze","num_items":0,"storage_size":0,"selections_size":0,"updated_at":"2024-10-14T10:28:01.749+00:00","selections":[]}],"message":"success"}'
+  recorded_at: Mon, 14 Oct 2024 10:28:03 GMT
+recorded_with: VCR 6.2.0

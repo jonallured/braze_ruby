@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: "<BRAZE_REST_URL>/catalogs/restaurants/items"
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"id":"restaurant1"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Braze Ruby gem v0.8.0
+      Authorization:
+      - Bearer <BRAZE_REST_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Tue, 15 Oct 2024 10:28:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 8d2f2006ee7fbb2d-CDG
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin,Accept-Encoding
+      X-Ratelimit-Limit:
+      - '16000'
+      X-Ratelimit-Remaining:
+      - '15999'
+      X-Ratelimit-Reset:
+      - '1728988140'
+      X-Request-Id:
+      - 12807f2d-1b1c-4608-8b97-603fc656f3b9
+      X-Runtime:
+      - '0.043822'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"success"}'
+  recorded_at: Tue, 15 Oct 2024 10:28:55 GMT
+recorded_with: VCR 6.2.0
