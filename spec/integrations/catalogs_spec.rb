@@ -68,4 +68,39 @@ RSpec.describe "catalogs" do
       end
     end
   end
+
+  # Catalog Items
+  describe "create_catalog_items" do
+    subject(:create_catalog_items) do
+      api.create_catalog_items(
+        "restaurants",
+        items: [
+          {
+            "id": "restaurant1",
+            "Name": "Restaurant1",
+            "City": "New York",
+            "Cuisine": "American",
+            "Rating": 5,
+            "Loyalty_Program": true,
+            "Location": {
+              "Latitude": 33.6112,
+              "Longitude": -117.8711
+            },
+            "Created_At": "2022-11-01T09:03:19.967+00:00"
+          }
+        ]
+      )
+    end
+
+    context "with success", vcr: true do
+      it "responds with success message" do
+        expect(create_catalog_items.status).to be 202
+
+        parsed_body = JSON.parse(create_catalog_items.body)
+
+        expect(parsed_body["message"]).to eq("success")
+      end
+    end
+
+  end
 end

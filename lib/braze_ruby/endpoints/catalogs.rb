@@ -15,6 +15,11 @@ module BrazeRuby
       def list_catalogs
         BrazeRuby::REST::ListCatalogs.new(api_key, braze_url, options).perform
       end
+
+      # Catalog items
+      def create_catalog_items(catalog_name, **payload)
+        BrazeRuby::REST::CreateCatalogItems.new(api_key, braze_url, options, catalog_name, **payload).perform
+      end
     end
   end
 end
