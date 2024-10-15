@@ -24,6 +24,10 @@ module BrazeRuby
       def delete_catalog_items(catalog_name, **payload)
         BrazeRuby::REST::DeleteCatalogItems.new(api_key, braze_url, options, catalog_name, **payload).perform
       end
+
+      def update_catalog_items(catalog_name, **payload)
+        BrazeRuby::REST::UpdateCatalogItems.new(api_key, braze_url, options, catalog_name, **payload).perform
+      end
     end
   end
 end
