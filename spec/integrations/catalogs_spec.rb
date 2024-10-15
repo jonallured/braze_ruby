@@ -101,6 +101,26 @@ RSpec.describe "catalogs" do
         expect(parsed_body["message"]).to eq("success")
       end
     end
+  end
 
+  describe "delete_catalog_items" do
+    subject(:delete_catalog_items) do
+      api.delete_catalog_items(
+        "restaurants",
+        items: [
+          { id: "restaurant1" }
+        ]
+      )
+    end
+
+    context "with success", vcr: true do
+      it "responds with success message" do
+        expect(delete_catalog_items.status).to be 202
+
+        parsed_body = JSON.parse(delete_catalog_items.body)
+
+        expect(parsed_body["message"]).to eq("success")
+      end
+    end
   end
 end

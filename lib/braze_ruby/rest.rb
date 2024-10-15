@@ -28,3 +28,5 @@ require "braze_ruby/rest/create_catalog.rb"
 require "braze_ruby/rest/delete_catalog.rb"
 require "braze_ruby/rest/list_catalogs.rb"
 require "braze_ruby/rest/create_catalog_items.rb"
+require "braze_ruby/rest/delete_catalog_items.rb"
+
