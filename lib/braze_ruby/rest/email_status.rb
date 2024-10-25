@@ -8,7 +8,7 @@ module BrazeRuby
       def initialize(api_key, braze_url, options, email: nil, status: nil)
         @email = email
         @status = status
-        super api_key, braze_url, options
+        super(api_key, braze_url, options)
       end
 
       def perform

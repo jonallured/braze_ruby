@@ -7,7 +7,7 @@ module BrazeRuby
 
       def initialize(api_key, braze_url, options, **params)
         @params = params
-        super api_key, braze_url, options
+        super(api_key, braze_url, options)
       end
 
       def perform

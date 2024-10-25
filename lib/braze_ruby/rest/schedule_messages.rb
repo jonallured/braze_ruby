@@ -10,7 +10,7 @@ module BrazeRuby
         @time = time
         @external_user_ids = external_user_ids
         @in_local_time = in_local_time
-        super api_key, braze_url, options
+        super(api_key, braze_url, options)
       end
 
       def perform
