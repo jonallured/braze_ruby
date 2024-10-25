@@ -13,6 +13,7 @@ require "braze_ruby/endpoints/subscription"
 require "braze_ruby/endpoints/rename_external_ids"
 require "braze_ruby/endpoints/remove_external_ids"
 require "braze_ruby/endpoints/remove_email_addresses_from_spam"
+require "braze_ruby/endpoints/content_blocks"
 
 module BrazeRuby
   class API
@@ -32,6 +33,7 @@ module BrazeRuby
     include BrazeRuby::Endpoints::RenameExternalIds
     include BrazeRuby::Endpoints::RemoveExternalIds
     include BrazeRuby::Endpoints::RemoveEmailAddressesFromSpam
+    include BrazeRuby::Endpoints::ContentBlocks
 
     def export_users(**payload)
       BrazeRuby::REST::ExportUsers.new(api_key, braze_url, options).perform(**payload)
