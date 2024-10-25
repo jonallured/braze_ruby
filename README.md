@@ -314,6 +314,7 @@ bundle exec rails whatever
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+6. Update CHANGELOG
 
 [badge]: https://circleci.com/gh/jonallured/braze_ruby.svg?style=svg
 [braze_api_key]: https://www.braze.com/docs/api/api_key/
