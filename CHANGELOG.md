@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 ### Changed
 
 * Improve configuration support ([#64][])
+* Improve release script ([#65][])
 
 ### Deprecated
 
@@ -113,3 +114,4 @@ The format is based on [Keep a Changelog][] and this project adheres to
 [#62]: https://github.com/jonallured/braze_ruby/pull/62
 [#63]: https://github.com/jonallured/braze_ruby/pull/63
 [#64]: https://github.com/jonallured/braze_ruby/pull/64
+[#65]: https://github.com/jonallured/braze_ruby/pull/65

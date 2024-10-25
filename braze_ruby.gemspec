@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "faraday"
 
+  spec.add_development_dependency "bump"
   spec.add_development_dependency "dotenv"
   spec.add_development_dependency "factory_bot"
   spec.add_development_dependency "pry"
