@@ -9,6 +9,7 @@ require "braze_ruby/endpoints/email_sync"
 require "braze_ruby/endpoints/delete_users"
 require "braze_ruby/endpoints/campaigns"
 require "braze_ruby/endpoints/canvas"
+require "braze_ruby/endpoints/catalogs"
 require "braze_ruby/endpoints/subscription"
 require "braze_ruby/endpoints/rename_external_ids"
 require "braze_ruby/endpoints/remove_external_ids"
@@ -26,6 +27,7 @@ module BrazeRuby
     include BrazeRuby::Endpoints::DeleteUsers
     include BrazeRuby::Endpoints::Campaigns
     include BrazeRuby::Endpoints::Canvas
+    include BrazeRuby::Endpoints::Catalogs
     include BrazeRuby::Endpoints::Subscription
     include BrazeRuby::Endpoints::IdentifyUsers
     include BrazeRuby::Endpoints::CreateUserAliases
