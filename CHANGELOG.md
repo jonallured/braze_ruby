@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 ### Added
 
 * Add a CHANGELOG ([#61][])
+* Add console script ([#63][])
 
 ### Changed
 
@@ -108,3 +109,4 @@ The format is based on [Keep a Changelog][] and this project adheres to
 [#47]: https://github.com/jonallured/braze_ruby/pull/47
 [#61]: https://github.com/jonallured/braze_ruby/pull/61
 [#62]: https://github.com/jonallured/braze_ruby/pull/62
+[#63]: https://github.com/jonallured/braze_ruby/pull/63
