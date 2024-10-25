@@ -328,6 +328,16 @@ export BRAZE_RUBY_DEBUG=true
 bundle exec rails whatever
 ```
 
+## Releasing
+
+New versions are released by running a script locally that bumps the patch level
+of the gem and then pushes to a GitHub Action that actually sends the new
+version to RubyGems.org:
+
+```
+$ ./bin/release
+```
+
 ## Contributing
 
 1. Fork it
