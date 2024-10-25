@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.name = "braze_ruby"
   spec.version = BrazeRuby::VERSION
   spec.authors = ["Josh Nussbaum", "Hugo Bastien", "Justin Boltz", "Jonathan Allured"]
-  spec.email = %w[josh@godynamo.com hugo@godynamo.com justin.boltz@takl.com jon.allured@gmail.com]
+  spec.email = %w[josh@godynamo.com hugo@godynamo.com justin.boltz@takl.com jon@jonallured.com]
 
   spec.summary = "A wrapper gem for the Braze REST API."
   spec.description = "Wrapper for Braze API"
