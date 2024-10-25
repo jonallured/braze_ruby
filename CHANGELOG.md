@@ -22,6 +22,8 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ### Fixed
 
+* Fix CircleCI builds ([#62][])
+
 ### Security
 
 ## [0.8.0][] - 2022-01-24
@@ -105,3 +107,4 @@ The format is based on [Keep a Changelog][] and this project adheres to
 [#46]: https://github.com/jonallured/braze_ruby/pull/46
 [#47]: https://github.com/jonallured/braze_ruby/pull/47
 [#61]: https://github.com/jonallured/braze_ruby/pull/61
+[#62]: https://github.com/jonallured/braze_ruby/pull/62
