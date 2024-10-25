@@ -8,7 +8,7 @@ module BrazeRuby
       def initialize(api_key, braze_url, options, messages: [], external_user_ids: [])
         @messages = messages
         @external_user_ids = external_user_ids
-        super api_key, braze_url, options
+        super(api_key, braze_url, options)
       end
 
       def perform
