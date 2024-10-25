@@ -1,6 +1,6 @@
 #! /bin/sh
 set -ex
 
-bundle exec bump patch --tag
+bundle exec bump minor --tag
 git push origin main
 git push origin --tags

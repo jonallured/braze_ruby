@@ -330,7 +330,9 @@ bundle exec rails whatever
 
 ## Releasing
 
-New versions are released by running a script locally that bumps the patch level
+Before releasing the CHANGELOG should be updated so that the new version has
+it's own section and an empty Unreleased section is ready for the next change.
+New versions are released by running a script locally that bumps the minor level
 of the gem and then pushes to a GitHub Action that actually sends the new
 version to RubyGems.org:
 
