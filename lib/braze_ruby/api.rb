@@ -43,10 +43,10 @@ module BrazeRuby
 
     attr_reader :api_key, :braze_url, :options
 
-    def initialize(api_key, braze_url, options = {})
-      @api_key = api_key || configuration.rest_api_key
-      @braze_url = braze_url || configuration.rest_url
-      @options = options || configuration.options
+    def initialize(api_key = nil, braze_url = nil, options = nil)
+      @api_key = api_key || BrazeRuby.configuration.rest_api_key
+      @braze_url = braze_url || BrazeRuby.configuration.rest_url
+      @options = options || BrazeRuby.configuration.options || {}
     end
   end
 end

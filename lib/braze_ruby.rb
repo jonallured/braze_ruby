@@ -16,6 +16,10 @@ module BrazeRuby
     @configuration ||= Configuration.new
   end
 
+  def self.reset
+    @configuration = Configuration.new
+  end
+
   def self.configure
     yield(configuration)
   end

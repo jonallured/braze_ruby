@@ -19,22 +19,43 @@ Or install it yourself as:
 
 ### Configuration
 
-Configuration options may be passed when a new API object is instantiated:
+Configuration settings may be passed when a new API object is instantiated:
 
 ```ruby
-BrazeRuby::API.new('<braze-rest-api-key>', '<braze-rest-url', {<additional options>})
+api_key = "instance-api-key"
+braze_url = "instance-braze-url"
+options = { key: "instance-options" }
+
+api = BrazeRuby::API.new(api_key, braze_url, options)
+
+api.api_key
+# => "instance-api-key"
+api.braze_url
+# => "instance-braze-url"
+api.options
+# => {:key=>"instance-options"}
 ```
 
 Alternatively, you can pass your [Braze REST API key][braze_api_key], [Braze
 REST URL][braze_url], and any required [Faraday options][faraday_options] to the
-`BrazeRuby::configure` method:
+`BrazeRuby::configure` method. Then, if you instantiate an API object with no
+arguments it will use these global configuration settings:
 
 ```ruby
 BrazeRuby.configure do |config|
-  config.rest_api_key = '<braze-rest-api-key>'
-  config.rest_url = '<braze-rest-url>'
-  config.options = {<additional options>}
+  config.rest_api_key = "global-api-key"
+  config.rest_url = "global-braze-url"
+  config.options = { key: "global-options" }
 end
+
+api = BrazeRuby::API.new
+
+api.api_key
+# => "global-api-key"
+api.braze_url
+# => "global-braze-url"
+api.options
+# => {:key=>"global-options"}
 ```
 
 ## Examples
