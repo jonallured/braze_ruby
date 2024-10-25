@@ -23,4 +23,4 @@ workflows:
       - test:
           matrix:
             parameters:
-              ruby-version: ["ruby:3.0.1", "ruby:2.7.3", "ruby:2.6.7"]
+              ruby-version: ["ruby:3.1.6", "ruby:3.2.5", "ruby:3.3.5"]
