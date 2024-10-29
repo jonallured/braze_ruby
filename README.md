@@ -317,6 +317,83 @@ api.email_hard_bounces(email: ['jdoe@example.com'])
 api.remove_emails_from_spam(email: ['jdoe@example.com'])
 ```
 
+### Braze catalogs
+
+As of november 2024, Braze catalogs still have some moving parts (beta) and only
+partial support has been implemented
+
+#### Create Catalogs
+```ruby
+api.create_catalogs(
+  catalogs: [
+    {
+      name: "restaurants",
+      description: "My Restaurants",
+      fields: [
+        {name: "id", type: "string"},
+        {name: "Name", type: "string"},
+        {name: "Loyalty_Program", type: "boolean"},
+        {name: "Created_At", type: "time"}
+      ]
+    }
+  ]
+)
+```
+
+#### List Catalogs
+```ruby
+api.list_catalogs
+```
+
+#### Delete Catalog
+```ruby
+api.delete_catalog("restaurants")
+```
+
+#### Create Catalog Items
+```ruby
+api.create_catalog_items(
+  "restaurants",
+  items: [
+    {
+      id: "restaurant1",
+      Name: "Restaurant1",
+      Loyalty_Program: true,
+      Created_At: "2022-11-01T09:03:19.967+00:00"
+    }
+  ]
+)
+```
+
+#### Delete Catalog Items
+```ruby
+api.delete_catalog_items(
+  "restaurants",
+  items: [
+    {id: "restaurant1"}
+  ]
+)
+```
+
+#### Update Catalog Items
+
+This functions like an upsert, the name of the associated permission api key
+permission is `catalog.replace_items`
+
+```ruby
+api.update_catalog_items(
+  "restaurants",
+  items: [
+    {
+      id: "restaurant1",
+      Name: "NewRestaurantName",
+      Loyalty_Program: false,
+      Created_At: "2022-11-01T09:03:19.967+00:00"
+    }
+  ]
+)
+```
+
 ## Debugging
 
 The BRAZE_RUBY_DEBUG environment variable will trigger full printouts of the
