@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 ## [Unreleased][]
 
 ### Added
+* Partial support for Braze catalogs ([#60][])
 
 ### Changed
 
@@ -119,6 +120,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 [#45]: https://github.com/jonallured/braze_ruby/pull/45
 [#46]: https://github.com/jonallured/braze_ruby/pull/46
 [#47]: https://github.com/jonallured/braze_ruby/pull/47
+[#60]: https://github.com/jonallured/braze_ruby/pull/60
 [#61]: https://github.com/jonallured/braze_ruby/pull/61
 [#62]: https://github.com/jonallured/braze_ruby/pull/62
 [#63]: https://github.com/jonallured/braze_ruby/pull/63
