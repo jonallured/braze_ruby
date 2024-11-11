@@ -7,7 +7,7 @@ describe BrazeRuby::HTTP do
   describe "#connection" do
     let(:options) { double("options", "[]=": nil) }
     let(:headers) { double("headers", "[]=": nil) }
-    let(:conn) { double("conn", adapter: nil, options: options, headers: headers, request: nil) }
+    let(:conn) { double("conn", adapter: nil, options: options, headers: headers, request: nil, use: nil) }
     let(:api_key) { "braze-api-key" }
     let(:braze_url) { "http://example.com" }
 
@@ -66,6 +66,12 @@ describe BrazeRuby::HTTP do
       described_class.new(api_key, braze_url).connection
 
       expect(conn).to have_received(:adapter).with(:default_adapter)
+    end
+
+    it "enables Faraday middlewares" do
+      described_class.new(api_key, braze_url, middlewares: [Faraday::Response::RaiseError]).connection
+
+      expect(conn).to have_received(:use).with(Faraday::Response::RaiseError)
     end
   end
 end
