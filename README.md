@@ -41,6 +41,7 @@ REST URL][braze_url], and any required [Faraday options][faraday_options] to the
 `BrazeRuby::configure` method. Then, if you instantiate an API object with no
 arguments it will use these global configuration settings:
 
+
 ```ruby
 BrazeRuby.configure do |config|
   config.rest_api_key = "global-api-key"
@@ -57,6 +58,13 @@ api.braze_url
 api.options
 # => {:key=>"global-options"}
 ```
+
+#### Available `options` keys
+
+- retry - Number of times to retry a failed request
+- open_timeout - Number of seconds to wait for the connection to open
+- timeout - Number of seconds to wait for the request to complete
+- middlewares - Array of Faraday middleware to use
 
 ## Examples
 

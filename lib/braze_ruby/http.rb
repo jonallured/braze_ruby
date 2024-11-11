@@ -50,6 +50,10 @@ module BrazeRuby
 
         connection.options[:timeout] = @options[:timeout]
         connection.options[:open_timeout] = @options[:open_timeout]
+
+        @options.fetch(:middlewares, []).each do |middleware|
+          connection.use middleware
+        end
       end
     end
 
