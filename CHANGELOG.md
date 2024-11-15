@@ -12,6 +12,8 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ### Added
 
+* Support for Faraday middlewares ([#66][])
+
 ### Changed
 
 ### Deprecated
