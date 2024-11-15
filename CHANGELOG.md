@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 ### Changed
 
 * Use more generic CI job names ([#67][])
+* Bump Ruby versions for CI ([#68][])
 
 ### Deprecated
 
@@ -130,3 +131,4 @@ The format is based on [Keep a Changelog][] and this project adheres to
 [#64]: https://github.com/jonallured/braze_ruby/pull/64
 [#65]: https://github.com/jonallured/braze_ruby/pull/65
 [#67]: https://github.com/jonallured/braze_ruby/pull/67
+[#68]: https://github.com/jonallured/braze_ruby/pull/68
