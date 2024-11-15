@@ -41,7 +41,6 @@ REST URL][braze_url], and any required [Faraday options][faraday_options] to the
 `BrazeRuby::configure` method. Then, if you instantiate an API object with no
 arguments it will use these global configuration settings:
 
-
 ```ruby
 BrazeRuby.configure do |config|
   config.rest_api_key = "global-api-key"
