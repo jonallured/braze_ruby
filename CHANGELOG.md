@@ -12,12 +12,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ### Added
 
-* Partial support for Braze catalogs ([#60][])
-
 ### Changed
-
-* Use more generic CI job names ([#67][])
-* Bump Ruby versions for CI ([#68][])
 
 ### Deprecated
 
@@ -26,6 +21,17 @@ The format is based on [Keep a Changelog][] and this project adheres to
 ### Fixed
 
 ### Security
+
+## [0.10.0][] - 2024-11-15
+
+### Added
+
+* Partial support for Braze catalogs ([#60][])
+
+### Changed
+
+* Use more generic CI job names ([#67][])
+* Bump Ruby versions for CI ([#68][])
 
 ## [0.9.0][] - 2024-10-25
 
@@ -97,13 +103,14 @@ The format is based on [Keep a Changelog][] and this project adheres to
 * Modernize a few files and tinker with CI setup ([#26][])
 * Update authors and license ([#27][])
 
-[Unreleased]: https://github.com/jonallured/braze_ruby/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/jonallured/braze_ruby/compare/v0.10.0...HEAD
 
 [0.5.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.5.0
 [0.6.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.6.0
 [0.7.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.7.0
 [0.8.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.8.0
 [0.9.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.9.0
+[0.10.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.10.0
 
 [#25]: https://github.com/jonallured/braze_ruby/pull/25
 [#26]: https://github.com/jonallured/braze_ruby/pull/26
