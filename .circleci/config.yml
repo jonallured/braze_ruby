@@ -1,4 +1,5 @@
 version: 2.1
+
 jobs:
   test:
     parameters:
@@ -17,10 +18,16 @@ jobs:
       - run:
           name: Run tests
           command: bundle exec rake
+
 workflows:
   all-tests:
     jobs:
       - test:
-          matrix:
-            parameters:
-              ruby-version: ["ruby:3.1.6", "ruby:3.2.5", "ruby:3.3.5"]
+          name: test-latest
+          ruby-version: ruby:3.3.5
+      - test:
+          name: test-minus-one
+          ruby-version: ruby:3.2.5
+      - test:
+          name: test-minus-two
+          ruby-version: ruby:3.1.6

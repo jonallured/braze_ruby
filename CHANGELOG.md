@@ -11,9 +11,12 @@ The format is based on [Keep a Changelog][] and this project adheres to
 ## [Unreleased][]
 
 ### Added
+
 * Partial support for Braze catalogs ([#60][])
 
 ### Changed
+
+* Use more generic CI job names ([#67][])
 
 ### Deprecated
 
@@ -126,3 +129,4 @@ The format is based on [Keep a Changelog][] and this project adheres to
 [#63]: https://github.com/jonallured/braze_ruby/pull/63
 [#64]: https://github.com/jonallured/braze_ruby/pull/64
 [#65]: https://github.com/jonallured/braze_ruby/pull/65
+[#67]: https://github.com/jonallured/braze_ruby/pull/67
