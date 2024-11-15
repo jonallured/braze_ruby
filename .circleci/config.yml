@@ -24,10 +24,10 @@ workflows:
     jobs:
       - test:
           name: test-latest
-          ruby-version: ruby:3.3.5
+          ruby-version: ruby:3.3.6
       - test:
           name: test-minus-one
-          ruby-version: ruby:3.2.5
+          ruby-version: ruby:3.2.6
       - test:
           name: test-minus-two
           ruby-version: ruby:3.1.6
