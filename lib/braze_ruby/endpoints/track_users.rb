@@ -3,10 +3,10 @@
 module BrazeRuby
   module Endpoints
     module TrackUsers
-      attr_writer :track_users_service
+      attr_writer :track_users_rest
 
       def track_users(**payload)
-        track_users_service.perform(**payload)
+        track_users_rest.perform(**payload)
       end
 
       def track_purchase(**payload)
@@ -23,8 +23,8 @@ module BrazeRuby
 
       private
 
-      def track_users_service
-        @track_users_service ||= BrazeRuby::REST::TrackUsers.new(api_key, braze_url, options)
+      def track_users_rest
+        @track_users_rest ||= BrazeRuby::REST::TrackUsers.new(api_key, braze_url, options)
       end
     end
   end

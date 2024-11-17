@@ -12,9 +12,9 @@ end
 
 describe BrazeRuby::Endpoints::DeleteUsers do
   let(:api) { API.new }
-  let(:delete_users_service) { double(:delete_users_service) }
+  let(:delete_users_rest) { double(:delete_users_rest) }
 
-  before { api.delete_users_service = delete_users_service }
+  before { api.delete_users_rest = delete_users_rest }
 
   describe "#delete_users" do
     let(:payload) { [1, 2, 3] }
@@ -22,7 +22,7 @@ describe BrazeRuby::Endpoints::DeleteUsers do
     subject(:delete_users!) { api.delete_users(payload) }
 
     it "deletes users" do
-      expect(delete_users_service).to receive(:perform)
+      expect(delete_users_rest).to receive(:perform)
         .with(external_ids: payload)
 
       delete_users!

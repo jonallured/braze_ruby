@@ -3,16 +3,16 @@
 module BrazeRuby
   module Endpoints
     module RemoveEmailAddressesFromSpam
-      attr_writer :remove_emails_from_spam_service
+      attr_writer :remove_emails_from_spam_rest
 
       def remove_emails_from_spam(**payload)
-        remove_emails_from_spam_service.perform(**payload)
+        remove_emails_from_spam_rest.perform(**payload)
       end
 
       private
 
-      def remove_emails_from_spam_service
-        @remove_emails_from_spam_service ||= BrazeRuby::REST::RemoveEmailAddressesFromSpam.new(api_key, braze_url, options)
+      def remove_emails_from_spam_rest
+        @remove_emails_from_spam_rest ||= BrazeRuby::REST::RemoveEmailAddressesFromSpam.new(api_key, braze_url, options)
       end
     end
   end

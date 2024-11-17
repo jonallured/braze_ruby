@@ -12,9 +12,9 @@ end
 
 describe BrazeRuby::Endpoints::TrackUsers do
   let(:api) { API.new }
-  let(:track_users_service) { double(:track_users_service) }
+  let(:track_users_rest) { double(:track_users_rest) }
 
-  before { api.track_users_service = track_users_service }
+  before { api.track_users_rest = track_users_rest }
 
   describe "#track_users" do
     let(:payload) {
@@ -28,7 +28,7 @@ describe BrazeRuby::Endpoints::TrackUsers do
     subject(:track_users!) { api.track_users(**payload) }
 
     it "tracks attributes, events and purchases" do
-      expect(track_users_service).to receive(:perform)
+      expect(track_users_rest).to receive(:perform)
         .with(payload)
 
       track_users!
@@ -41,7 +41,7 @@ describe BrazeRuby::Endpoints::TrackUsers do
     subject(:track_purchase!) { api.track_purchase(**payload) }
 
     it "tracks a single purchase" do
-      expect(track_users_service).to receive(:perform)
+      expect(track_users_rest).to receive(:perform)
         .with(purchases: [payload])
 
       track_purchase!
@@ -54,7 +54,7 @@ describe BrazeRuby::Endpoints::TrackUsers do
     subject(:track_event!) { api.track_event(**payload) }
 
     it "tracks a single purchase" do
-      expect(track_users_service).to receive(:perform)
+      expect(track_users_rest).to receive(:perform)
         .with(events: [payload])
 
       track_event!
@@ -67,7 +67,7 @@ describe BrazeRuby::Endpoints::TrackUsers do
     subject(:track_attribute!) { api.track_attribute(**payload) }
 
     it "tracks a single purchase" do
-      expect(track_users_service).to receive(:perform)
+      expect(track_users_rest).to receive(:perform)
         .with(attributes: [payload])
 
       track_attribute!
