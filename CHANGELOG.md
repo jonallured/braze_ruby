@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 ### Added
 
 * Support for Faraday middlewares ([#66][])
+* Adding support for v2 subscription endpoint ([#53][])
 
 ### Changed
 
