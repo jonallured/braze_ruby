@@ -5,7 +5,13 @@ require "spec_helper"
 describe BrazeRuby::REST::DeleteUsers do
   let(:http) { double(:http) }
 
-  let(:payload) { {external_ids: [1, 2, 3]} }
+  let(:payload) do
+    {
+      external_ids: [1, 2, 3],
+      user_aliases: [4, 5, 6],
+      braze_ids: [7, 8, 9],
+    }
+  end
 
   subject { described_class.new :api_key, :rest_url, {} }
 

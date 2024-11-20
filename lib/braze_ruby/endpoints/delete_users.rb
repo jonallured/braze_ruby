@@ -13,6 +13,14 @@ module BrazeRuby
         delete_users_action(external_ids: payload.compact.uniq)
       end
 
+      def delete_users_by_alias(payload)
+        delete_users_action(user_aliases: payload.compact.uniq)
+      end
+
+      def delete_users_by_braze_id(payload)
+        delete_users_action(braze_ids: payload.compact.uniq)
+      end
+
       private
 
       def delete_users_service
