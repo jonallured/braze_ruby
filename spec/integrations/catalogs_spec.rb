@@ -156,4 +156,28 @@ RSpec.describe "catalogs" do
       end
     end
   end
+
+  describe "edit_catalog_items" do
+    subject(:edit_catalog_items) do
+      api.edit_catalog_items(
+        "restaurants",
+        items: [
+          {
+            id: "restaurant1",
+            Name: "NewNameForRestaurant1"
+          }
+        ]
+      )
+    end
+
+    context "with success", vcr: true do
+      it "responds with success message" do
+        expect(edit_catalog_items.status).to be 202
+
+        parsed_body = JSON.parse(edit_catalog_items.body)
+
+        expect(parsed_body["message"]).to eq("success")
+      end
+    end
+  end
 end

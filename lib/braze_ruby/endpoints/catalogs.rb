@@ -28,6 +28,10 @@ module BrazeRuby
       def update_catalog_items(catalog_name, **payload)
         BrazeRuby::REST::UpdateCatalogItems.new(api_key, braze_url, options, catalog_name, **payload).perform
       end
+
+      def edit_catalog_items(catalog_name, **payload)
+        BrazeRuby::REST::EditCatalogItems.new(api_key, braze_url, options, catalog_name, **payload).perform
+      end
     end
   end
 end
