@@ -396,6 +396,7 @@ api.delete_catalog_items(
 
 #### Update Catalog Items
 
+**EDIT : This functions hints at functioning like an upsert but actual API behaviour is more of the create if not existing. Further calls on items already existing will do nothing. Use edit_catalog_items for that, see below**
 This functions like an upsert, the name of the associated permission api key
 permission is `catalog.replace_items`
 
@@ -408,6 +409,31 @@ api.update_catalog_items(
       Name: "NewRestaurantName",
       Loyalty_Program: false,
       Created_At: "2022-11-01T09:03:19.967+00:00"
+    }
+  ]
+)
+```
+
+#### Edit Catalog Items
+This functions actually _updates_ items. The update catalog items does not. This
+is very confusing and Braze support answers late nov 2024 did not clarify this
+point. TL;DR Actual behaviour is `update_catalog_items` functions more or less
+like an create if not existing. `edit_catalog_items` functions like an update
+without the creation bit if it item does not already exists. This will stay in
+an in-between state while Braze continues working on its implementation.
+
+`edit_catalog_items` only updates the property in the payload, it does not reset
+value for the existing properties that were omitted.
+
+When fixed we will be able to better name things
+
+```ruby
+api.edit_catalog_items(
+  "restaurants",
+  items: [
+    {
+      id: "restaurant1",
+      Name: "NewRestaurantName",
     }
   ]
 )

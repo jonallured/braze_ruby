@@ -26,6 +26,12 @@ module BrazeRuby
       end
     end
 
+    def patch(path, payload)
+      connection.patch path do |request|
+        request.body = JSON.dump(payload)
+      end
+    end
+
     def get(path, query = {})
       connection.get path, query
     end
