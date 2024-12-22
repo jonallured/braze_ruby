@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "braze_ruby/deprecated"
+require "braze_ruby/http"
 require "braze_ruby/endpoints/track_users"
 require "braze_ruby/endpoints/send_messages"
 require "braze_ruby/endpoints/schedule_messages"
@@ -43,12 +44,14 @@ module BrazeRuby
       BrazeRuby::REST::ListSegments.new(api_key, braze_url, options).perform
     end
 
-    attr_reader :api_key, :braze_url, :options
+    attr_reader :http
 
     def initialize(api_key = nil, braze_url = nil, options = nil)
-      @api_key = api_key || BrazeRuby.configuration.rest_api_key
-      @braze_url = braze_url || BrazeRuby.configuration.rest_url
-      @options = options || BrazeRuby.configuration.options || {}
+      api_key ||= BrazeRuby.configuration.rest_api_key
+      braze_url ||= BrazeRuby.configuration.rest_url
+      options ||= BrazeRuby.configuration.options || {}
+
+      @http ||= HTTP.new(api_key, braze_url, options)
     end
   end
 end
