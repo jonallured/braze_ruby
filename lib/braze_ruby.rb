@@ -5,8 +5,6 @@ require "braze_ruby/configuration"
 
 module BrazeRuby
   autoload :API, "braze_ruby/api"
-  autoload :REST, "braze_ruby/rest"
-  autoload :Endpoints, "braze_ruby/endpoints"
 
   class << self
     attr_writer :configuration

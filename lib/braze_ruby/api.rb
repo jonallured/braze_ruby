@@ -1,54 +1,33 @@
 # frozen_string_literal: true
 
-require "braze_ruby/deprecated"
-require "braze_ruby/endpoints/track_users"
-require "braze_ruby/endpoints/send_messages"
-require "braze_ruby/endpoints/schedule_messages"
-require "braze_ruby/endpoints/email_status"
-require "braze_ruby/endpoints/email_sync"
-require "braze_ruby/endpoints/delete_users"
-require "braze_ruby/endpoints/campaigns"
-require "braze_ruby/endpoints/canvas"
-require "braze_ruby/endpoints/catalogs"
-require "braze_ruby/endpoints/subscription"
-require "braze_ruby/endpoints/rename_external_ids"
-require "braze_ruby/endpoints/remove_external_ids"
-require "braze_ruby/endpoints/remove_email_addresses_from_spam"
+require "braze_ruby/http"
 
 module BrazeRuby
   class API
-    include BrazeRuby::Deprecated
+    attr_reader :http
 
-    include BrazeRuby::Endpoints::TrackUsers
-    include BrazeRuby::Endpoints::SendMessages
-    include BrazeRuby::Endpoints::ScheduleMessages
-    include BrazeRuby::Endpoints::EmailStatus
-    include BrazeRuby::Endpoints::EmailSync
-    include BrazeRuby::Endpoints::DeleteUsers
-    include BrazeRuby::Endpoints::Campaigns
-    include BrazeRuby::Endpoints::Canvas
-    include BrazeRuby::Endpoints::Catalogs
-    include BrazeRuby::Endpoints::Subscription
-    include BrazeRuby::Endpoints::IdentifyUsers
-    include BrazeRuby::Endpoints::CreateUserAliases
-    include BrazeRuby::Endpoints::RenameExternalIds
-    include BrazeRuby::Endpoints::RemoveExternalIds
-    include BrazeRuby::Endpoints::RemoveEmailAddressesFromSpam
+    def initialize(api_key = nil, braze_url = nil, options = nil)
+      api_key ||= BrazeRuby.configuration.rest_api_key
+      braze_url ||= BrazeRuby.configuration.rest_url
+      options ||= BrazeRuby.configuration.options || {}
 
-    def export_users(**payload)
-      BrazeRuby::REST::ExportUsers.new(api_key, braze_url, options).perform(**payload)
+      @http = HTTP.new(api_key, braze_url, options)
+    end
+
+    def export_users(external_ids: nil, segment_id: nil, **options)
+      if external_ids
+        http.post "/users/export/ids", {
+          external_ids: external_ids
+        }.merge(options)
+      elsif segment_id
+        http.post "/users/export/segment", {
+          segment_id: segment_id
+        }.merge(options)
+      end
     end
 
     def list_segments
-      BrazeRuby::REST::ListSegments.new(api_key, braze_url, options).perform
-    end
-
-    attr_reader :api_key, :braze_url, :options
-
-    def initialize(api_key = nil, braze_url = nil, options = nil)
-      @api_key = api_key || BrazeRuby.configuration.rest_api_key
-      @braze_url = braze_url || BrazeRuby.configuration.rest_url
-      @options = options || BrazeRuby.configuration.options || {}
+      http.get "/segments/list"
     end
   end
 end
