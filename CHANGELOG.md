@@ -142,12 +142,14 @@ The format is based on [Keep a Changelog][] and this project adheres to
 [#46]: https://github.com/jonallured/braze_ruby/pull/46
 [#47]: https://github.com/jonallured/braze_ruby/pull/47
 [#52]: https://github.com/jonallured/braze_ruby/pull/52
+[#53]: https://github.com/jonallured/braze_ruby/pull/53
 [#60]: https://github.com/jonallured/braze_ruby/pull/60
 [#61]: https://github.com/jonallured/braze_ruby/pull/61
 [#62]: https://github.com/jonallured/braze_ruby/pull/62
 [#63]: https://github.com/jonallured/braze_ruby/pull/63
 [#64]: https://github.com/jonallured/braze_ruby/pull/64
 [#65]: https://github.com/jonallured/braze_ruby/pull/65
+[#66]: https://github.com/jonallured/braze_ruby/pull/66
 [#67]: https://github.com/jonallured/braze_ruby/pull/67
 [#68]: https://github.com/jonallured/braze_ruby/pull/68
 [#69]: https://github.com/jonallured/braze_ruby/pull/69
