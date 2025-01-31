@@ -12,11 +12,6 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ### Added
 
-* Support for Faraday middlewares ([#66][])
-* Adding support for v2 subscription endpoint ([#53][])
-* Support for Braze catalogs : edit_catalog_items ([#69][])
-* Add support for export campaigns ([#52][])
-
 ### Changed
 
 ### Deprecated
@@ -26,6 +21,15 @@ The format is based on [Keep a Changelog][] and this project adheres to
 ### Fixed
 
 ### Security
+
+## [0.11.0][] - 2025-01-31
+
+### Added
+
+* Support for Faraday middlewares ([#66][])
+* Adding support for v2 subscription endpoint ([#53][])
+* Support for Braze catalogs : edit_catalog_items ([#69][])
+* Add support for export campaigns ([#52][])
 
 ## [0.10.0][] - 2024-11-15
 
@@ -108,7 +112,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 * Modernize a few files and tinker with CI setup ([#26][])
 * Update authors and license ([#27][])
 
-[Unreleased]: https://github.com/jonallured/braze_ruby/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/jonallured/braze_ruby/compare/v0.11.0...HEAD
 
 [0.5.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.5.0
 [0.6.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.6.0
@@ -116,6 +120,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 [0.8.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.8.0
 [0.9.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.9.0
 [0.10.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.10.0
+[0.11.0]: https://github.com/jonallured/braze_ruby/releases/tag/v0.11.0
 
 [#25]: https://github.com/jonallured/braze_ruby/pull/25
 [#26]: https://github.com/jonallured/braze_ruby/pull/26
