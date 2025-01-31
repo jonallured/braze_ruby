@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 * Support for Faraday middlewares ([#66][])
 * Adding support for v2 subscription endpoint ([#53][])
 * Support for Braze catalogs : edit_catalog_items ([#69][])
+* Add support for export campaigns ([#52][])
 
 ### Changed
 
@@ -135,6 +136,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 [#45]: https://github.com/jonallured/braze_ruby/pull/45
 [#46]: https://github.com/jonallured/braze_ruby/pull/46
 [#47]: https://github.com/jonallured/braze_ruby/pull/47
+[#52]: https://github.com/jonallured/braze_ruby/pull/52
 [#60]: https://github.com/jonallured/braze_ruby/pull/60
 [#61]: https://github.com/jonallured/braze_ruby/pull/61
 [#62]: https://github.com/jonallured/braze_ruby/pull/62
