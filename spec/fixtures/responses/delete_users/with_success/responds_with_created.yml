@@ -5,7 +5,7 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/users/delete"
     body:
       encoding: UTF-8
-      string: '{"external_ids":[400,401,402]}'
+      string: '{"external_ids":[400,401,402],"user_aliases":[],"braze_ids":[]}'
     headers:
       Content-Type:
       - application/json
