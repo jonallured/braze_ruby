@@ -12,6 +12,8 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ### Added
 
+* Support `emails_to_identify` and `phone_numbers_to_identify` in `identify_users`
+
 ### Changed
 
 ### Deprecated
