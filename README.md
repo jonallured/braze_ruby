@@ -309,6 +309,30 @@ api.identify_users(
 )
 ```
 
+#### Identify a user by email
+
+```ruby
+api.identify_users(
+  emails_to_identify: [{
+    external_id: 1234,
+    email: "user@example.com",
+    prioritization: ["unidentified", "most_recently_updated"]
+  }]
+)
+```
+
+#### Identify a user by phone number
+
+```ruby
+api.identify_users(
+  phone_numbers_to_identify: [{
+    external_id: 1234,
+    phone: "+15555555555",
+    prioritization: ["unidentified", "most_recently_updated"]
+  }]
+)
+```
+
 ### External ID Migration
 
 #### Rename users' external IDs with an array of external_id_renames
